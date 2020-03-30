@@ -12,17 +12,23 @@
 </head>
 <link rel="stylesheet" href="static/css/bootstrap.min.css">
 <script type="text/javascript" src="static/js/jquery-3.4.1.js"></script>
-<script src="static/js/bootstrap.min.js">
+<script>
     function login() {
         document.loginForm.action = "login";
         document.loginForm.submit();
     }
-
-    // function reg() {
-    //     document.loginForm.action = "reg.jsp";
-    // }
 </script>
-<h1>用户登录</h1>
+<%--<script src="static/js/bootstrap.min.js">--%>
+<%--    function login() {--%>
+<%--        document.loginForm.action = "chat";--%>
+<%--        document.loginForm.submit();--%>
+<%--    }--%>
+
+<%--    // function reg() {--%>
+<%--    //     document.loginForm.action = "reg.jsp";--%>
+<%--    // }--%>
+<%--</script>--%>
+<h1 align="center">用户登录</h1>
 <form action="" name="loginForm" method="post">
     <table align="center">
         <tr>

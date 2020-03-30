@@ -23,7 +23,8 @@
     <result column="chat_content" jdbcType="VARCHAR" property="chatContent" />
     <result column="chat_time" jdbcType="TIMESTAMP" property="chatTime" />
     <association property="user" javaType="com.zx.bean.User">
-      <result column="user_name" property="username"/>
+      <id column="user_id" jdbcType="INTEGER" property="userId" />
+      <result column="user_name" property="userName"/>
     </association>
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -103,7 +104,7 @@
     chat_id, user_id, chat_content, chat_time
   </sql>
   <sql id="With_User_Name">
-    chat_id, user_id, chat_content, chat_time, user_name
+    chat_id, chat.user_id, chat_content, chat_time, user_name
   </sql>
   <select id="selectByExample" parameterType="com.zx.bean.ChatExample" resultMap="BaseResultMap">
     <!--

@@ -9,6 +9,9 @@
     <typeAliases>
         <package name="com.zx.bean"/>
     </typeAliases>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
 
 </configuration>
 

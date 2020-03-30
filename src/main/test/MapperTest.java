@@ -35,17 +35,18 @@ public class MapperTest {
 //        System.out.println(userMapper);
 //        userMapper.insertSelective(new User(null,"中","zxc"));
 //        noteBookMapper.insertSelective(new NoteBook(null,5,"123","123"));
-//        UserMapper userMapper = sqlSessionTemplate.getMapper(UserMapper.class);
-//        for (int i = 0;i<5;i++){
-//            String uid = UUID.randomUUID().toString().substring(0,5)+i;
-//            userMapper.insertSelective(new User(null,"中","zxc"));
-//            System.out.println(uid);
-//        }
+        UserMapper userMapper = sqlSessionTemplate.getMapper(UserMapper.class);
+        for (int i = 0;i<5;i++){
+            String uid = UUID.randomUUID().toString().substring(0,5)+i;
+            userMapper.insertSelective(new User(null,uid,uid+i));
+            System.out.println(uid);
+        }
+
 //        密码加密
-        String base = slat.substring(0,1)+slat+slat.substring(slat.length()-1,slat.length());
-        System.out.println(base);
-        String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
-        System.out.println(md5);
+//        String base = slat.substring(0,1)+slat+slat.substring(slat.length()-1,slat.length());
+//        System.out.println(base);
+//        String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
+//        System.out.println(md5);
 
     }
 }

@@ -21,14 +21,27 @@ public class Chat extends ChatKey {
      */
     private Date chatTime;
 
-    public Chat() {
-    }
-
-    public Chat(Integer chatId, Integer userId, String chatContent, Date chatTime) {
+    public Chat(Integer chatId, Integer userId, String chatContent, Date chatTime, User user) {
         super(chatId, userId);
         this.chatContent = chatContent;
         this.chatTime = chatTime;
+        this.user = user;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    User user;
+
+    public Chat() {
+    }
+
+
 
 
     /**
