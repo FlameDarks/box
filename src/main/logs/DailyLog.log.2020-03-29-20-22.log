@@ -1,0 +1,36 @@
+[2020-03-29 20:22:12:732] [INFO ] [method:org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:248)]
+Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+
+[2020-03-29 20:22:12:768] [INFO ] [method:org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:177)]
+Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5be6e01c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1c93084c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6ef888f6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@10e92f8f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7ce3cb8e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@78b66d36, org.springframework.test.context.event.EventPublishingTestExecutionListener@5223e5ee]
+
+[2020-03-29 20:22:13:276] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-03-29 20:22:13:857] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-03-29 20:22:46:291] [INFO ] [method:org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:248)]
+Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+
+[2020-03-29 20:22:46:306] [INFO ] [method:org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:177)]
+Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7880cdf3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5be6e01c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c93084c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ef888f6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@10e92f8f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7ce3cb8e, org.springframework.test.context.event.EventPublishingTestExecutionListener@78b66d36]
+
+[2020-03-29 20:22:46:950] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-03-29 20:22:47:732] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-03-29 20:22:58:543] [INFO ] [method:org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:248)]
+Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+
+[2020-03-29 20:22:58:557] [INFO ] [method:org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:177)]
+Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7880cdf3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5be6e01c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c93084c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ef888f6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@10e92f8f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7ce3cb8e, org.springframework.test.context.event.EventPublishingTestExecutionListener@78b66d36]
+
+[2020-03-29 20:22:59:117] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-03-29 20:22:59:684] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+

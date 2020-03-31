@@ -19,11 +19,11 @@ public class NoteBookController {
     @Autowired
     NoteBookService noteBookService;
     @RequestMapping("/notebook")
-    public String getChat(@RequestParam(value = "pn",defaultValue = "1")Integer pn, Model model){
-        PageHelper.startPage(pn,1);
+    public String getNoteBook(@RequestParam(value = "pn",defaultValue = "1")Integer pn, Model model){
+        PageHelper.startPage(pn,6);
         List<NoteBook> noteBooks = noteBookService.getAll();
         PageInfo pageInfo = new PageInfo(noteBooks,5);
-        model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("notebook_pageInfo",pageInfo);
         return "notebook";
     }
 }

@@ -38,11 +38,12 @@
         </javaClientGenerator>
 
         <!--table指定每个表的生成策略-->
-        <table tableName="user" domainObjectName="User"></table>
-        <table tableName="notebook" domainObjectName="NoteBook"></table>
-        <table tableName="contact" domainObjectName="Contact"></table>
-        <table tableName="bookmark" domainObjectName="BookMark"></table>
-        <table tableName="chat" domainObjectName="Chat"></table>
+<!--        <table tableName="user" domainObjectName="User"/>-->
+<!--        <table tableName="notebook" domainObjectName="NoteBook"/>-->
+<!--        <table tableName="contact" domainObjectName="Contact"/>-->
+<!--        <table tableName="bookmark" domainObjectName="BookMark"/>-->
+        <table tableName="file" domainObjectName="File"/>
+<!--        <table tableName="chat" domainObjectName="Chat"/>-->
 
         <!--关闭注释-->
         <!--

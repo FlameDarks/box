@@ -4,6 +4,10 @@ import com.zx.bean.NoteBook;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mybatis.generator.api.MyBatisGenerator;
+import org.mybatis.generator.config.Configuration;
+import org.mybatis.generator.config.xml.ConfigurationParser;
+import org.mybatis.generator.internal.DefaultShellCallback;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.test.context.ContextConfiguration;
@@ -15,6 +19,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -33,7 +39,7 @@ public class test {
     public void test2() throws Exception{
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/notebook").param("pn","1")).andReturn();
         MockHttpServletRequest request = result.getRequest();
-        PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
+        PageInfo pageInfo = (PageInfo)request.getAttribute("notebook_pageInfo");
         System.out.println("当前页码："+pageInfo.getPageNum());
         System.out.println("总页码："+pageInfo.getPages());
         System.out.println("总记录数："+pageInfo.getTotal());
@@ -46,7 +52,7 @@ public class test {
         System.out.println();
         List<NoteBook> noteBooks = pageInfo.getList();
         for(NoteBook noteBook:noteBooks){
-            System.out.println("ID:"+noteBook.getNotebookId()+" name:"+noteBook.getNotebookTitle());
+            System.out.println("ID:"+noteBook.getNotebookId()+" name:"+noteBook.getNotebookTime());
         }
     }
 

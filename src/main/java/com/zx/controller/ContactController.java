@@ -17,11 +17,11 @@ public class ContactController {
     @Autowired
     ContactService contactService;
     @RequestMapping("/contact")
-    public String getChat(@RequestParam(value = "pn",defaultValue = "1")Integer pn, Model model){
+    public String getContact(@RequestParam(value = "pn",defaultValue = "1")Integer pn, Model model){
         PageHelper.startPage(pn,1);
         List<Contact> contacts = contactService.getAll();
         PageInfo pageInfo = new PageInfo(contacts,5);
-        model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("contact_pageInfo",pageInfo);
         return "notebook";
     }
 }

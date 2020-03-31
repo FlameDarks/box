@@ -23,7 +23,7 @@ public class ChatController {
         PageHelper.startPage(pn,1);
         List<Chat> chat = chatService.getAll();
         PageInfo pageInfo = new PageInfo(chat,5);
-        model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("chat_pageInfo",pageInfo);
         return "chat";
     }
     @RequestMapping("/login")

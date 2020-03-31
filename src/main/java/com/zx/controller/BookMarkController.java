@@ -16,13 +16,13 @@ import java.util.List;
 public class BookMarkController {
     @Autowired
     BookMarkService bookMarkService;
-    @RequestMapping("/notebook")
-    public String getChat(@RequestParam(value = "pn",defaultValue = "1")Integer pn, Model model){
+    @RequestMapping("/bookmark")
+    public String getBookMark(@RequestParam(value = "pn",defaultValue = "1")Integer pn, Model model){
         PageHelper.startPage(pn,1);
         List<BookMark> bookMarks = bookMarkService.getAll();
         PageInfo pageInfo = new PageInfo(bookMarks,5);
-        model.addAttribute("pageInfo",pageInfo);
-        return "notebook";
+        model.addAttribute("bookmark_pageInfo",pageInfo);
+        return "bookmark";
     }
 }
 
