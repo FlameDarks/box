@@ -18,20 +18,6 @@
 <link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap.min.css">
 <script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js"></script>
 <script src="${APP_PATH}/static/js/bootstrap.min.js"></script>
-<script>
-    function rq(sj)
-    {
-        var now = new Date(sj*1000);
-        var   year=now.getFullYear();
-        var   month=now.getMonth()+1;
-        var   date=now.getDate();
-        var   hour=now.getHours();
-        var   minute=now.getMinutes();
-        var   second=now.getSeconds();
-        return   year+"-"+month+"-"+date+"   "+hour+":"+minute+":"+second;
-
-    }
-</script>
 <body>
 <div class="container">
     <%--    标题--%>
@@ -61,10 +47,10 @@
         <div class="col-md-12">
             <table class="table table-hover">
                 <tr>
-                    <th>ID</th>
-                    <th>标题</th>
-                    <th>日期</th>
-                    <th>操作</th>
+                    <th class="col-md-2">ID</th>
+                    <th class="col-md-6">标题</th>
+                    <th class="col-md-2">日期</th>
+                    <th class="col-md-2">操作</th>
                 </tr>
                 <c:forEach items="${notebook_pageInfo.list}" var="notebook">
                     <tr>
@@ -89,28 +75,35 @@
     <%--    页码--%>
     <div class="row">
         <div class="col-md-6">
-            当前页数:
+            当前页数:${notebook_pageInfo.pageNum}，总${notebook_pageInfo.pages}页，共${notebook_pageInfo.total}条记录
         </div>
         <div class="col-md-6">
             <nav aria-label="Page navigation">
                 <ul class="pagination">
-                    <li><a href="#">首页</a></li>
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                    <li><a href="#">尾页</a></li>
+                    <li><a href="${APP_PATH}/notebook?pn=1">首页</a></li>
+                    <c:if test="${notebook_pageInfo.hasPreviousPage}">
+                        <li>
+                            <a href="${APP_PATH}/notebook?pn=${notebook_pageInfo.pageNum-1}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    </c:if>
+                    <c:forEach items="${notebook_pageInfo.navigatepageNums}" var="notebook_pagenum">
+                        <c:if test="${notebook_pagenum == notebook_pageInfo.pageNum}">
+                            <li class="active"><a href="#">${notebook_pagenum}</a></li>
+                        </c:if>
+                        <c:if test="${notebook_pagenum != notebook_pageInfo.pageNum}">
+                            <li><a href="${APP_PATH}/notebook?pn=${notebook_pagenum}">${notebook_pagenum}</a></li>
+                        </c:if>
+                    </c:forEach>
+                    <c:if test="${notebook_pageInfo.hasNextPage}">
+                        <li>
+                            <a href="${APP_PATH}/notebook?pn=${notebook_pageInfo.pageNum+1}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </c:if>
+                    <li><a href="${APP_PATH}/notebook?pn=${notebook_pageInfo.pages}">尾页</a></li>
                 </ul>
             </nav>
         </div>
