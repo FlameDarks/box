@@ -41,7 +41,7 @@
         </tr>
         <tr>
             <td colspan="1"><input class="btn btn-default" type="submit" onClick="login()" value="登录"/></td>
-            <td colspan="2"><input type="submit" onClick="reg()" value="注册"/></td>
+            <td colspan="2"><input class="btn btn-default" type="submit" onClick="reg()" value="注册"/></td>
         </tr>
     </table>
 </form>
