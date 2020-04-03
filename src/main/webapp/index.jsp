@@ -12,6 +12,7 @@
 </head>
 <link rel="stylesheet" href="static/css/bootstrap.min.css">
 <script type="text/javascript" src="static/js/jquery-3.4.1.js"></script>
+<script src="${APP_PATH}/static/js/bootstrap.min.js"></script>
 <script>
     function login() {
         document.loginForm.action = "login";

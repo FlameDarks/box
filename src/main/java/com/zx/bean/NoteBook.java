@@ -30,6 +30,9 @@ public class NoteBook extends NoteBookKey {
      */
     private Date notebookTime;
 
+    public NoteBook() {
+    }
+
     public NoteBook(Integer notebookId, Integer userId, String notebookTitle, String notebookContent, Date notebookTime) {
         super(notebookId, userId);
         this.notebookTitle = notebookTitle;
