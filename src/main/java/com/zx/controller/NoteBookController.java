@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -24,15 +22,16 @@ public class NoteBookController {
 
     @RequestMapping("/notebook")
     @ResponseBody
-    public Msg getNoteBookWithJson(@RequestParam(value = "pn",defaultValue = "1")Integer pn){
+    public Msg getNoteBookWithJson(@RequestParam(value = "pn",defaultValue = "1")Integer pn,@RequestParam(value = "userId")int id){
 //        每页显示条数
-        PageHelper.startPage(pn,1);
+        PageHelper.startPage(pn,3);
 //        升序排列
         PageHelper.orderBy("notebook_id asc");
 //        获取数据
-        List<NoteBook> noteBooks = noteBookService.getAll();
+        List<NoteBook> noteBooks = noteBookService.getAll(id);
 //        连续显示的页数
-        PageInfo pageInfo = new PageInfo(noteBooks,5);
+        PageInfo pageInfo = new PageInfo(noteBooks,3);
+        System.out.println(pageInfo.getPages());
         return Msg.success().add("notebook_pageInfo",pageInfo);
     }
 

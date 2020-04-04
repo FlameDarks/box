@@ -1,5 +1,4 @@
 import com.github.pagehelper.PageInfo;
-import com.zx.bean.Chat;
 import com.zx.bean.NoteBook;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,34 +26,34 @@ import java.util.List;
 @WebAppConfiguration
 @ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/applicationContext.xml","file:src/main/webapp/WEB-INF/dispatcher-servlet.xml"})
 public class test {
-    @Autowired
-    WebApplicationContext context;
-    MockMvc mockMvc;
-
-    @Before
-    public void test1(){
-        mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
-    }
-    @Test
-    public void test2() throws Exception{
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/notebook").param("pn","1")).andReturn();
-        MockHttpServletRequest request = result.getRequest();
-        PageInfo pageInfo = (PageInfo)request.getAttribute("notebook_pageInfo");
-        System.out.println("当前页码："+pageInfo.getPageNum());
-        System.out.println("总页码："+pageInfo.getPages());
-        System.out.println("总记录数："+pageInfo.getTotal());
-        System.out.println("连续显示的页码：");
-        int[] num = pageInfo.getNavigatepageNums();
-        System.out.println(num);
-        for (int i:num){
-            System.out.print(" "+i);
-        }
-        System.out.println();
-        List<NoteBook> noteBooks = pageInfo.getList();
-        for(NoteBook noteBook:noteBooks){
-            System.out.println("ID:"+noteBook.getNotebookId()+" name:"+noteBook.getNotebookTime());
-        }
-    }
+//    @Autowired
+//    WebApplicationContext context;
+//    MockMvc mockMvc;
+//
+//    @Before
+//    public void test1(){
+//        mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
+//    }
+//    @Test
+//    public void test2() throws Exception{
+//        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/notebook").param("pn","1")).andReturn();
+//        MockHttpServletRequest request = result.getRequest();
+//        PageInfo pageInfo = (PageInfo)request.getAttribute("notebook_pageInfo");
+//        System.out.println("当前页码："+pageInfo.getPageNum());
+//        System.out.println("总页码："+pageInfo.getPages());
+//        System.out.println("总记录数："+pageInfo.getTotal());
+//        System.out.println("连续显示的页码：");
+//        int[] num = pageInfo.getNavigatepageNums();
+//        System.out.println(num);
+//        for (int i:num){
+//            System.out.print(" "+i);
+//        }
+//        System.out.println();
+//        List<NoteBook> noteBooks = pageInfo.getList();
+//        for(NoteBook noteBook:noteBooks){
+//            System.out.println("ID:"+noteBook.getNotebookId()+" name:"+noteBook.getNotebookTime());
+//        }
+//    }
 
 //    @Test
 //    public void tests() throws IOException {

@@ -26,8 +26,4 @@ public class ChatController {
         model.addAttribute("chat_pageInfo",pageInfo);
         return "chat";
     }
-    @RequestMapping("/login")
-    public String getIndex(){
-        return "success";
-    }
 }
