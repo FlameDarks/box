@@ -1,0 +1,84 @@
+[2020-04-05 12:05:01:198] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-05 12:05:01:275] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-04-05 12:05:03:309] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 3394 ms
+
+[2020-04-05 12:05:03:719] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-05 12:05:04:984] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1265 ms
+
+[2020-04-05 12:05:15:976] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hgery9a9k4bao7bg467i|13ed28bc, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgery9a9k4bao7bg467i|13ed28bc, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/box?useSSL=false, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+
+[2020-04-05 13:54:43:714] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-05 13:54:44:709] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-05 13:54:44:794] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-04-05 13:54:44:795] [WARN ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log(Slf4jMLog.java:220)]
+A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.
+
+[2020-04-05 13:54:46:221] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 2504 ms
+
+[2020-04-05 13:54:46:252] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-05 13:54:47:242] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 989 ms
+
+[2020-04-05 14:03:38:692] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-05 14:03:39:865] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-05 14:03:39:959] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-04-05 14:03:39:962] [WARN ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log(Slf4jMLog.java:220)]
+A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.
+
+[2020-04-05 14:03:41:653] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 2958 ms
+
+[2020-04-05 14:03:41:687] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-05 14:03:42:942] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1255 ms
+
+[2020-04-05 14:06:06:526] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hgery9a9k8jvh11q9aakh|539b472b, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgery9a9k8jvh11q9aakh|539b472b, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/box?useSSL=false, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+
+[2020-04-05 14:08:42:499] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-05 14:08:43:400] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-05 14:08:43:466] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-04-05 14:08:43:467] [WARN ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log(Slf4jMLog.java:220)]
+A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.
+
+[2020-04-05 14:08:44:877] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 2375 ms
+
+[2020-04-05 14:08:44:904] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-05 14:08:45:874] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 969 ms
+

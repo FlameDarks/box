@@ -2,6 +2,7 @@ package com.zx.controller;
 
 
 import com.zx.bean.Msg;
+import com.zx.bean.NoteBook;
 import com.zx.bean.User;
 import com.zx.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,14 @@ public class UserController {
         System.out.println(user.getUserName() + "///////" + user.getUserPassword());
         return Msg.success().add("user_Info", user.getUserId());
 
+    }
 
+    @RequestMapping(value = "/saveuser",method = RequestMethod.POST)
+    @ResponseBody
+    public Msg save(User user){
+        System.out.println("进入Controller");
+        userService.reg(user);
+        return Msg.success();
     }
 
 }

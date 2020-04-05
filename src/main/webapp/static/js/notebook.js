@@ -125,11 +125,11 @@ $("#notebook_del_btn").click(function () {
 
 $(document).on("click", '#notebook_save_btn', function() {
     //需要执行的逻辑
-    console.log($('#notebook_add form').serialize()+"&userId=1");
-    var path = $("#APP_PATH").val();
     user = sessionStorage.getItem("userId");
+    console.log($('#notebook_add form').serialize()+"&userId="+user);
+    var path = $("#APP_PATH").val();
     $.ajax({
-        url: path+"/save",
+        url: path+"/saveNoteBook",
         type: "POST",
         async:false,
         data: $('#notebook_add form').serialize()+"&userId="+user,

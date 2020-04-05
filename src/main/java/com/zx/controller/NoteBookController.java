@@ -35,7 +35,7 @@ public class NoteBookController {
         return Msg.success().add("notebook_pageInfo",pageInfo);
     }
 
-    @RequestMapping(value = "/save",method = RequestMethod.POST)
+    @RequestMapping(value = "/saveNoteBook",method = RequestMethod.POST)
     @ResponseBody
     public Msg save(NoteBook noteBook){
         noteBookService.save(noteBook);

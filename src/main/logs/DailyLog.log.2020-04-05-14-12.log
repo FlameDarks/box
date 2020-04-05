@@ -1,0 +1,18 @@
+[2020-04-05 14:12:09:319] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-05 14:12:10:524] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-05 14:12:10:607] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-04-05 14:12:12:263] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 2935 ms
+
+[2020-04-05 14:12:12:652] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-05 14:12:13:791] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1138 ms
+
