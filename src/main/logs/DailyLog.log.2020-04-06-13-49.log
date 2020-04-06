@@ -1,0 +1,9 @@
+[2020-04-06 13:49:56:653] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-06 13:49:58:515] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-06 13:49:58:654] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+

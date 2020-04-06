@@ -1,10 +1,12 @@
-
+﻿
 var pagenum;
 var user;
 
 $(function () {
-
     notebook_to_page(1);
+    $(document).on("click", '.edit', function() {
+        alert("123");
+    });
 });
 
 function notebook_to_page(pn) {
@@ -31,9 +33,9 @@ function build_notebook_table(result) {
         var notebookIdTd = $("<td></td>").append(item.notebookId);
         var notebookTitleTd = $("<td></td>").append(item.notebookTitle);
         var notebookTimeTd = $("<td></td>").append(notebook_time(item.notebookTime));
-        var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm")
+        var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit")
             .append($("<span></span>").addClass("glyphicon glyphicon-pencil").append("编辑"));
-        var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm")
+        var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm del")
             .append($("<span></span>").addClass("glyphicon glyphicon-trash").append("删除"));
         var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn)
         $("<tr></tr>").append(notebookIdTd)
@@ -126,17 +128,18 @@ $("#notebook_del_btn").click(function () {
 $(document).on("click", '#notebook_save_btn', function() {
     //需要执行的逻辑
     user = sessionStorage.getItem("userId");
-    console.log($('#notebook_add form').serialize()+"&userId="+user);
+    console.log($('#notebook_add form').serialize() + "&userId=" + user);
     var path = $("#APP_PATH").val();
     $.ajax({
-        url: path+"/saveNoteBook",
+        url: path + "/saveNoteBook",
         type: "POST",
-        async:false,
-        data: $('#notebook_add form').serialize()+"&userId="+user,
-        success:function (result) {
+        async: false,
+        data: $('#notebook_add form').serialize() + "&userId=" + user,
+        success: function (result) {
             console.log(result.msg);
             $('#notebook_add').modal("hide");
             notebook_to_page(pagenum);
         }
     });
 });
+

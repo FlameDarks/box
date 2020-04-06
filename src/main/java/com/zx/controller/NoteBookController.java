@@ -31,7 +31,7 @@ public class NoteBookController {
         List<NoteBook> noteBooks = noteBookService.getAll(id);
 //        连续显示的页数
         PageInfo pageInfo = new PageInfo(noteBooks,3);
-        System.out.println(pageInfo.getPages());
+        System.out.println("连续显示的页数："+pageInfo.getPages());
         return Msg.success().add("notebook_pageInfo",pageInfo);
     }
 

@@ -27,7 +27,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
-      <scope>test</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>commons-logging</groupId>
@@ -201,7 +201,18 @@
       <artifactId>pagehelper</artifactId>
       <version>5.1.11</version>
     </dependency>
+
+<!--    JSR303校验-->
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.1.2.Final</version>
+    </dependency>
+
   </dependencies>
+
+
 
 
   <build>

@@ -35,5 +35,15 @@ public class UserService {
         System.out.println("name:"+user.getUserName()+"password:"+user.getUserPassword());
         userMapper.insertSelective(user);
     }
+
+
+    public boolean checkUser(String username) {
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andUserNameEqualTo(username);
+        long count = userMapper.countByExample(userExample);
+        System.out.println("找到："+count);
+        return count == 0;
+    }
 }
 

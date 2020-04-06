@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class BookMarkService {
+
     @Autowired
     BookMarkMapper bookMarkMapper;
     public List<BookMark> getAll() {
