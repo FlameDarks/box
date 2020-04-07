@@ -176,4 +176,15 @@ public class Contact {
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "contactId=" + contactId +
+                ", contactName='" + contactName + '\'' +
+                ", contactPhone='" + contactPhone + '\'' +
+                ", contactAddress='" + contactAddress + '\'' +
+                ", userId=" + userId +
+                '}';
+    }
 }

@@ -3,108 +3,109 @@ var pagenum;
 var user;
 
 $(function () {
-    notebook_to_page(1);
+    contact_to_page(1);
 });
 
-function notebook_to_page(pn) {
+function contact_to_page(pn) {
     var path = $("#APP_PATH").val();
     user = sessionStorage.getItem("userId");
     $.ajax({
-        url:path+"/notebook",
+        url:path+"/contact",
         data:"pn="+pn+"&userId="+user,
         type:"GET",
-        async: false,
         success:function (result) {
-            build_notebook_table(result);
-            build_notebook_pageinfo(result);
-            build_notebook_page(result);
+            build_contact_table(result);
+            build_contact_pageinfo(result);
+            build_contact_page(result);
         }
     });
 }
 
 // 解析显示记事本数据
-function build_notebook_table(result) {
-    $("#notebook_table tbody").empty();
-    var notebook = result.extend.notebook_pageInfo.list;
-    $.each(notebook,function (index,item) {
-        // var notebookIdTd = $("<td></td>").append(item.notebookId);
+function build_contact_table(result) {
+    $("#contact_table tbody").empty();
+    var contact = result.extend.contact_pageInfo.list;
+    $.each(contact,function (index,item) {
+        // var contactIdTd = $("<td></td>").append(item.contactId);
         var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>")
-        checkBoxTd.find("input").attr("check_id",item.notebookId);
-        var notebookTitleTd = $("<td></td>").append(item.notebookTitle);
-        var notebookTimeTd = $("<td></td>").append(notebook_time(item.notebookTime));
+        checkBoxTd.find("input").attr("check_id",item.contactId);
+        var contactNameTd = $("<td></td>").append(item.contactName);
+        var contactPhoneTd = $("<td></td>").append(item.contactPhone);
+        var contactAddressTd = $("<td></td>").append(item.contactAddress);
         var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit")
             .append($("<span></span>").addClass("glyphicon glyphicon-pencil").append("编辑"));
-        editBtn.attr("edit_id",item.notebookId);
+        editBtn.attr("edit_id",item.contactId);
         var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm del")
             .append($("<span></span>").addClass("glyphicon glyphicon-trash").append("删除"));
-        delBtn.attr("del_id",item.notebookId);
+        delBtn.attr("del_id",item.contactId);
         var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn)
         $("<tr></tr>")
-            // .append(notebookIdTd)
+            // .append(contactIdTd)
             .append(checkBoxTd)
-            .append(notebookTitleTd)
-            .append(notebookTimeTd)
+            .append(contactNameTd)
+            .append(contactPhoneTd)
+            .append(contactAddressTd)
             .append(btnTd)
-            .appendTo("#notebook_table tbody");
+            .appendTo("#contact_table tbody");
     });
 }
 
 // 解析显示分页信息
-function build_notebook_pageinfo(result) {
-    $("#notebook_pageinfo").empty();
-    $("#notebook_pageinfo").append("第"+result.extend.notebook_pageInfo.pageNum+"页，总共"+result.extend.notebook_pageInfo.pages+"页，总共"+result.extend.notebook_pageInfo.total+"条记录")
-    pagenum = result.extend.notebook_pageInfo.pageNum;
+function build_contact_pageinfo(result) {
+    $("#contact_pageinfo").empty();
+    $("#contact_pageinfo").append("第"+result.extend.contact_pageInfo.pageNum+"页，总共"+result.extend.contact_pageInfo.pages+"页，总共"+result.extend.contact_pageInfo.total+"条记录")
+    pagenum = result.extend.contact_pageInfo.pageNum;
 }
 
 // 解析显示分页条数据
-function build_notebook_page(result) {
-    $("#notebook_page").empty();
+function build_contact_page(result) {
+    $("#contact_page").empty();
     var ul = $("<ul></ul>").addClass("pagination");
     var first = $("<li></li>").append($("<a></a>").append("首页").attr("href","#"));
     var pre = $("<li></li>").append($("<a></a>").append("&laquo;"));
-    if (result.extend.notebook_pageInfo.hasPreviousPage == false){
+    if (result.extend.contact_pageInfo.hasPreviousPage == false){
         first.addClass("disabled");
         pre.addClass("disabled");
     }else {
         first.click(function () {
-            notebook_to_page(1);
+            contact_to_page(1);
         });
         pre.click(function () {
-            notebook_to_page(result.extend.notebook_pageInfo.pageNum-1);
+            contact_to_page(result.extend.contact_pageInfo.pageNum-1);
         });
     }
 
     var next = $("<li></li>").append($("<a></a>").append("&raquo;"));
     var last = $("<li></li>").append($("<a></a>").append("尾页").attr("href","#"));
-    if (result.extend.notebook_pageInfo.hasNextPage == false){
+    if (result.extend.contact_pageInfo.hasNextPage == false){
         next.addClass("disabled");
         last.addClass("disabled");
     }else {
         next.click(function () {
-            notebook_to_page(result.extend.notebook_pageInfo.pageNum+1);
+            contact_to_page(result.extend.contact_pageInfo.pageNum+1);
         });
         last.click(function () {
-            notebook_to_page(result.extend.notebook_pageInfo.pages);
+            contact_to_page(result.extend.contact_pageInfo.pages);
         });
     }
 
     ul.append(first).append(pre);
-    $.each(result.extend.notebook_pageInfo.navigatepageNums,function (index,item) {
+    $.each(result.extend.contact_pageInfo.navigatepageNums,function (index,item) {
         var num = $("<li></li>").append($("<a></a>").append(item));
-        if (result.extend.notebook_pageInfo.pageNum == item){
+        if (result.extend.contact_pageInfo.pageNum == item){
             num.addClass("active");
         }
         num.click(function () {
-            notebook_to_page(item);
+            contact_to_page(item);
         });
         ul.append(num);
     });
     ul.append(next).append(last);
     var navigation = $("<nav></nav>").append(ul);
-    navigation.appendTo("#notebook_page");
+    navigation.appendTo("#contact_page");
 }
 // 时间换算
-function notebook_time(time) {
+function contact_time(time) {
     var datetime = new Date();
     datetime.setTime(time);
     var year = datetime.getFullYear();
@@ -116,34 +117,34 @@ function notebook_time(time) {
     return year + "-" + month + "-" + date+" "+hour+":"+minute+":"+second;
 }
 
-$('#notebook_add_btn').click(function () {
-    $('#notebook_add').modal({
+$('#contact_add_btn').click(function () {
+    $('#contact_add').modal({
         backdrop: 'static'
     });
 });
 
-$(document).on("click", '#notebook_save_btn', function() {
+$(document).on("click", '#contact_save_btn', function() {
     //需要执行的逻辑
     user = sessionStorage.getItem("userId");
-    console.log($('#notebook_add form').serialize() + "&userId=" + user);
+    console.log($('#contact_add form').serialize() + "&userId=" + user);
     var path = $("#APP_PATH").val();
     $.ajax({
-        url: path + "/saveNoteBook",
+        url: path + "/saveContact",
         type: "POST",
         async: false,
-        data: $('#notebook_add form').serialize() + "&userId=" + user,
+        data: $('#contact_add form').serialize() + "&userId=" + user,
         success: function (result) {
             console.log(result.msg);
-            $('#notebook_add').modal("hide");
-            notebook_to_page(pagenum);
+            $('#contact_add').modal("hide");
+            contact_to_page(pagenum);
         }
     });
 });
 
 $(document).on("click", '.edit', function() {
     echo($(this).attr("edit_id"));
-    $('#notebook_update_btn').attr("edit_id",$(this).attr("edit_id"));
-    $('#notebook_update').modal({
+    $('#contact_update_btn').attr("edit_id",$(this).attr("edit_id"));
+    $('#contact_update').modal({
         backdrop: 'static'
     });
 });
@@ -151,28 +152,28 @@ $(document).on("click", '.edit', function() {
 function echo(id) {
     var path = $("#APP_PATH").val();
     $.ajax({
-        url:path+"/echoNoteBook",
+        url:path+"/echoContact",
         data:"Id="+id,
         type:"GET",
         success:function (result) {
-            var data = result.extend.note;
-            $("#notebookTitle_update").val(data.notebookTitle);
-            $("#notebookContent_update").val(data.notebookContent);
+            var data = result.extend.contacts;
+            $("#contactTitle_update").val(data.contactTitle);
+            $("#contactContent_update").val(data.contactContent);
         }
     });
 }
 
-$(document).on("click", '#notebook_update_btn', function() {
+$(document).on("click", '#contact_update_btn', function() {
     var path = $("#APP_PATH").val();
-    console.log("notebookId="+$(this).attr("edit_id")+"&"+$('#notebook_update form').serialize());
+    console.log("contactId="+$(this).attr("edit_id")+"&"+$('#contact_update form').serialize());
     user = sessionStorage.getItem("userId");
     $.ajax({
-        url:path+"/editNoteBook",
-        data:"notebookId="+$(this).attr("edit_id")+"&"+$('#notebook_update form').serialize()+"&userId="+user,
+        url:path+"/editContact",
+        data:"contactId="+$(this).attr("edit_id")+"&"+$('#contact_update form').serialize()+"&userId="+user,
         type:"PUT",
         success:function () {
-            $('#notebook_update').modal("hide");
-            notebook_to_page(pagenum);
+            $('#contact_update').modal("hide");
+            contact_to_page(pagenum);
         }
     });
 });
@@ -182,11 +183,11 @@ $(document).on("click", '.del', function() {
     var title = $(this).parents("tr").find("td:eq(1)").text();
     if (confirm("确认删除"+title+"吗？")){
         $.ajax({
-            url:path+"/delNoteBook",
+            url:path+"/delContact",
             data:"Id="+$(this).attr("del_id"),
             type:"DELETE",
             success:function () {
-                notebook_to_page(pagenum);
+                contact_to_page(pagenum);
             }
         });
     }
@@ -202,8 +203,8 @@ $(document).on("click", '.check_item', function() {
 });
 
 // 批量删除
-$(document).on("click", '#notebook_del_btn', function() {
-// $("#notebook_del_btn").click(function () {
+$(document).on("click", '#contact_del_btn', function() {
+// $("#contact_del_btn").click(function () {
     var title = "";
     var id = "";
     var path = $("#APP_PATH").val();
@@ -215,11 +216,11 @@ $(document).on("click", '#notebook_del_btn', function() {
     id = id.substring(0,id.length-1);
     if (confirm("确认删除"+title+"吗？")){
         $.ajax({
-            url:path+"/delNoteBook",
+            url:path+"/delContact",
             data:"Id="+id,
             type:"DELETE",
             success:function () {
-                notebook_to_page(pagenum);
+                contact_to_page(pagenum);
             }
         });
     }

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>聊天室</title>
 </head>
 <%
     pageContext.setAttribute("APP_PATH",request.getContextPath());

@@ -5,7 +5,7 @@ $(function () {
         success=false;
         loginuser();
         if (success==true){
-            document.loginform.action = "login";
+            document.loginform.action = "page1";
         }else {
             alert("登陆失败");
         }
