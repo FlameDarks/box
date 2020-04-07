@@ -19,7 +19,7 @@ public class NoteBookService {
     @Autowired
     NoteBookMapper noteBookMapper;
 
-    public List<NoteBook> getAll(int userid) {
+    public List<NoteBook> getAll(Integer userid) {
         NoteBookExample noteBookExample = new NoteBookExample();
         NoteBookExample.Criteria criteria = noteBookExample.createCriteria();
         criteria.andUserIdEqualTo(userid);
@@ -29,5 +29,24 @@ public class NoteBookService {
 //    保存数据
     public void save(NoteBook noteBook) {
         noteBookMapper.insertSelective(noteBook);
+    }
+
+    public NoteBook echoNote(Integer id) {
+        return noteBookMapper.selectByPrimaryKey(id);
+    }
+
+    public void update(NoteBook noteBook) {
+        noteBookMapper.updateByPrimaryKeySelective(noteBook);
+    }
+
+    public void delete(Integer id) {
+        noteBookMapper.deleteByPrimaryKey(id);
+    }
+
+    public void deleteAll(List<Integer> ids) {
+        NoteBookExample noteBookExample = new NoteBookExample();
+        NoteBookExample.Criteria criteria = noteBookExample.createCriteria();
+        criteria.andNotebookIdIn(ids);
+        noteBookMapper.deleteByExample(noteBookExample);
     }
 }

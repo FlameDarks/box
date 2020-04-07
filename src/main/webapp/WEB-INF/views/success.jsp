@@ -40,7 +40,7 @@
     <div class="row">
         <div class="col-md-4 col-md-offset-8">
             <button class="btn btn-primary" id="notebook_add_btn" data-toggle="modal"  data-target="#notebook_add">新增</button>
-            <button class="btn btn-danger" id="notebook_del_btn" data-toggle="modal" data-target="#notebook_add">删除</button>
+            <button class="btn btn-danger" id="notebook_del_btn">删除</button>
         </div>
     </div>
     <%--    表格--%>
@@ -49,7 +49,9 @@
             <table class="table table-hover" id="notebook_table">
                 <thead>
                     <tr>
-                        <th class="col-md-2">ID</th>
+                        <th class="col-md-2">
+                            <input type="checkbox" id="check_all">
+                        </th>
                         <th class="col-md-6">标题</th>
                         <th class="col-md-2">日期</th>
                         <th class="col-md-2">操作</th>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -20,9 +21,10 @@ public class NoteBookController {
     @Autowired
     NoteBookService noteBookService;
 
+//    显示记事本列表
     @RequestMapping("/notebook")
     @ResponseBody
-    public Msg getNoteBookWithJson(@RequestParam(value = "pn",defaultValue = "1")Integer pn,@RequestParam(value = "userId")int id){
+    public Msg getNoteBookWithJson(@RequestParam(value = "pn",defaultValue = "1")Integer pn,@RequestParam(value = "userId")Integer id){
 //        每页显示条数
         PageHelper.startPage(pn,3);
 //        升序排列
@@ -35,11 +37,48 @@ public class NoteBookController {
         return Msg.success().add("notebook_pageInfo",pageInfo);
     }
 
+//  保存记事本
     @RequestMapping(value = "/saveNoteBook",method = RequestMethod.POST)
     @ResponseBody
     public Msg save(NoteBook noteBook){
         noteBookService.save(noteBook);
         return Msg.success();
+    }
+
+//  回显记事本
+    @RequestMapping(value = "/echoNoteBook",method = RequestMethod.GET)
+    @ResponseBody
+    public Msg echo(@RequestParam(value = "Id")Integer id){
+        NoteBook noteBook = noteBookService.echoNote(id);
+        return Msg.success().add("note",noteBook);
+    }
+
+//  修改记事本
+    @RequestMapping(value = "/editNoteBook",method = RequestMethod.PUT)
+    @ResponseBody
+    public Msg edit(NoteBook noteBook){
+        noteBookService.update(noteBook);
+        return Msg.success();
+    }
+
+//   删除记事本
+    @RequestMapping(value = "/delNoteBook",method = RequestMethod.DELETE)
+    @ResponseBody
+    public Msg delete(@RequestParam(value = "Id")String ids){
+        if (ids.contains("-")){
+            String[] str_ids = ids.split("-");
+            List<Integer> del_ids = new ArrayList<>();
+            for (String string : str_ids){
+                del_ids.add(Integer.parseInt(string));
+            }
+            noteBookService.deleteAll(del_ids);
+            return Msg.success();
+        }else {
+            Integer id = Integer.parseInt(ids);
+            System.out.println("删除的id："+id);
+            noteBookService.delete(id);
+            return Msg.success();
+        }
     }
 
 //    public String getNoteBook(@RequestParam(value = "pn",defaultValue = "1")Integer pn, Model model){

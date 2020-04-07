@@ -167,4 +167,15 @@ public class NoteBook {
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
+
+    @Override
+    public String toString() {
+        return "NoteBook{" +
+                "notebookId=" + notebookId +
+                ", notebookTitle='" + notebookTitle + '\'' +
+                ", notebookContent='" + notebookContent + '\'' +
+                ", notebookTime=" + notebookTime +
+                ", userId=" + userId +
+                '}';
+    }
 }

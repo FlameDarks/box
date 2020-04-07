@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.DigestUtils;
@@ -15,8 +17,8 @@ import org.springframework.util.DigestUtils;
 import java.util.List;
 import java.util.UUID;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/applicationContext.xml"})
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/applicationContext.xml"})
 public class MapperTest {
 
 //    @Autowired
@@ -36,7 +38,6 @@ public class MapperTest {
 //        ChatMapper chat = ioc.getBean(ChatMapper.class);
 //        System.out.println(userMapper);
 //        userMapper.insertSelective(new User(null,"中","zxc"));
-//        noteBookMapper.insertSelective(new NoteBook(null,5,"123","123"));
 //        UserMapper userMapper = sqlSessionTemplate.getMapper(UserMapper.class);
 //        List<User> users = userMapper.selectByExample(null);
 //        User user = new User();
@@ -53,10 +54,10 @@ public class MapperTest {
 //        }
 
 //        密码加密
-//        String base = slat.substring(0,1)+slat+slat.substring(slat.length()-1,slat.length());
-//        System.out.println(base);
-//        String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
-//        System.out.println(md5);
-
+//        String bases = slat.substring(0,1)+slat+slat.substring(slat.length()-1,slat.length());
+//        System.out.println(bases);
+//        String md5s = DigestUtils.md5DigestAsHex(base.getBytes());
+//        System.out.println(md5s);
+//
 //    }
 }
