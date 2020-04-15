@@ -1,0 +1,33 @@
+[2020-04-15 16:33:39:022] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopping...
+
+[2020-04-15 16:33:39:027] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-15 16:33:39:027] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopped.
+
+[2020-04-15 16:33:39:028] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-15 16:33:39:029] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'brokerChannelExecutor'
+
+[2020-04-15 16:33:39:030] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-15 16:33:39:030] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-15 16:33:39:030] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-15 16:33:39:031] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
+{dataSource-1} closing ...
+
+[2020-04-15 16:33:39:052] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2075)]
+{dataSource-1} closed
+
+[2020-04-15 16:33:57:473] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+

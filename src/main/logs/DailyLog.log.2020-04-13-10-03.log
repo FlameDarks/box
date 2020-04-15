@@ -1,0 +1,69 @@
+[2020-04-13 10:03:17:169] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopping...
+
+[2020-04-13 10:03:17:176] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-13 10:03:17:176] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopped.
+
+[2020-04-13 10:03:17:178] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'brokerChannelExecutor'
+
+[2020-04-13 10:03:17:178] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-13 10:03:17:179] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-13 10:03:17:179] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-13 10:03:41:530] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-13 10:03:43:843] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-13 10:03:43:981] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-04-13 10:03:46:034] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-13 10:03:46:071] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-13 10:03:46:734] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-13 10:03:46:916] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'brokerChannelExecutor'
+
+[2020-04-13 10:03:47:367] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Starting...
+
+[2020-04-13 10:03:47:368] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-13 10:03:47:374] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Started.
+
+[2020-04-13 10:03:47:385] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 5846 ms
+
+[2020-04-13 10:03:47:532] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-13 10:03:48:117] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-13 10:03:49:518] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1986 ms
+
+[2020-04-13 10:03:55:305] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hgery9a9vfi4sw2k5d2s|3702f8fc, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgery9a9vfi4sw2k5d2s|3702f8fc, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/box?useSSL=false&allowPublicKeyRetrieval=true, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+
+[2020-04-13 10:03:58:296] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:69)]
+Mon Apr 13 10:03:58 HKT 2020, 123456 login.
+

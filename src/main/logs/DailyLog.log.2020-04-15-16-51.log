@@ -1,0 +1,30 @@
+[2020-04-15 16:51:47:636] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopping...
+
+[2020-04-15 16:51:47:639] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-15 16:51:47:640] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopped.
+
+[2020-04-15 16:51:47:641] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-15 16:51:47:642] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'brokerChannelExecutor'
+
+[2020-04-15 16:51:47:643] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-15 16:51:47:643] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-15 16:51:47:644] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-15 16:51:47:644] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
+{dataSource-1} closing ...
+
+[2020-04-15 16:51:47:662] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2075)]
+{dataSource-1} closed
+

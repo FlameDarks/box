@@ -1,0 +1,42 @@
+[2020-04-14 17:46:09:489] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-14 17:46:15:827] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 17:46:15:857] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 17:46:16:050] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:1010)]
+{dataSource-1} inited
+
+[2020-04-14 17:46:16:982] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 17:46:17:202] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 17:46:17:612] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Starting...
+
+[2020-04-14 17:46:17:612] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-14 17:46:17:621] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Started.
+
+[2020-04-14 17:46:17:636] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 8139 ms
+
+[2020-04-14 17:46:17:932] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-14 17:46:18:631] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-14 17:46:20:215] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 2282 ms
+
+[2020-04-14 17:46:28:745] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 17:46:28 HKT 2020, 123456 login.
+

@@ -1,0 +1,30 @@
+[2020-04-15 16:44:00:606] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-15 16:44:00:721] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'brokerChannelExecutor'
+
+[2020-04-15 16:44:00:952] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-15 16:44:00:996] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Starting...
+
+[2020-04-15 16:44:00:996] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-15 16:44:01:000] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Started.
+
+[2020-04-15 16:44:01:008] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 3927 ms
+
+[2020-04-15 16:44:01:453] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-15 16:44:01:869] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-15 16:44:02:716] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1263 ms
+

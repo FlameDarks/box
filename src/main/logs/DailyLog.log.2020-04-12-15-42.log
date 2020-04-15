@@ -1,0 +1,3 @@
+[2020-04-12 15:42:09:185] [WARN ] [method:org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException(AbstractHandlerExceptionResolver.java:199)]
+Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+

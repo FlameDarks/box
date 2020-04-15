@@ -40,8 +40,10 @@ function loginuser(){
         success:function (result) {
             // alert("找到用户："+result.extend.user_Info);
             if (result.code == 100){
-                var id = result.extend.user_Info;
+                var id = result.extend.userId;
+                var name = result.extend.userName;
                 sessionStorage.setItem("userId",id);
+                sessionStorage.setItem("userName",name);
                 success = true;
             }
         }

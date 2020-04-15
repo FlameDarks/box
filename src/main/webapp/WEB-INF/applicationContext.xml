@@ -19,11 +19,20 @@
 
 
     <context:property-placeholder location="classpath:dbconfig.properties"/>
-    <bean id="comboPooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="jdbcUrl" value="${jdbcurl}"/>
-        <property name="driverClass" value="${driverclass}"/>
-        <property name="user" value="${user}"/>
+    <bean id="comboPooledDataSource" class="com.alibaba.druid.pool.DruidDataSource" lazy-init="true">
+<!--    <bean id="comboPooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+<!--        <property name="jdbcUrl" value="${jdbcurl}"/>-->
+<!--        <property name="driverClass" value="${driverclass}"/>-->
+<!--        <property name="user" value="${user}"/>-->
+<!--        <property name="password" value="${password}"/>-->
+        <property name="driverClassName" value="${driverclass}"/>
+        <property name="url" value="${jdbcurl}"/>
+        <property name="username" value="${user}"/>
         <property name="password" value="${password}"/>
+        <!--连接池中最大连接数量-->
+        <property name="maxActive" value="15"/>
+        <!--数据库连接池中最少连接数量-->
+        <property name="minIdle" value="5"/>
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

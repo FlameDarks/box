@@ -1,0 +1,741 @@
+[2020-04-14 14:37:32:980] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopping...
+
+[2020-04-14 14:37:32:983] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-14 14:37:32:984] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopped.
+
+[2020-04-14 14:37:32:984] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 14:37:32:985] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 14:37:32:986] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 14:37:32:986] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 14:37:39:547] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-14 14:37:41:187] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-14 14:37:41:309] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-04-14 14:37:41:312] [WARN ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log(Slf4jMLog.java:220)]
+A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.
+
+[2020-04-14 14:37:42:973] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 14:37:43:021] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 14:37:43:494] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 14:37:43:620] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 14:37:43:900] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Starting...
+
+[2020-04-14 14:37:43:900] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-14 14:37:43:905] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Started.
+
+[2020-04-14 14:37:43:912] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 4361 ms
+
+[2020-04-14 14:37:44:031] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-14 14:37:44:553] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-14 14:37:45:556] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1525 ms
+
+[2020-04-14 14:38:10:206] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hgery9a9x4qald1ctkzy6|65ce5c6b, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgery9a9x4qald1ctkzy6|65ce5c6b, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/box?useSSL=false&allowPublicKeyRetrieval=true, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+
+[2020-04-14 14:38:10:970] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:38:10 HKT 2020, 123456 login.
+
+[2020-04-14 14:38:43:620] [INFO ] [method:org.springframework.web.socket.config.WebSocketMessageBrokerStats.lambda$initLoggingTask$0(WebSocketMessageBrokerStats.java:126)]
+WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 15], outboundChannel[pool size = 2, active threads = 0, queued tasks = 0, completed tasks = 2], sockJsScheduler[pool size = 4, active threads = 1, queued tasks = 2, completed tasks = 8]
+
+[2020-04-14 14:38:55:437] [ERROR] [method:org.springframework.web.socket.messaging.StompSubProtocolHandler.publishEvent(StompSubProtocolHandler.java:403)]
+Error publishing SessionDisconnectEvent[sessionId=1yvqgjh3, CloseStatus[code=1000, reason=null]]
+
+java.lang.NullPointerException
+	at com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:49)
+	at com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:20)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.web.socket.messaging.StompSubProtocolHandler.publishEvent(StompSubProtocolHandler.java:399)
+	at org.springframework.web.socket.messaging.StompSubProtocolHandler.afterSessionEnded(StompSubProtocolHandler.java:627)
+	at org.springframework.web.socket.messaging.SubProtocolWebSocketHandler.clearSession(SubProtocolWebSocketHandler.java:530)
+	at org.springframework.web.socket.messaging.SubProtocolWebSocketHandler.afterConnectionClosed(SubProtocolWebSocketHandler.java:399)
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.afterConnectionClosed(WebSocketHandlerDecorator.java:85)
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.afterConnectionClosed(LoggingWebSocketHandlerDecorator.java:72)
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.afterConnectionClosed(ExceptionWebSocketHandlerDecorator.java:78)
+	at org.springframework.web.socket.sockjs.transport.session.AbstractSockJsSession.delegateConnectionClosed(AbstractSockJsSession.java:413)
+	at org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler.afterConnectionClosed(SockJsWebSocketHandler.java:98)
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.onClose(StandardWebSocketHandlerAdapter.java:145)
+	at org.apache.tomcat.websocket.WsSession.fireEndpointOnClose(WsSession.java:555)
+	at org.apache.tomcat.websocket.WsSession.onClose(WsSession.java:533)
+	at org.apache.tomcat.websocket.WsFrameBase.processDataControl(WsFrameBase.java:347)
+	at org.apache.tomcat.websocket.WsFrameBase.processData(WsFrameBase.java:289)
+	at org.apache.tomcat.websocket.WsFrameBase.processInputBuffer(WsFrameBase.java:133)
+	at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:82)
+	at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:171)
+	at org.apache.tomcat.websocket.server.WsFrameServer.notifyDataAvailable(WsFrameServer.java:151)
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:148)
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:54)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+[2020-04-14 14:38:56:898] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:38:56 HKT 2020, 123456 login.
+
+[2020-04-14 14:39:02:619] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:67)]
+Tue Apr 14 14:39:02 HKT 2020, 123456 logout.
+
+[2020-04-14 14:39:03:578] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:39:03 HKT 2020, 123456 login.
+
+[2020-04-14 14:39:09:078] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:67)]
+Tue Apr 14 14:39:09 HKT 2020, 123456 logout.
+
+[2020-04-14 14:39:10:089] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:39:09 HKT 2020, 123456 login.
+
+[2020-04-14 14:39:20:755] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:67)]
+Tue Apr 14 14:39:20 HKT 2020, 123456 logout.
+
+[2020-04-14 14:39:21:637] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:39:21 HKT 2020, 123456 login.
+
+[2020-04-14 14:39:23:767] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:67)]
+Tue Apr 14 14:39:23 HKT 2020, 123456 logout.
+
+[2020-04-14 14:39:25:011] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:39:24 HKT 2020, 123456 login.
+
+[2020-04-14 14:39:50:759] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:67)]
+Tue Apr 14 14:39:50 HKT 2020, 123456 logout.
+
+[2020-04-14 14:39:50:761] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopping...
+
+[2020-04-14 14:39:50:762] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-14 14:39:50:762] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopped.
+
+[2020-04-14 14:39:50:763] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 14:39:50:763] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 14:39:50:764] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 14:39:50:764] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 14:39:55:264] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-14 14:39:56:738] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-14 14:39:56:877] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-04-14 14:39:56:880] [WARN ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log(Slf4jMLog.java:220)]
+A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.
+
+[2020-04-14 14:39:58:336] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 14:39:58:355] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 14:39:58:894] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 14:39:59:020] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 14:39:59:314] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Starting...
+
+[2020-04-14 14:39:59:314] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-14 14:39:59:318] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Started.
+
+[2020-04-14 14:39:59:341] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 4073 ms
+
+[2020-04-14 14:39:59:470] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-14 14:39:59:905] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-14 14:40:00:821] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1351 ms
+
+[2020-04-14 14:40:08:221] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hgery9a9x4t7731idf9wp|3d18a957, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgery9a9x4t7731idf9wp|3d18a957, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/box?useSSL=false&allowPublicKeyRetrieval=true, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+
+[2020-04-14 14:40:09:937] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:40:09 HKT 2020, 123456 login.
+
+[2020-04-14 14:40:20:618] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:67)]
+Tue Apr 14 14:40:20 HKT 2020, 123456 logout.
+
+[2020-04-14 14:40:21:964] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:40:21 HKT 2020, 123456 login.
+
+[2020-04-14 14:40:59:020] [INFO ] [method:org.springframework.web.socket.config.WebSocketMessageBrokerStats.lambda$initLoggingTask$0(WebSocketMessageBrokerStats.java:126)]
+WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 33], outboundChannel[pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 4], sockJsScheduler[pool size = 4, active threads = 1, queued tasks = 2, completed tasks = 11]
+
+[2020-04-14 14:46:17:864] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:67)]
+Tue Apr 14 14:46:17 HKT 2020, 123456 logout.
+
+[2020-04-14 14:46:19:115] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:46:18 HKT 2020, 123456 login.
+
+[2020-04-14 14:47:46:333] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:67)]
+Tue Apr 14 14:47:46 HKT 2020, 123456 logout.
+
+[2020-04-14 14:49:34:107] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopping...
+
+[2020-04-14 14:49:34:111] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-14 14:49:34:112] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopped.
+
+[2020-04-14 14:49:34:112] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 14:49:34:113] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 14:49:34:113] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 14:49:34:114] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 14:49:39:731] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-14 14:49:41:442] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-14 14:49:41:565] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-04-14 14:49:41:568] [WARN ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log(Slf4jMLog.java:220)]
+A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.
+
+[2020-04-14 14:49:43:175] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 14:49:43:239] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 14:49:43:745] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 14:49:43:885] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 14:49:44:210] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Starting...
+
+[2020-04-14 14:49:44:211] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-14 14:49:44:214] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Started.
+
+[2020-04-14 14:49:44:222] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 4488 ms
+
+[2020-04-14 14:49:44:331] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-14 14:49:44:753] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-14 14:49:45:816] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1484 ms
+
+[2020-04-14 14:50:36:569] [ERROR] [method:org.springframework.web.socket.messaging.StompSubProtocolHandler.publishEvent(StompSubProtocolHandler.java:403)]
+Error publishing SessionDisconnectEvent[sessionId=abhiqnkp, CloseStatus[code=1000, reason=null]]
+
+java.lang.NullPointerException
+	at com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:49)
+	at com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:20)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.web.socket.messaging.StompSubProtocolHandler.publishEvent(StompSubProtocolHandler.java:399)
+	at org.springframework.web.socket.messaging.StompSubProtocolHandler.afterSessionEnded(StompSubProtocolHandler.java:627)
+	at org.springframework.web.socket.messaging.SubProtocolWebSocketHandler.clearSession(SubProtocolWebSocketHandler.java:530)
+	at org.springframework.web.socket.messaging.SubProtocolWebSocketHandler.afterConnectionClosed(SubProtocolWebSocketHandler.java:399)
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.afterConnectionClosed(WebSocketHandlerDecorator.java:85)
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.afterConnectionClosed(LoggingWebSocketHandlerDecorator.java:72)
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.afterConnectionClosed(ExceptionWebSocketHandlerDecorator.java:78)
+	at org.springframework.web.socket.sockjs.transport.session.AbstractSockJsSession.delegateConnectionClosed(AbstractSockJsSession.java:413)
+	at org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler.afterConnectionClosed(SockJsWebSocketHandler.java:98)
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.onClose(StandardWebSocketHandlerAdapter.java:145)
+	at org.apache.tomcat.websocket.WsSession.fireEndpointOnClose(WsSession.java:555)
+	at org.apache.tomcat.websocket.WsSession.onClose(WsSession.java:533)
+	at org.apache.tomcat.websocket.WsFrameBase.processDataControl(WsFrameBase.java:347)
+	at org.apache.tomcat.websocket.WsFrameBase.processData(WsFrameBase.java:289)
+	at org.apache.tomcat.websocket.WsFrameBase.processInputBuffer(WsFrameBase.java:133)
+	at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:82)
+	at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:171)
+	at org.apache.tomcat.websocket.server.WsFrameServer.notifyDataAvailable(WsFrameServer.java:151)
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:148)
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:54)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+[2020-04-14 14:50:43:883] [INFO ] [method:org.springframework.web.socket.config.WebSocketMessageBrokerStats.lambda$initLoggingTask$0(WebSocketMessageBrokerStats.java:126)]
+WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 33], outboundChannel[pool size = 3, active threads = 0, queued tasks = 0, completed tasks = 3], sockJsScheduler[pool size = 4, active threads = 1, queued tasks = 2, completed tasks = 10]
+
+[2020-04-14 14:54:09:963] [ERROR] [method:org.springframework.web.socket.messaging.StompSubProtocolHandler.publishEvent(StompSubProtocolHandler.java:403)]
+Error publishing SessionDisconnectEvent[sessionId=zl5tmalc, CloseStatus[code=1000, reason=null]]
+
+java.lang.NullPointerException
+	at com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:49)
+	at com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:20)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.web.socket.messaging.StompSubProtocolHandler.publishEvent(StompSubProtocolHandler.java:399)
+	at org.springframework.web.socket.messaging.StompSubProtocolHandler.afterSessionEnded(StompSubProtocolHandler.java:627)
+	at org.springframework.web.socket.messaging.SubProtocolWebSocketHandler.clearSession(SubProtocolWebSocketHandler.java:530)
+	at org.springframework.web.socket.messaging.SubProtocolWebSocketHandler.afterConnectionClosed(SubProtocolWebSocketHandler.java:399)
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.afterConnectionClosed(WebSocketHandlerDecorator.java:85)
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.afterConnectionClosed(LoggingWebSocketHandlerDecorator.java:72)
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.afterConnectionClosed(ExceptionWebSocketHandlerDecorator.java:78)
+	at org.springframework.web.socket.sockjs.transport.session.AbstractSockJsSession.delegateConnectionClosed(AbstractSockJsSession.java:413)
+	at org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler.afterConnectionClosed(SockJsWebSocketHandler.java:98)
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.onClose(StandardWebSocketHandlerAdapter.java:145)
+	at org.apache.tomcat.websocket.WsSession.fireEndpointOnClose(WsSession.java:555)
+	at org.apache.tomcat.websocket.WsSession.onClose(WsSession.java:533)
+	at org.apache.tomcat.websocket.WsFrameBase.processDataControl(WsFrameBase.java:347)
+	at org.apache.tomcat.websocket.WsFrameBase.processData(WsFrameBase.java:289)
+	at org.apache.tomcat.websocket.WsFrameBase.processInputBuffer(WsFrameBase.java:133)
+	at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:82)
+	at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:171)
+	at org.apache.tomcat.websocket.server.WsFrameServer.notifyDataAvailable(WsFrameServer.java:151)
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:148)
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:54)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+[2020-04-14 14:54:10:311] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hgery9a9x55qcg1025s4g|34b41b95, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgery9a9x55qcg1025s4g|34b41b95, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/box?useSSL=false&allowPublicKeyRetrieval=true, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+
+[2020-04-14 14:54:12:244] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:54:11 HKT 2020, 123456 login.
+
+[2020-04-14 14:54:44:364] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:67)]
+Tue Apr 14 14:54:44 HKT 2020, 123456 logout.
+
+[2020-04-14 14:55:03:191] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:55:02 HKT 2020, 123456 login.
+
+[2020-04-14 14:57:10:272] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:67)]
+Tue Apr 14 14:57:10 HKT 2020, 123456 logout.
+
+[2020-04-14 14:57:10:275] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopping...
+
+[2020-04-14 14:57:10:276] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-14 14:57:10:276] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopped.
+
+[2020-04-14 14:57:10:277] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 14:57:10:277] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 14:57:10:279] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 14:57:10:279] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 14:57:15:110] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-14 14:57:16:611] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-14 14:57:16:730] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-04-14 14:57:16:732] [WARN ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log(Slf4jMLog.java:220)]
+A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.
+
+[2020-04-14 14:57:18:159] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 14:57:18:183] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 14:57:18:646] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 14:57:18:769] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 14:57:19:044] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Starting...
+
+[2020-04-14 14:57:19:044] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-14 14:57:19:049] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Started.
+
+[2020-04-14 14:57:19:056] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 3943 ms
+
+[2020-04-14 14:57:19:163] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-14 14:57:19:589] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-14 14:57:20:573] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1410 ms
+
+[2020-04-14 14:58:18:770] [INFO ] [method:org.springframework.web.socket.config.WebSocketMessageBrokerStats.lambda$initLoggingTask$0(WebSocketMessageBrokerStats.java:126)]
+WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 33], outboundChannel[pool size = 3, active threads = 0, queued tasks = 0, completed tasks = 3], sockJsScheduler[pool size = 4, active threads = 1, queued tasks = 2, completed tasks = 3]
+
+[2020-04-14 14:59:21:413] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hgery9a9x5fhjzqngzya|4b894c58, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgery9a9x5fhjzqngzya|4b894c58, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/box?useSSL=false&allowPublicKeyRetrieval=true, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+
+[2020-04-14 14:59:22:700] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:59:22 HKT 2020, 123456 login.
+
+[2020-04-14 14:59:24:221] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 14:59:24 HKT 2020, 123456 logout.
+
+[2020-04-14 14:59:25:487] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 14:59:24 HKT 2020, 123456 login.
+
+[2020-04-14 15:01:36:073] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:01:36 HKT 2020, 123456 logout.
+
+[2020-04-14 15:01:37:127] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:01:36 HKT 2020, 123456 login.
+
+[2020-04-14 15:01:39:069] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:01:39 HKT 2020, 123456 logout.
+
+[2020-04-14 15:01:40:087] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:01:39 HKT 2020, 123456 login.
+
+[2020-04-14 15:01:41:736] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:01:41 HKT 2020, 123456 logout.
+
+[2020-04-14 15:01:42:819] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:01:42 HKT 2020, 123456 login.
+
+[2020-04-14 15:01:45:483] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:01:45 HKT 2020, 123456 logout.
+
+[2020-04-14 15:01:46:938] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:01:46 HKT 2020, 123456 login.
+
+[2020-04-14 15:01:59:278] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:01:59 HKT 2020, 123456 logout.
+
+[2020-04-14 15:02:00:396] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:02:00 HKT 2020, 123456 login.
+
+[2020-04-14 15:02:02:018] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:02:02 HKT 2020, 123456 logout.
+
+[2020-04-14 15:02:13:699] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopping...
+
+[2020-04-14 15:02:13:701] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[1 sessions]]]]
+
+[2020-04-14 15:02:13:701] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopped.
+
+[2020-04-14 15:02:13:702] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 15:02:13:702] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 15:02:13:704] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 15:02:13:705] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 15:02:19:519] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-14 15:02:21:282] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-14 15:02:21:396] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-04-14 15:02:21:398] [WARN ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log(Slf4jMLog.java:220)]
+A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.
+
+[2020-04-14 15:02:22:829] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 15:02:22:850] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 15:02:23:324] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 15:02:23:508] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 15:02:23:795] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Starting...
+
+[2020-04-14 15:02:23:796] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-14 15:02:23:800] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Started.
+
+[2020-04-14 15:02:23:809] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 4285 ms
+
+[2020-04-14 15:02:23:915] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-14 15:02:24:332] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-14 15:02:25:306] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1391 ms
+
+[2020-04-14 15:03:15:701] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hgery9a9x5m0mxhjjsjd|7ae1c827, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgery9a9x5m0mxhjjsjd|7ae1c827, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/box?useSSL=false&allowPublicKeyRetrieval=true, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+
+[2020-04-14 15:03:17:015] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:03:16 HKT 2020, 123456 login.
+
+[2020-04-14 15:03:20:462] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:03:20 HKT 2020, 123456 logout.
+
+[2020-04-14 15:03:22:474] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:03:22 HKT 2020, 123456 login.
+
+[2020-04-14 15:03:23:095] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:03:23 HKT 2020, 123456 logout.
+
+[2020-04-14 15:03:23:508] [INFO ] [method:org.springframework.web.socket.config.WebSocketMessageBrokerStats.lambda$initLoggingTask$0(WebSocketMessageBrokerStats.java:126)]
+WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 45], outboundChannel[pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 8], sockJsScheduler[pool size = 4, active threads = 1, queued tasks = 1, completed tasks = 2]
+
+[2020-04-14 15:03:23:959] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:03:23 HKT 2020, 123456 login.
+
+[2020-04-14 15:04:15:192] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:04:15 HKT 2020, 123456 logout.
+
+[2020-04-14 15:04:17:594] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:04:17 HKT 2020, 123456 login.
+
+[2020-04-14 15:04:22:255] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:04:22 HKT 2020, 123456 logout.
+
+[2020-04-14 15:04:23:202] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:04:22 HKT 2020, 123456 login.
+
+[2020-04-14 15:04:24:471] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:04:24 HKT 2020, 123456 logout.
+
+[2020-04-14 15:04:25:192] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:04:25 HKT 2020, 123456 login.
+
+[2020-04-14 15:04:25:915] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:04:25 HKT 2020, 123456 logout.
+
+[2020-04-14 15:04:26:434] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:04:26 HKT 2020, 123456 login.
+
+[2020-04-14 15:04:27:108] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:04:27 HKT 2020, 123456 logout.
+
+[2020-04-14 15:04:27:719] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:04:27 HKT 2020, 123456 login.
+
+[2020-04-14 15:04:28:533] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:04:28 HKT 2020, 123456 logout.
+
+[2020-04-14 15:04:29:021] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:04:29 HKT 2020, 123456 login.
+
+[2020-04-14 15:04:29:597] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:04:29 HKT 2020, 123456 logout.
+
+[2020-04-14 15:04:30:087] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:04:30 HKT 2020, 123456 login.
+
+[2020-04-14 15:04:40:611] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:04:40 HKT 2020, 123456 logout.
+
+[2020-04-14 15:04:41:388] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:04:41 HKT 2020, 123456 login.
+
+[2020-04-14 15:04:42:577] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:04:42 HKT 2020, 123456 logout.
+
+[2020-04-14 15:06:11:138] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:06:10 HKT 2020, 123456 login.
+
+[2020-04-14 15:06:12:489] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:06:12 HKT 2020, 123456 logout.
+
+[2020-04-14 15:06:13:308] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:06:13 HKT 2020, 123456 login.
+
+[2020-04-14 15:06:14:058] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:06:14 HKT 2020, 123456 logout.
+
+[2020-04-14 15:06:14:867] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:06:14 HKT 2020, 123456 login.
+
+[2020-04-14 15:08:14:652] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:08:14 HKT 2020, 123456 logout.
+
+[2020-04-14 15:08:15:795] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:08:15 HKT 2020, 123456 login.
+
+[2020-04-14 15:09:53:908] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:09:53 HKT 2020, 123456 login.
+
+[2020-04-14 15:17:02:528] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopping...
+
+[2020-04-14 15:17:02:530] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-14 15:17:02:531] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Stopped.
+
+[2020-04-14 15:17:02:531] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 15:17:02:532] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 15:17:02:532] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 15:17:02:533] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 15:17:26:627] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-14 15:17:29:262] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+MLog clients using slf4j logging.
+
+[2020-04-14 15:17:29:451] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+
+[2020-04-14 15:17:32:684] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientInboundChannelExecutor'
+
+[2020-04-14 15:17:32:787] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'clientOutboundChannelExecutor'
+
+[2020-04-14 15:17:33:594] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'messageBrokerTaskScheduler'
+
+[2020-04-14 15:17:33:767] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'brokerChannelExecutor'
+
+[2020-04-14 15:17:34:136] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Starting...
+
+[2020-04-14 15:17:34:137] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+
+[2020-04-14 15:17:34:142] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
+Started.
+
+[2020-04-14 15:17:34:153] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 7521 ms
+
+[2020-04-14 15:17:34:314] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-14 15:17:34:943] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-14 15:17:36:351] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 2036 ms
+
+[2020-04-14 15:17:39:646] [INFO ] [method:com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)]
+Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hgery9a9x65haa1iaf2bq|45992bd0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgery9a9x65haa1iaf2bq|45992bd0, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/box?useSSL=false&allowPublicKeyRetrieval=true, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+
+[2020-04-14 15:17:43:848] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:17:42 HKT 2020, 123456 login.
+

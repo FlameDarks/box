@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
@@ -27,19 +29,27 @@ public class UserController {
 
     @RequestMapping(value = "/user",method = RequestMethod.POST)
     @ResponseBody
-    public Msg getUserWithJson(@RequestParam(value = "userName")String name,@RequestParam(value = "userPassword")String pwd){
-        System.out.println("原始："+name+"\t"+pwd);
+    public Msg getUserWithJson(@RequestParam(value = "userName")String name,@RequestParam(value = "userPassword")String pwd, HttpServletRequest request){
+        HttpSession session = request.getSession();
+        // 登录操作
+        // 判断是否是一个已经登录的用户，没有则登录
+        if (null != session.getAttribute("loginUser")) {
+            // 清除旧的用户
+            session.removeAttribute("loginUser");
+        }
         String base = pwd.substring(0,1)+pwd+pwd.substring(pwd.length()-1,pwd.length());
         String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
-        System.out.println("md5后："+name+"\t"+md5);
         List<User> users = userService.getAll(name,md5);
         if (users==null){
             System.out.println("全错了!");
             return Msg.fail();
         }
         User user = users.get(0);
+        System.out.println("准备");
+        System.out.println(user.toString());
+        session.setAttribute("loginUser", user);
         System.out.println("获取的："+user.getUserName() + "///////" + user.getUserPassword());
-        return Msg.success().add("user_Info", user.getUserId());
+        return Msg.success().add("userId", user.getUserId()).add("userName",user.getUserName());
 
     }
 

@@ -17,8 +17,8 @@ import org.springframework.util.DigestUtils;
 import java.util.List;
 import java.util.UUID;
 
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/applicationContext.xml"})
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/applicationContext.xml"})
 public class MapperTest {
 
 //    @Autowired
@@ -52,7 +52,7 @@ public class MapperTest {
 //            userMapper.insertSelective(new User(null,uid,uid+i));
 //            System.out.println("id:"+user.getUserId()+" name:"+user.getUserName());
 //        }
-
+//
 //        密码加密
 //        String bases = slat.substring(0,1)+slat+slat.substring(slat.length()-1,slat.length());
 //        System.out.println(bases);

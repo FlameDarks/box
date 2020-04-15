@@ -1,0 +1,30 @@
+[2020-04-14 15:35:29:306] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:35:29 HKT 2020, 123456 logout.
+
+[2020-04-14 15:35:31:145] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:35:30 HKT 2020, 123456 login.
+
+[2020-04-14 15:35:31:955] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:35:31 HKT 2020, 123456 logout.
+
+[2020-04-14 15:35:32:908] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:35:32 HKT 2020, 123456 login.
+
+[2020-04-14 15:35:33:454] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:35:33 HKT 2020, 123456 logout.
+
+[2020-04-14 15:35:34:353] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:35:34 HKT 2020, 123456 login.
+
+[2020-04-14 15:35:34:793] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:35:34 HKT 2020, 123456 logout.
+
+[2020-04-14 15:35:35:714] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:35:35 HKT 2020, 123456 login.
+
+[2020-04-14 15:35:50:862] [INFO ] [method:com.zx.web.WebSocketDisconnectHandler.onApplicationEvent(WebSocketDisconnectHandler.java:68)]
+Tue Apr 14 15:35:50 HKT 2020, 123456 logout.
+
+[2020-04-14 15:35:52:255] [INFO ] [method:com.zx.controller.ChatController.loginIntoChatRoom(ChatController.java:79)]
+Tue Apr 14 15:35:52 HKT 2020, 123456 login.
+

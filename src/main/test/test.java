@@ -18,17 +18,20 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import javax.sound.midi.SoundbankResource;
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@WebAppConfiguration
-//@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/applicationContext.xml","file:src/main/webapp/WEB-INF/dispatcher-servlet.xml"})
+@RunWith(SpringJUnit4ClassRunner.class)
+@WebAppConfiguration
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/applicationContext.xml","file:src/main/webapp/WEB-INF/dispatcher-servlet.xml"})
 public class test {
-//    @Autowired
-//    WebApplicationContext context;
-//    MockMvc mockMvc;
+    @Autowired
+    WebApplicationContext context;
+    MockMvc mockMvc;
 //
 //    @Before
 //    public void test1(){
@@ -80,15 +83,26 @@ public class test {
 //        System.out.println(user);
 //    }
 //    由表逆向建类
-//    public static void main(String[] args) throws Exception {
-//        List<String> warnings = new ArrayList<String>();
-//        boolean overwrite = true;
-//        File configFile = new File("mbg.xml");
-//        ConfigurationParser cp = new ConfigurationParser(warnings);
-//        Configuration config = cp.parseConfiguration(configFile);
-//        DefaultShellCallback callback = new DefaultShellCallback(overwrite);
-//        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
-//        myBatisGenerator.generate(null);
+    public static void main(String[] args) throws Exception {
+        List<String> warnings = new ArrayList<String>();
+        boolean overwrite = true;
+        File configFile = new File("mbg.xml");
+        ConfigurationParser cp = new ConfigurationParser(warnings);
+        Configuration config = cp.parseConfiguration(configFile);
+        DefaultShellCallback callback = new DefaultShellCallback(overwrite);
+        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+        myBatisGenerator.generate(null);
+    }
+//    @Test
+//    public void test3() throws Exception{
+//        long a = System.currentTimeMillis();
+//        SimpleDateFormat format = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss:SSS");
+//        String dates = format.format(a);
+//        Date date = format.parse(dates);
+//        long b = date.getTime();
+//        System.out.println(dates);
+//        System.out.println(date);
+//        System.out.println(b);
 //    }
 
 }

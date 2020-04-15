@@ -1,6 +1,6 @@
 package com.zx.service;
 
-import com.zx.bean.NoteBook;
+import com.mysql.cj.x.protobuf.MysqlxNotice;
 import com.zx.bean.User;
 import com.zx.bean.UserExample;
 import com.zx.dao.UserMapper;
@@ -8,6 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import javax.swing.*;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -44,6 +50,12 @@ public class UserService {
         long count = userMapper.countByExample(userExample);
         System.out.println("找到："+count);
         return count == 0;
+    }
+//    通过Id获取用户信息
+    public User getUser(Integer id){
+        User user = userMapper.selectByPrimaryKey(id);
+        user.setUserPassword(null);
+        return user;
     }
 }
 

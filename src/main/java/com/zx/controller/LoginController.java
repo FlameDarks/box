@@ -19,7 +19,7 @@ public class LoginController {
     }
     @RequestMapping("/page4")
     public String getPage4(){
-        return "file";
+        return "cloud";
     }
     @RequestMapping("/page5")
     public String getPage5(){
