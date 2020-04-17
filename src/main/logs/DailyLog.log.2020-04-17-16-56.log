@@ -1,0 +1,111 @@
+[2020-04-17 16:56:10:871] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-17 16:56:14:265] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-17 16:56:14:834] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 3955 ms
+
+[2020-04-17 16:56:15:327] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-17 16:56:16:029] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-17 16:56:17:229] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1901 ms
+
+[2020-04-17 16:56:20:479] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:1010)]
+{dataSource-1} inited
+
+[2020-04-17 16:56:44:446] [ERROR] [method:org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.tryCloseWithError(ExceptionWebSocketHandlerDecorator.java:90)]
+Closing session due to exception for WebSocketServerSockJsSession[id=w2x2hksy]
+
+org.springframework.dao.DataIntegrityViolationException: com.zx.dao.ChatMapper.insertSelective (batch index #1) failed. Cause: java.sql.BatchUpdateException: Field 'chat_content' doesn't have a default value
+; Field 'chat_content' doesn't have a default value; nested exception is java.sql.BatchUpdateException: Field 'chat_content' doesn't have a default value
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization.beforeCommit(SqlSessionUtils.java:287)
+	at org.springframework.transaction.support.TransactionSynchronizationUtils.triggerBeforeCommit(TransactionSynchronizationUtils.java:96)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.triggerBeforeCommit(AbstractPlatformTransactionManager.java:920)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:728)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:712)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:631)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.zx.service.ChatService$$EnhancerBySpringCGLIB$$cad53047.insert(<generated>)
+	at com.zx.web.ChatWebSocketHandler.handleMessage(ChatWebSocketHandler.java:79)
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.handleMessage(WebSocketHandlerDecorator.java:75)
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.handleMessage(LoggingWebSocketHandlerDecorator.java:56)
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.handleMessage(ExceptionWebSocketHandlerDecorator.java:58)
+	at org.springframework.web.socket.sockjs.transport.session.AbstractSockJsSession.delegateMessages(AbstractSockJsSession.java:387)
+	at org.springframework.web.socket.sockjs.transport.session.WebSocketServerSockJsSession.handleMessage(WebSocketServerSockJsSession.java:195)
+	at org.springframework.web.socket.sockjs.transport.handler.SockJsWebSocketHandler.handleTextMessage(SockJsWebSocketHandler.java:93)
+	at org.springframework.web.socket.handler.AbstractWebSocketHandler.handleMessage(AbstractWebSocketHandler.java:43)
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.handleTextMessage(StandardWebSocketHandlerAdapter.java:114)
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.access$000(StandardWebSocketHandlerAdapter.java:43)
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$3.onMessage(StandardWebSocketHandlerAdapter.java:85)
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$3.onMessage(StandardWebSocketHandlerAdapter.java:82)
+	at org.apache.tomcat.websocket.WsFrameBase.sendMessageText(WsFrameBase.java:395)
+	at org.apache.tomcat.websocket.server.WsFrameServer.sendMessageText(WsFrameServer.java:119)
+	at org.apache.tomcat.websocket.WsFrameBase.processDataText(WsFrameBase.java:495)
+	at org.apache.tomcat.websocket.WsFrameBase.processData(WsFrameBase.java:294)
+	at org.apache.tomcat.websocket.WsFrameBase.processInputBuffer(WsFrameBase.java:133)
+	at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:82)
+	at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:171)
+	at org.apache.tomcat.websocket.server.WsFrameServer.notifyDataAvailable(WsFrameServer.java:151)
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:148)
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:54)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.BatchUpdateException: Field 'chat_content' doesn't have a default value
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at com.mysql.cj.util.Util.handleNewInstance(Util.java:192)
+	at com.mysql.cj.util.Util.getInstance(Util.java:167)
+	at com.mysql.cj.util.Util.getInstance(Util.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:224)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:853)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:435)
+	at com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:796)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeBatch(DruidPooledPreparedStatement.java:565)
+	at org.apache.ibatis.executor.BatchExecutor.doFlushStatements(BatchExecutor.java:123)
+	at org.apache.ibatis.executor.BaseExecutor.flushStatements(BaseExecutor.java:129)
+	at org.apache.ibatis.executor.BaseExecutor.flushStatements(BaseExecutor.java:122)
+	at org.apache.ibatis.executor.BaseExecutor.commit(BaseExecutor.java:242)
+	at org.apache.ibatis.executor.CachingExecutor.commit(CachingExecutor.java:119)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy45.commit(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.commit(DefaultSqlSession.java:223)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.commit(DefaultSqlSession.java:217)
+	at org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization.beforeCommit(SqlSessionUtils.java:283)
+	... 44 more
+Caused by: java.sql.SQLException: Field 'chat_content' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:832)
+	... 61 more

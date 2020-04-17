@@ -1,6 +1,10 @@
 package com.zx.bean;
 
+import com.google.gson.annotations.Expose;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Chat {
     /**
@@ -10,6 +14,7 @@ public class Chat {
      *
      * @mbg.generated Mon Apr 13 15:41:33 HKT 2020
      */
+    @Expose
     private Integer chatId;
 
     /**
@@ -19,6 +24,7 @@ public class Chat {
      *
      * @mbg.generated Mon Apr 13 15:41:33 HKT 2020
      */
+    @Expose
     private String chatContent;
 
     /**
@@ -28,6 +34,7 @@ public class Chat {
      *
      * @mbg.generated Mon Apr 13 15:41:33 HKT 2020
      */
+    @Expose
     private Integer chatType;
 
     /**
@@ -37,6 +44,7 @@ public class Chat {
      *
      * @mbg.generated Mon Apr 13 15:41:33 HKT 2020
      */
+    @Expose
     private Date chatTime;
 
     /**
@@ -46,7 +54,30 @@ public class Chat {
      *
      * @mbg.generated Mon Apr 13 15:41:33 HKT 2020
      */
+    @Expose
     private Integer chatUserId;
+
+    @Expose
+    private Boolean type;
+
+    @Expose
+    User user;
+
+    @Expose
+    String userName;
+
+    @Expose
+    private List<User> userList = new ArrayList<>();
+
+
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
 
     public User getUser() {
         return user;
@@ -56,13 +87,21 @@ public class Chat {
         this.user = user;
     }
 
-    User user;
-    String userName;
+
+    public Boolean getType() {
+        return type;
+    }
+
+    public void setType(Boolean type) {
+        this.type = type;
+    }
+
+
 
     public Chat() {
     }
 
-    public Chat(Integer chatId, String chatContent, Integer chatType, Date chatTime, Integer chatUserId, String userName,User user) {
+    public Chat(Integer chatId, String chatContent, Integer chatType, Date chatTime, Integer chatUserId, String userName, User user, Boolean type, List<User> userList) {
         this.chatId = chatId;
         this.chatContent = chatContent;
         this.chatType = chatType;
@@ -70,6 +109,8 @@ public class Chat {
         this.chatUserId = chatUserId;
         this.userName = userName;
         this.user = user;
+        this.type = type;
+        this.userList = userList;
     }
 
     /**
@@ -204,6 +245,21 @@ public class Chat {
         this.userName = userName;
     }
 
+    @Override
+    public String toString() {
+        return "Chat{" +
+                "chatId=" + chatId +
+                ", chatContent='" + chatContent + '\'' +
+                ", chatType=" + chatType +
+                ", chatTime=" + chatTime +
+                ", chatUserId=" + chatUserId +
+                ", type=" + type +
+                ", user=" + user +
+                ", userName='" + userName + '\'' +
+                ", userList=" + userList +
+                '}';
+    }
+
     public static class ChatBuilder {
         private Integer chatId;
         private String chatContent;
@@ -212,6 +268,8 @@ public class Chat {
         private Integer userId;
         private String userName;
         private User user;
+        private Boolean type;
+        private List<User> userList;
 
         public ChatBuilder chatId(Integer chatId){
             this.chatId = chatId;
@@ -244,8 +302,18 @@ public class Chat {
             return this;
         }
 
+        public ChatBuilder type(Boolean type){
+            this.type = type;
+            return this;
+        }
+
+        public ChatBuilder userList(List<User> userList){
+            this.userList = userList;
+            return this;
+        }
+
         public Chat build(){
-            return new Chat(chatId,chatContent,chatType,chatTime,userId,userName,user);
+            return new Chat(chatId,chatContent,chatType,chatTime,userId,userName,user,type,userList);
         }
     }
 }

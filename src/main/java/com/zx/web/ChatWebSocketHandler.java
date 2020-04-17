@@ -1,10 +1,13 @@
 package com.zx.web;
 
-import com.zx.bean.Message;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
+import com.zx.bean.Chat;
 import com.zx.bean.User;
+import com.zx.service.ChatService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.*;
-import org.springframework.web.util.HtmlUtils;
 
 import java.io.IOException;
 import java.util.Date;
@@ -16,6 +19,8 @@ import java.util.Set;
 @Component("chatWebSocketHandler")
 public class ChatWebSocketHandler implements WebSocketHandler {
 
+    @Autowired
+    ChatService chatService;
     //在线用户的SOCKETsession(存储了所有的通信通道)
     public static final Map<String, WebSocketSession> USER_SOCKETSESSION_MAP;
 
@@ -34,11 +39,11 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         USER_SOCKETSESSION_MAP.put(String.valueOf(loginUser.getUserId()), webSocketSession);
 
         //群发消息告知大家
-        Message msg = new Message();
+        Chat msg = new Chat();
 //        msg.setContent("风骚的【"+loginUser.getUserName()+"】踩着轻盈的步伐来啦。。。大家欢迎！");
         msg.setUserName(loginUser.getUserName());
         msg.setType(true);
-        msg.setSendDate(new Date());
+        msg.setChatTime(new Date());
         //获取所有在线的WebSocketSession对象集合
         Set<Entry<String, WebSocketSession>> entrySet = USER_SOCKETSESSION_MAP.entrySet();
         //将最新的所有的在线人列表放入消息对象的list集合中，用于页面显示
@@ -58,26 +63,31 @@ public class ChatWebSocketHandler implements WebSocketHandler {
      * 客户端发送服务器的消息时的处理函数，在这里收到消息之后可以分发消息
      */
     //处理消息：当一个新的WebSocket到达的时候，会被调用（在客户端通过Websocket API发送的消息会经过这里，然后进行相应的处理）
-    public void handleMessage(WebSocketSession webSocketSession, WebSocketMessage<?> message) throws Exception {
+    public void handleMessage(WebSocketSession webSocketSession, WebSocketMessage<?> chat) throws Exception {
         //如果消息没有任何内容，则直接返回
-        if(message.getPayloadLength()==0)return;
+        if(chat.getPayloadLength()==0)return;
         //反序列化服务端收到的json消息
-        Message msg = GsonUtils.fromJson(message.getPayload().toString(), Message.class);
-        msg.setSendDate(new Date());
+        Chat msg = GsonUtils.fromJson(chat.getPayload().toString(), Chat.class);
+        msg.setChatTime(new Date());
         //处理html的字符，转义：
 //        String text = msg.getContent();
         //转换为HTML转义字符表示
 //        String htmlEscapeText = HtmlUtils.htmlEscape(text);
-        msg.setContent(msg.getContent());
-        System.out.println("消息（可存数据库作为历史记录）:"+message.getPayload().toString());
+//        JSONObject jsonObject = new JSONObject(chat.getPayload().toString());
+//        msg.setChatContent(jsonObject.getStr("chatContent"));
+//        System.out.println(msg.toString());
+        msg.setChatType(1);
+//        msg.setChatUserId(jsonObject.getInt("userId"));
+        System.out.println("消息（可存数据库作为历史记录）:"+chat.getPayload().toString());
+        chatService.insert(msg);
         //判断是群发还是单发
-        if(msg.getToUser()==null||msg.getToUser().equals("-1")){
+//        if(msg.getToUser()==null||msg.getToUser().equals("-1")){
             //群发
             sendMessageToAll(new TextMessage(GsonUtils.toJson(msg)));
-        }else{
-            //单发
-            sendMessageToUser(msg.getToUser(), new TextMessage(GsonUtils.toJson(msg)));
-        }
+//        }else{
+//            //单发
+//            sendMessageToUser(msg.getToUser(), new TextMessage(GsonUtils.toJson(msg)));
+//        }
     }
 
     @Override
@@ -94,8 +104,8 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         }
 
         //群发消息告知大家
-        Message msg = new Message();
-        msg.setSendDate(new Date());
+        Chat msg = new Chat();
+        msg.setChatTime(new Date());
 
         //获取异常的用户的会话中的用户编号
         User loginUser=(User)webSocketSession.getAttributes().get("loginUser");
@@ -135,8 +145,8 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         System.out.println("Websocket正常断开:" + webSocketSession.getId() + "已经关闭");
 
         //群发消息告知大家
-        Message msg = new Message();
-        msg.setSendDate(new Date());
+        Chat msg = new Chat();
+        msg.setChatTime(new Date());
 
         //获取异常的用户的会话中的用户编号
         User loginUser=(User)webSocketSession.getAttributes().get("loginUser");

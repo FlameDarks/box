@@ -52,7 +52,7 @@ websocket.onmessage = function(event) {
     //2.系统消息：登录和退出触发
 
     //判断是否是欢迎消息（没用户编号的就是欢迎消息）
-    if(data.userId==undefined||data.userId==null||data.userId==""){
+    if(data.chatUserId==undefined||data.chatUserId==null||data.chatUserId==""){
         //===系统消息
         // $("#contentUl").append("<li><b>"+data.date+"</b><em>系统消息：</em><span>"+data.text+"</span></li>");
         // //刷新在线用户列表
@@ -77,11 +77,11 @@ websocket.onmessage = function(event) {
 
         if(data.userName==userName){
             data.userName="我";
-            showNewMessage(data.userName,null,data.content);
+            showNewMessage(data.userName,null,data.chatContent);
             // $("#contentUl").append("<li><span  style='display:block; float:right;'><em>"+data.userName+"</em><span>"+data.text+"</span><b>"+data.date+"</b></span></li><br/>");
         }else{
             // $("#contentUl").append("<li><b>"+data.date+"</b><em>"+data.userName+"</em><span>"+data.text+"</span></li><br/>");
-            showNewMessage(data.userName,null,data.content);
+            showNewMessage(data.userName,null,data.chatContent);
         }
 
     }
@@ -197,10 +197,10 @@ function sendMsg(){
         return;
     }else{
         var data={};
-        data["userId"]=$("#loginUserId").val();
+        data["chatUserId"]=$("#loginUserId").val();
         data["userName"]=$("#loginUserName").val();
-        data["toUser"]=to;
-        data["content"]=msg;
+        // data["toUser"]=to;
+        data["chatContent"]=msg.trim();
         //发送消息
         websocket.send(JSON.stringify(data));
         //发送完消息，清空输入框
