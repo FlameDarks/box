@@ -25,6 +25,12 @@ $(function () {
     // $(document).on("change", '#user_name', function() {
         check_user_name();
     });
+    $("#user_password").focusout(function () {
+        validate_reg_form();
+    });
+    $("#user_passwords").focusout(function () {
+        validate_reg_form();
+    });
 });
 //      登录请求
 function loginuser(){
@@ -75,6 +81,12 @@ function reguser() {
                 if (undefined != result.extend.errorFields.userPassword){
                     show_validate_msg("#user_password","error",result.extend.errorFields.userPassword);
                 }
+                if (undefined != result.extend.errorFields.userPasswords){
+                    show_validate_msg("#user_passwords","error",result.extend.errorFields.userPasswords);
+                }
+                if (result.extend.errorFields=="密码不一样"){
+                    show_validate_msg("#user_passwords","error",result.extend.errorFields);
+                }
             }
 
         }
@@ -82,31 +94,34 @@ function reguser() {
 }
 //      注册校验
 function validate_reg_form() {
-    var username = $("#user_name").val();
-    var userpwd = $("#user_password").val();
+    var username = $("#user_name").val().trim();
+    var userpwd = $("#user_password").val().trim();
+    var userpwds = $("#user_passwords").val().trim();
     var regname = /(^[a-zA-Z0-9_-]{6,10})|(^[\u2E80-\u9FFF]{3,5})/;
     var regpwd = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9_-]{8,16}$/;
     if (!regname.test(username)){
-        // alert("用户名不合法，请设置6-10个英文和数字组合或者3-5个汉字");
         show_validate_msg("#user_name","error","6-10个英文和数字组合或者3-5个汉字");
-        // $("#user_name").parent().addClass("has-error");
-        // $("#user_name").next("span").text("6-10个英文和数字组合或者3-5个汉字");
         return false;
     }else {
         show_validate_msg("#user_name","success","");
-        // $("#user_name").parent().addClass("has-success");
-        // $("#user_name").next("span").text("");
     }
     if (!regpwd.test(userpwd)){
-        // alert("密码不合法，应包含至少一个大写字母、小写字母和数字的8-16位组合");
         show_validate_msg("#user_password","error","应包含至少一个大写字母、小写字母和数字的8-16位组合");
-        // $("#user_password").parent().addClass("has-error");
-        // $("#user_password").next("span").text("应包含至少一个大写字母、小写字母和数字的8-16位组合");
         return false;
     }else {
         show_validate_msg("#user_password","success","");
-        // $("#user_password").parent().addClass("has-success");
-        // $("#user_password").next("span").text("");
+    }
+    if (!regpwd.test(userpwds)){
+        show_validate_msg("#user_passwords","error","应包含至少一个大写字母、小写字母和数字的8-16位组合");
+        return false;
+    }else {
+        show_validate_msg("#user_passwords","success","");
+    }
+    if (userpwd!=userpwds){
+        show_validate_msg("#user_passwords","error","请重新输入密码");
+        return false;
+    }else {
+        show_validate_msg("#user_passwords","success","");
     }
     return true;
 }
@@ -125,7 +140,7 @@ function show_validate_msg(element,status,msg) {
 }
 function check_user_name() {
     var path = $("#APP_PATH").val();
-    var username = $("#user_name").val();
+    var username = $("#user_name").val().trim();
     $.ajax({
         url: path+"/checkuser",
         type: "POST",

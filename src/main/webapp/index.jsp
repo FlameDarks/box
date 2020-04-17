@@ -44,6 +44,13 @@
                             <span class="help-block"></span>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="user_passwords" class="col-sm-2 control-label">重复密码</label>
+                        <div class="col-sm-10">
+                            <input type="password" name="userPasswords" class="form-control" id="user_passwords" placeholder="应包含大写字母、小写字母和数字的8-16位组合" autocomplete="off"/>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">

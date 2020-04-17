@@ -1,30 +1,30 @@
-[2020-04-15 17:08:59:970] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
-Stopping...
-
-[2020-04-15 17:08:59:973] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
-BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-
-[2020-04-15 17:08:59:973] [INFO ] [method:org.springframework.core.log.CompositeLog.info(CompositeLog.java:137)]
-Stopped.
-
-[2020-04-15 17:08:59:974] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+[2020-04-17 16:25:24:333] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
 Shutting down ExecutorService 'defaultSockJsTaskScheduler'
 
-[2020-04-15 17:08:59:976] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
-Shutting down ExecutorService 'brokerChannelExecutor'
-
-[2020-04-15 17:08:59:976] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
-Shutting down ExecutorService 'messageBrokerTaskScheduler'
-
-[2020-04-15 17:08:59:977] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
-Shutting down ExecutorService 'clientOutboundChannelExecutor'
-
-[2020-04-15 17:08:59:978] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
-Shutting down ExecutorService 'clientInboundChannelExecutor'
-
-[2020-04-15 17:08:59:978] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
+[2020-04-17 16:25:24:339] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
 {dataSource-1} closing ...
 
-[2020-04-15 17:08:59:991] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2075)]
+[2020-04-17 16:25:24:356] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2075)]
 {dataSource-1} closed
+
+[2020-04-17 16:25:28:905] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-17 16:25:31:590] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-17 16:25:32:088] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 3180 ms
+
+[2020-04-17 16:25:32:193] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-17 16:25:32:881] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-17 16:25:33:971] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1778 ms
+
+[2020-04-17 16:26:16:519] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:1010)]
+{dataSource-1} inited
 

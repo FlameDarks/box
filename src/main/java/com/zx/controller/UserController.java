@@ -45,6 +45,7 @@ public class UserController {
             return Msg.fail();
         }
         User user = users.get(0);
+        user.setUserPassword(null);
         System.out.println("准备");
         System.out.println(user.toString());
         session.setAttribute("loginUser", user);
@@ -57,8 +58,9 @@ public class UserController {
     @ResponseBody
     public Msg save(@Valid User user, BindingResult result){
         System.out.println("进入Controller");
+        System.out.println(user.toString());
+        Map<String,Object> map = new HashMap<>();
         if (result.hasErrors()){
-            Map<String,Object> map = new HashMap<>();
             List<FieldError> errors=result.getFieldErrors();
             for (FieldError fieldError:errors){
                 System.out.println("错误字段名："+fieldError.getField());
@@ -67,10 +69,12 @@ public class UserController {
             }
             return Msg.fail().add("errorFields",map);
         }
-        else {
+        if (user.getUserPassword().equals(user.getUserPasswords())){
             userService.reg(user);
             return Msg.success();
         }
+        return Msg.fail().add("errorFields","密码不一样");
+
     }
 
     @RequestMapping("/checkuser")

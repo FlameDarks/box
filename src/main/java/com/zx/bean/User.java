@@ -1,5 +1,6 @@
 package com.zx.bean;
 
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 public class User {
@@ -19,6 +20,8 @@ public class User {
      *
      * @mbg.generated Thu Apr 09 14:15:17 HKT 2020
      */
+    @Pattern(regexp = "(^[a-zA-Z0-9_-]{6,10})|(^[\\u2E80-\\u9FFF]{3,5})"
+            ,message = "6-10个英文和数字组合或者3-5个汉字")
     private String userName;
 
     /**
@@ -28,15 +31,30 @@ public class User {
      *
      * @mbg.generated Thu Apr 09 14:15:17 HKT 2020
      */
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z0-9_-]{8,16}$"
+            ,message = "应包含至少一个大写字母、小写字母和数字的8-16位组合")
     private String userPassword;
+
+    public String getUserPasswords() {
+        return userPasswords;
+    }
+
+    public void setUserPasswords(String userPasswords) {
+        this.userPasswords = userPasswords;
+    }
+
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z0-9_-]{8,16}$"
+            ,message = "应包含至少一个大写字母、小写字母和数字的8-16位组合")
+    private String userPasswords;
 
     public User() {
     }
 
-    public User(Integer userId, String userName, String userPassword) {
+    public User(Integer userId, String userName, String userPassword, String userPasswords) {
         this.userId = userId;
         this.userName = userName;
         this.userPassword = userPassword;
+        this.userPasswords = userPasswords;
     }
 
     /**
@@ -117,6 +135,7 @@ public class User {
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
                 ", userPassword='" + userPassword + '\'' +
+                ", userPasswords='" + userPasswords + '\'' +
                 '}';
     }
 }
