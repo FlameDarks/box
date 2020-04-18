@@ -11,12 +11,11 @@ import com.zx.bean.Msg;
 import com.zx.service.CloudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.*;
 
@@ -45,6 +44,10 @@ public class CloudController {
     @RequestMapping(value = "/saveCloud",method = RequestMethod.POST)
     @ResponseBody
     public Msg save(@RequestParam("data")MultipartFile file,@RequestParam("userId")Integer userId){
+        System.out.println("文件大小"+file.getSize());
+//        if (file.getSize()>10240){
+//            return Msg.fail().add("result","文件过大");
+//        }
         String result = "";
         JSONObject jsonObject1;
         JSONObject jsonObject2;
@@ -57,6 +60,7 @@ public class CloudController {
             params.put("file", isr);
             params.put("output", "json");
             params.put("path","/"+userId);
+//            params.put("rename","123");
             String UPLOAD_PATH = "http://39.106.190.142:8081/group1/upload";
             String resp = HttpUtil.post(UPLOAD_PATH, params);
             Console.log("resp: {}", resp);
@@ -103,4 +107,21 @@ public class CloudController {
             return Msg.success();
         }
     }
+
+//    @ExceptionHandler
+//    public Msg doException(Exception e, HttpServletRequest request) throws Exception {
+//        Map<String,Object> map = new HashMap<String,Object>();
+//        if (e instanceof MaxUploadSizeExceededException) {
+//            long maxSize = ((MaxUploadSizeExceededException) e)
+//                    .getMaxUploadSize();
+//            return Msg.fail().add("error","上传文件太大");
+////            map.put("error", "上传文件太大，不能超过" + maxSize / 1024 + "k");
+//        }else if(e instanceof RuntimeException){
+////            map.put("error", "未选中文件");
+//            return Msg.fail().add("error","未选中文件");
+//        }else{
+////            map.put("error", "上传失败");
+//            return Msg.fail().add("error","上传失败");
+//        }
+//    }
 }

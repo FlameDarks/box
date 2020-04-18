@@ -34,6 +34,7 @@ public class Chat {
      *
      * @mbg.generated Mon Apr 13 15:41:33 HKT 2020
      */
+    //0=system 1=text 2=image
     @Expose
     private Integer chatType;
 

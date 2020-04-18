@@ -129,7 +129,7 @@
 <body>
 <input type="hidden" id="APP_PATH" value="${APP_PATH}" />
 <input type="hidden" id="loginUserName" value="${loginUser.userName}"/>
-<input type="hidden" id="loginUserId" value="${loginUser.userId}"/>
+
 <div class="container">
 <%--    标题--%>
     <div class="row">
@@ -157,9 +157,8 @@
     </div>
     <div class="controls">
         <div class="items">
-            <input id="uploadUrl" type="hidden" value="<c:url value="/upload/image"/> "/>
+<%--            <input id="uploadUrl" type="hidden" value="<c:url value="/upload/image"/> "/>--%>
             <input id="websocketUrl" type="hidden" value="<c:url value="/websocket"/> "/>
-            <input id="emojiBaseUri" type="hidden"/>
             <form id="sendImageForm" enctype="multipart/form-data" method="post">
                 <input id="emoji" class="btn btn-primary" type="button" value="emoji" title="emoji"/>
                 <label for="sendImage" class="imageLable">
@@ -168,6 +167,7 @@
                            accept="image/jpg,image/jpeg,image/png,image/gif"/>
                 </label>
                 <input id="clearBtn" class="btn btn-warning" type="button" value="清屏" title="清除屏幕消息"/>
+                <input type="hidden" id="loginUserId" name="userId" value="${loginUser.userId}"/>
             </form>
         </div>
         <textarea class="form-control" id="messageInput" placeHolder="回车键发送"></textarea>

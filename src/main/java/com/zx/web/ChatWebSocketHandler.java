@@ -9,6 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
@@ -23,6 +27,8 @@ public class ChatWebSocketHandler implements WebSocketHandler {
     ChatService chatService;
     //在线用户的SOCKETsession(存储了所有的通信通道)
     public static final Map<String, WebSocketSession> USER_SOCKETSESSION_MAP;
+    //图片上传目录
+    private static final String IMAGE_PREFIX = "/resources/image/";
 
     //存储所有的在线用户
     static {
@@ -43,6 +49,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
 //        msg.setContent("风骚的【"+loginUser.getUserName()+"】踩着轻盈的步伐来啦。。。大家欢迎！");
         msg.setUserName(loginUser.getUserName());
         msg.setType(true);
+        msg.setChatType(0);
         msg.setChatTime(new Date());
         //获取所有在线的WebSocketSession对象集合
         Set<Entry<String, WebSocketSession>> entrySet = USER_SOCKETSESSION_MAP.entrySet();
@@ -208,11 +215,38 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         }
     }
 
+//    public void showImage() {
+//        if (!imageFile.isEmpty()) {
+//            String imageName = userName + "_" + (int) (Math.random() * 1000000) + ".jpg";
+//            String path = request.getSession().getServletContext().getRealPath(IMAGE_PREFIX) + "/" + imageName;
+//            File localImageFile = new File(path);
+//            try {
+//                //上传图片到目录
+//                byte[] bytes = imageFile.getBytes();
+//                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(localImageFile));
+//                bufferedOutputStream.write(bytes);
+//                bufferedOutputStream.close();
+//                Chat message = new Chat();
+//                message.setChatType(2);
+//                message.setUserName(userName);
+//                message.setChatTime(new Date());
+//                message.setChatContent(request.getContextPath() + IMAGE_PREFIX + imageName);
+//                //保存发送图片信息
+//                Chat userByName = chatService.getUserName(message.getChatUserId());
+//                Chat chat = Chat.builder().userId(userByName == null ? null : userByName.getChatUserId())
+//                        .chatContent(message.getChatContent()).chatTime(new Date()).build();
+//                chatService.insert(chat);
+//            } catch (IOException e) {
+//                System.out.println("图片上传失败：" + e.getMessage());
+//            }
+//        }
+//    }
+
     /**
      *
      * 说明：群发信息：给所有在线用户发送消息
      */
-    private void sendMessageToAll(final TextMessage message){
+    public void sendMessageToAll(final TextMessage message){
         //对用户发送的消息内容进行转义
 
         //获取到所有在线用户的SocketSession对象

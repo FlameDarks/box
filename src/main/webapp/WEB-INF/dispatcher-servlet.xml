@@ -19,6 +19,7 @@
     <mvc:resources mapping="/fonts/**" location="/static/fonts/"/>
     <mvc:resources mapping="/image/**" location="/static/images/"/>
     <mvc:resources mapping="/emoji/**" location="/static/images/emoji/"/>
+    <mvc:resources mapping="/upload/**" location="/static/images/upload/"/>
     <mvc:default-servlet-handler />  <!--这句要加上，要不然可能会访问不到静态资源，具体作用自行百度-->
 
     <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀(如果最后一个还是表示文件夹,则最后的斜杠不要漏了) 使用JSP-->
@@ -32,7 +33,9 @@
 <!--上传文件-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="defaultEncoding" value="UTF-8"/>
-        <property name="maxUploadSize" value="10240000"/>
+<!--        10MB上传限制-->
+        <property name="maxUploadSize" value="10485760"/>
+        <property name="resolveLazily" value="true"/>
     </bean>
 
     <!-- 自动扫描装配 -->

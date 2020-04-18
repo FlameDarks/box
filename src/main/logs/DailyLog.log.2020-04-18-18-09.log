@@ -1,0 +1,9 @@
+[2020-04-18 18:09:29:938] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-18 18:09:29:962] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
+{dataSource-1} closing ...
+
+[2020-04-18 18:09:29:966] [WARN ] [method:org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:349)]
+Destroy method 'close' on bean with name 'comboPooledDataSource' threw an exception: java.lang.IllegalStateException: java.io.IOException: java.lang.reflect.InvocationTargetException
+

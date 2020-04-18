@@ -21,7 +21,7 @@ function cloud_to_page(pn) {
     });
 }
 
-// 解析显示记事本数据
+// 解析显示数据
 function build_cloud_table(result) {
     $("#cloud_table tbody").empty();
     var cloud = result.extend.cloud_pageInfo.list;
@@ -131,6 +131,11 @@ $(document).on("click", '#cloud_save_btn', function() {
     var path = $("#APP_PATH").val();
     console.log(2);
     var file = $('#clouds_add')[0].files[0];
+    var allowsize = 10485760;
+    if (file.size>allowsize){
+        alert("文件不能超过10kb");
+        return false;
+    }
     console.log(3);
     var formData = new FormData();
     console.log(4);
@@ -147,9 +152,14 @@ $(document).on("click", '#cloud_save_btn', function() {
         cache: false,
         data: formData,
         success: function (result) {
-            console.log(result.msg);
-            $('#cloud_add').modal("hide");
-            cloud_to_page(pagenum);
+            if (result.code == 200){
+                console.log(result.msg);
+                $('#cloud_add').modal("hide");
+                cloud_to_page(pagenum);
+            }else {
+                alert(result.extend.result);
+            }
+
         }
     });
 });

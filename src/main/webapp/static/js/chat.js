@@ -2,7 +2,6 @@
 var user;
 var path;
 
-var uid='${sessionScope.loginUser.id}';
 //发送人编号
 
 //接收人编号
@@ -39,6 +38,15 @@ websocket.onopen = function(event) {
 
 }
 
+//关闭Websocket连接
+function closeWebsocket(){
+    if (websocket != null) {
+        websocket.close();
+        websocket = null;
+    }
+
+}
+
 // 监听消息
 //onmessage事件提供了一个data属性，它可以包含消息的Body部分。消息的Body部分必须是一个字符串，可以进行序列化/反序列化操作，以便传递更多的数据。
 websocket.onmessage = function(event) {
@@ -52,7 +60,8 @@ websocket.onmessage = function(event) {
     //2.系统消息：登录和退出触发
 
     //判断是否是欢迎消息（没用户编号的就是欢迎消息）
-    if(data.chatUserId==undefined||data.chatUserId==null||data.chatUserId==""){
+    //data.chatUserId==undefined||data.chatUserId==null||data.chatUserId==""
+    if(data.chatType==0){
         //===系统消息
         // $("#contentUl").append("<li><b>"+data.date+"</b><em>系统消息：</em><span>"+data.text+"</span></li>");
         // //刷新在线用户列表
@@ -71,21 +80,24 @@ websocket.onmessage = function(event) {
             showActiveUserNumber(data.userList.length);
         }
     }
-    else{
+    if (data.chatType == 1){
         //===普通消息
         //处理一下个人信息的显示：
-
         if(data.userName==userName){
-            data.userName="我";
-            showNewMessage(data.userName,null,data.chatContent);
+            showNewMessage("我",null,data.chatContent);
             // $("#contentUl").append("<li><span  style='display:block; float:right;'><em>"+data.userName+"</em><span>"+data.text+"</span><b>"+data.date+"</b></span></li><br/>");
         }else{
             // $("#contentUl").append("<li><b>"+data.date+"</b><em>"+data.userName+"</em><span>"+data.text+"</span></li><br/>");
             showNewMessage(data.userName,null,data.chatContent);
         }
-
     }
-
+    if (data.chatType == 2){
+        if(data.userName==userName){
+            showNewImage("我",null,data.chatContent);
+        }else{
+            showNewImage(data.userName,null,data.chatContent);
+        }
+    }
     scrollToBottom();
 };
 
@@ -128,14 +140,18 @@ $(function(){
      * 上传图片发送
      */
     $("#sendImage").bind("change", function () {
+        path = $("#APP_PATH").val();
         if (this.files.length != 0){
             $.ajax({
-                url: $("#uploadUrl").val(),
+                url: path+"/upload/image",
                 type: 'POST',
                 cache: false,
                 data: new FormData($('#sendImageForm')[0]),
                 processData: false,
-                contentType: false
+                contentType: false,
+                success:function () {
+                    scrollToBottom();
+                }
             }).done(function(res) {
                 console.log(res);
             }).fail(function(res) {
@@ -143,7 +159,7 @@ $(function(){
             });
         }
     });
-    // initEmoji();
+    initEmoji();
     $("#sendImageBtn").click(function () {
         $("#sendImage").trigger("click");
     })
@@ -151,7 +167,6 @@ $(function(){
     // $("#sendBtn").on("click",function(){
     //     sendMsg();
     // });
-    // initEmoji();
 
     //给退出聊天绑定事件
     // $("#exitBtn").on("click",function(){
@@ -168,20 +183,6 @@ $(function(){
     scrollToBottom();
 
 });
-
-//使用ctrl+回车快捷键发送消息
-// function keySend(e) {
-//     var theEvent = window.event || e;
-//     var code = theEvent.keyCode || theEvent.which;
-//     if (theEvent.ctrlKey && code == 13) {
-//         var msg=$("#messageInput");
-//         if (msg.innerHTML == "") {
-//             msg.focus();
-//             return false;
-//         }
-//         sendMsg();
-//     }
-// }
 
 //发送消息
 function sendMsg(){
@@ -208,14 +209,7 @@ function sendMsg(){
     }
 }
 
-//关闭Websocket连接
-function closeWebsocket(){
-    if (websocket != null) {
-        websocket.close();
-        websocket = null;
-    }
 
-}
 
 //div滚动条(scrollbar)保持在最底部
 function scrollToBottom(){
@@ -224,24 +218,9 @@ function scrollToBottom(){
     div.scrollTop = div.scrollHeight;
 }
 
-// Date.prototype.Format = function (fmt) { //author: meizz
-//     var o = {
-//         "M+": this.getMonth() + 1, //月份
-//         "d+": this.getDate(), //日
-//         "h+": this.getHours(), //小时
-//         "m+": this.getMinutes(), //分
-//         "s+": this.getSeconds(), //秒
-//         "q+": Math.floor((this.getMonth() + 3) / 3), //季度
-//         "S": this.getMilliseconds() //毫秒
-//     };
-//     if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-//     for (var k in o)
-//         if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-//     return fmt;
-// }
+
 
 function showUserLogout(message) {
-
     // var json = JSON.parse(message);
     console.log("登出信息："+message);
     var logoutUser = message.userName;
@@ -249,7 +228,7 @@ function showUserLogout(message) {
     var user = "系统消息";
     var msg = logoutUser + "离开了聊天室~";
     showNewMessage(user, date, msg);
-    showSubActiveUserNumber();
+    // showSubActiveUserNumber();
 }
 /**
  * 显示新用户登录的消息
@@ -262,7 +241,7 @@ function showNewUser(message) {
     var user = '系统消息';
     var msg = newUser + "加入聊天！";
     showNewMessage(user, date, msg);
-    showAddActiveUserNumber();
+    // showAddActiveUserNumber();
 
 }
 /**
@@ -272,22 +251,7 @@ function showNewUser(message) {
 function showActiveUserNumber(number) {
     $("#status").text(number);
 }
-/**
- * 在线人数加1
- */
-function showAddActiveUserNumber() {
-    var number = parseInt($("#status").text());
-    number = number + 1;
-    $("#status").text(number);
-}
-/**
- * 在线人数减1
- */
-function showSubActiveUserNumber() {
-    var number = parseInt($("#status").text());
-    number = number - 1;
-    $("#status").text(number);
-}
+
 /**
  * 格式化时间，参数为null显示当前客户端时间
  * @param dateTime
@@ -323,7 +287,7 @@ function showNewMessage(user, date, msg) {
     msg = showEmoji(msg);
     msgToDisplay.innerHTML = '<span class="timespan">' + dateTime + '</span><br/>[' + user + "] : " + msg;
     container.append(msgToDisplay);
-    container.scrollTop = container.scrollHeight;
+    // container.scrollTop = container.scrollHeight;
 }
 /**
  * 正则表达式显示消息中的emoji图片
@@ -331,12 +295,13 @@ function showNewMessage(user, date, msg) {
  * @returns {*} 返回添加emoji图片标签后的消息
  */
 function showEmoji(message) {
+    path = $("#APP_PATH").val()+"/static/images/emoji/";
     var result = message,
         regrex = /\[EMOJI:\d+\]/g,
         match;
     while (match = regrex.exec(message)){
         var emojiIndex = match[0].slice(7, -1);
-        var emojiUrl = $("#emojiBaseUri").val().trim() + emojiIndex + ".gif";
+        var emojiUrl = path + emojiIndex + ".gif";
         result = result.replace(match[0], '<img src="' + emojiUrl + '"/>');
     }
     return result;
@@ -348,14 +313,96 @@ function showEmoji(message) {
  * @param date 用户发送的时间（未格式化）
  * @param url 图片url
  */
-// function showNewImage(user, date, url) {
-//     var container = document.getElementById("historyMsg");
-//     var msgToDisplay = document.createElement('p');
-//     var dateTime = formatDate(date);
-//     msgToDisplay.innerHTML = '<span class="timespan">' + dateTime + '</span><br/>[' + user + '] : <br/>' +
-//         '<img class="img-thumbnail" src="' + url + '"/>';
-//     container.append(msgToDisplay);
-//     container.scrollTop = container.scrollHeight;
+function showNewImage(user, date, url) {
+    var container = document.getElementById("historyMsg");
+    var msgToDisplay = document.createElement('p');
+    var dateTime = formatDate(date);
+    msgToDisplay.innerHTML = '<span class="timespan">' + dateTime + '</span><br/>[' + user + '] : <br/>' +
+        '<img class="img-thumbnail" src="' + url + '"/>';
+    container.append(msgToDisplay);
+    container.scrollTop = container.scrollHeight;
+}
+/**
+  * 预加载emoji图片
+  */
+function initEmoji() {
+    path = $("#APP_PATH").val();
+    var emojiContainer = $("#emojiWrapper");
+    var documentFragment = document.createDocumentFragment();
+    for (var i = 69; i > 0; i--) {
+        var emojiItem = document.createElement("img");
+        emojiItem.src = path + "/static/images/emoji/" + i + ".gif";
+        emojiItem.title = i;
+        documentFragment.appendChild(emojiItem);
+    }
+    emojiContainer.append(documentFragment);
+
+    $("#emoji").click(function (event) {
+        emojiContainer.css("display", "block");
+        event.stopPropagation(); //阻止事件的传递，防止body监听到
+    });
+
+    $("body").click(function (event) {
+        if (event.target != emojiContainer) {
+            emojiContainer.css("display", "none");
+        }
+    });
+
+    $("#emojiWrapper").click(function (event) {
+        var target = event.target;
+        if (target.nodeName.toLowerCase() == "img") {
+            var messageInput = $("#messageInput");
+            messageInput.val(messageInput.val() + "[EMOJI:" + target.title + "]");
+            messageInput.focus();
+        }
+    });
+}
+
+//使用ctrl+回车快捷键发送消息
+// function keySend(e) {
+//     var theEvent = window.event || e;
+//     var code = theEvent.keyCode || theEvent.which;
+//     if (theEvent.ctrlKey && code == 13) {
+//         var msg=$("#messageInput");
+//         if (msg.innerHTML == "") {
+//             msg.focus();
+//             return false;
+//         }
+//         sendMsg();
+//     }
+// }
+
+// Date.prototype.Format = function (fmt) { //author: meizz
+//     var o = {
+//         "M+": this.getMonth() + 1, //月份
+//         "d+": this.getDate(), //日
+//         "h+": this.getHours(), //小时
+//         "m+": this.getMinutes(), //分
+//         "s+": this.getSeconds(), //秒
+//         "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+//         "S": this.getMilliseconds() //毫秒
+//     };
+//     if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+//     for (var k in o)
+//         if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+//     return fmt;
+// }
+
+// /**
+//  * 在线人数加1
+//  */
+// function showAddActiveUserNumber() {
+//     var number = parseInt($("#status").text());
+//     number = number + 1;
+//     $("#status").text(number);
+// }
+// /**
+//  * 在线人数减1
+//  */
+// function showSubActiveUserNumber() {
+//     var number = parseInt($("#status").text());
+//     number = number - 1;
+//     $("#status").text(number);
 // }
 
 // var stompClient = null;
