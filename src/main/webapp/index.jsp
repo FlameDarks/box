@@ -13,13 +13,14 @@
 <%
     pageContext.setAttribute("APP_PATH",request.getContextPath());
 %>
-<link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap.min.css">
-<script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js" charset="utf-8"></script>
-<script src="${APP_PATH}/static/js/bootstrap.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap3.css">
+<link rel="stylesheet" type="text/css" href="${APP_PATH}/static/css/login.css">
+<%--<link href="https://fonts.googleapis.com/css?family=Montserrat:300,700" rel="stylesheet">--%>
+<script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js"></script>
+<script src="${APP_PATH}/static/js/bootstrap3.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/login.js" charset="utf-8"></script>
 <input type="hidden" id="APP_PATH" value="${APP_PATH}" />
 <body>
-<h1 align="center">用户登录</h1>
 <%--注册--%>
 <div class="modal fade" id="user_reg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -60,21 +61,26 @@
         </div>
     </div>
 </div>
-<form action="" name="loginform" method="post" id="login_form">
-    <table align="center">
-        <tr>
-            <td>用户名:</td>
-            <td><input type="text" name="userName" maxlength="10" autocomplete="off" id="userName"/></td>
-        </tr>
-        <tr>
-            <td>密码:</td>
-            <td><input type="password" name="userPassword" maxlength="10" autocomplete="off" id="userPassword"/></td>
-        </tr>
-        <tr>
-            <td colspan="1"><input class="btn btn-default" type="submit" id="login_btn" value="登录"></td>
-            <td colspan="2"><button class="btn btn-default" type="button" id="reg_btn">注册</button></td>
-        </tr>
-    </table>
-</form>
+<div class="home">
+    <img class="bgone" src="${APP_PATH}/static/images/image/home_bg.jpg"/>
+    <img class="pic" src="${APP_PATH}/static/images/image/home_pic.png" />
+    <div class="table">
+        <div class="wel">企业网络百宝箱</div>
+        <div class="wel1">QI YE WANG LUO BAI BAO XIANG</div>
+        <form name="loginform" method="post" id="login_form">
+            <div class="user">
+                <div id="user_icon" style=""><img src="${APP_PATH}/static/images/image/home_user.png" /></div>
+                <input type="text" name="userName" maxlength="10" autocomplete="off" id="userName" placeholder="请输入用户名" />
+            </div>
+            <div class="password">
+                <div id="pwd_icon"><img src="${APP_PATH}/static/images/image/home_pwd.png" /></div>
+                <input type="password" name="userPassword" maxlength="16" autocomplete="off" id="userPassword" placeholder="请输入密码"/>
+            </div>
+
+            <input class="loginbtn" type="submit" id="login_btn" value="登录">
+            <button class="regbtn" type="button" id="reg_btn" >注册</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>

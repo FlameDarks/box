@@ -15,34 +15,10 @@
 <%
     pageContext.setAttribute("APP_PATH",request.getContextPath());
 %>
-<link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap.css">
-<script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js" charset="utf-8"></script>
-<script src="${APP_PATH}/static/js/bootstrap.js" charset="utf-8"></script>
+<link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap3.css">
+<script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js"></script>
+<script src="${APP_PATH}/static/js/bootstrap3.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/notebook.js"></script>
-<%--<script type="text/javascript">--%>
-<%--    function first() {--%>
-<%--        var path = $("#APP_PATH").val();--%>
-<%--        var userId = sessionStorage.getItem("userId");--%>
-<%--        var userName = sessionStorage.getItem("userName");--%>
-<%--        var i = 0;--%>
-<%--        if (userId==null||userName==null){--%>
-<%--            i++;--%>
-<%--            console.log("有空值"+" i:"+i);--%>
-<%--        }else {--%>
-<%--            i++--%>
-<%--            console.log("有值"+" i:"+i+" path:"+path);--%>
-<%--            $.ajax({--%>
-<%--                url:path+"/chat",--%>
-<%--                data:"userId="+userId+"&userName="+userName,--%>
-<%--                type:"post",--%>
-<%--                success:function () {--%>
-
-<%--                }--%>
-<%--            });--%>
-<%--        }--%>
-
-<%--    }--%>
-<%--</script>--%>
 <body>
 <input type="hidden" id="APP_PATH" value="${APP_PATH}" />
 <div class="container">
@@ -58,7 +34,7 @@
             <li role="presentation"><a href="${APP_PATH}/page2">通讯录</a></li>
             <li role="presentation"><a href="${APP_PATH}/page3">收藏夹</a></li>
             <li role="presentation"><a href="${APP_PATH}/page4">文件箱</a></li>
-            <li role="presentation"><a href="${APP_PATH}/page5" onclick="first()">聊天室</a></li>
+            <li role="presentation"><a href="${APP_PATH}/page5">聊天室</a></li>
         </ul>
     </div>
     <%--    按钮--%>

@@ -22,7 +22,7 @@ $(function () {
         reguser();
     });
     $("#user_name").focusout(function () {
-    // $(document).on("change", '#user_name', function() {
+        // $(document).on("change", '#user_name', function() {
         check_user_name();
     });
     $("#user_password").focusout(function () {
