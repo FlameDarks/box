@@ -163,21 +163,6 @@ $(function(){
     $("#sendImageBtn").click(function () {
         $("#sendImage").trigger("click");
     })
-    //发送消息
-    // $("#sendBtn").on("click",function(){
-    //     sendMsg();
-    // });
-
-    //给退出聊天绑定事件
-    // $("#exitBtn").on("click",function(){
-    //     closeWebsocket();
-    //     location.href="${pageContext.request.contextPath}/index.jsp";
-    // });
-
-    //给输入框绑定事件
-    // $("#messageInput").on("keydown",function(event){
-    //     keySend(event);
-    // });
 
     //初始化时如果有消息，则滚动条到最下面：
     scrollToBottom();
@@ -357,6 +342,15 @@ function initEmoji() {
         }
     });
 }
+
+// 登出
+$(document).on("click", '#exitBtn', function() {
+    // $("#exitBtn").on("onclick",function(){
+    path = $("#APP_PATH").val();
+    sessionStorage.clear();
+    closeWebsocket();
+    location.href=path;
+});
 
 //使用ctrl+回车快捷键发送消息
 // function keySend(e) {

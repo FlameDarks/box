@@ -15,126 +15,31 @@
     pageContext.setAttribute("APP_PATH",request.getContextPath());
 %>
 <link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap3.css">
+<link rel="stylesheet" href="${APP_PATH}/static/css/chat.css">
 <script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js"></script>
-<script src="${APP_PATH}/static/js/bootstrap3.js"></script>
-<script src="${APP_PATH}/static/js/stomp.js"></script>
-<%--<script src="https://cdn.bootcss.com/stomp.js/2.3.3/stomp.min.js"></script>--%>
-<script src="${APP_PATH}/static/js/sockjs.js"></script>
+<script type="text/javascript" src="${APP_PATH}/static/js/bootstrap3.js"></script>
+<script type="text/javascript" src="${APP_PATH}/static/js/stomp.js"></script>
+<script type="text/javascript" src="${APP_PATH}/static/js/sockjs.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/chat.js"></script>
-<style rel="stylesheet">
-    html, body {
-        margin: 0;
-        font-family: sans-serif;
-    }
-
-    .wrapper {
-        width: 600px;
-        height: 450px;
-        padding: 5px;
-        margin: 0 auto;
-        background-color: #ddd;
-    }
-
-    #activeUserWraper {
-        width: 100%;
-        height: 30px;
-        margin-top: 5px;
-    }
-
-    #activeUserWraper span {
-        font-size: large;
-    }
-
-    .banner {
-        height: 40px;
-        width: 100%;
-    }
-    .banner span {
-        float: left;
-        display: inline-block;
-    }
-    .controls {
-        height: 150px;
-        margin: 5px 0px;
-        position: relative;
-    }
-
-
-    #historyMsg {
-        height: 250px;
-        background-color: #fff;
-        overflow: auto;
-        padding: 2px;
-    }
-    #historyMsg p {
-        font-size: 20px;
-    }
-    #historyMsg img {
-        max-width: 90%;
-
-    }
-    .timespan {
-        color: #ddd;
-        font-size: 16px;
-    }
-    .items {
-        height: 30px;
-        margin-bottom: 8px;
-    }
-    /*custom the file input*/
-
-    .imageLable {
-        position: relative;
-    }
-    #sendImage {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        left: 0;
-        opacity: 0;
-        overflow: hidden;
-    }
-    /*end custom file input*/
-
-    #messageInput {
-        height: 100px;
-        max-height: 170px;
-    }
-
-    #emojiWrapper {
-        display: none;
-        width: 500px;
-        bottom: 105px;
-        position: absolute;
-        background-color: #aaa;
-        box-shadow: 0 0 10px #555;
-    }
-    #emojiWrapper img {
-        margin: 2px;
-        padding: 2px;
-        width: 25px;
-        height: 25px;
-    }
-    #emojiWrapper img:hover {
-        background-color: blue;
-    }
-
-    .emoji{
-        display: inline;
-    }
-    footer {
-        text-align: center;
-    }
-</style>
 <body>
 <input type="hidden" id="APP_PATH" value="${APP_PATH}" />
 <input type="hidden" id="loginUserName" value="${loginUser.userName}"/>
-
 <div class="container">
 <%--    标题--%>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-11">
             <h1 align="center">企业网络百宝箱</h1>
+        </div>
+        <div class="userInfo">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle userBtn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    ${loginUser.userName}
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                    <li><a id="changeBtn">修改密码</a></li>
+                    <li><a id="exitBtn">登出</a></li>
+                </ul>
+            </div>
         </div>
     </div>
     <div>
@@ -145,6 +50,18 @@
             <li role="presentation"><a href="${APP_PATH}/page4">文件箱</a></li>
             <li role="presentation" class="active"><a href="${APP_PATH}/page5">聊天室</a></li>
         </ul>
+    </div>
+</div>
+<div class="chatroom">
+<div class="userList">
+    <div class="list-group">
+        <a href="#" class="list-group-item active">
+            Cras justo odio
+        </a>
+        <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+        <a href="#" class="list-group-item">Morbi leo risus</a>
+        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+        <a href="#" class="list-group-item">Vestibulum at eros</a>
     </div>
 </div>
 <div class="wrapper">
@@ -175,6 +92,6 @@
         </div>
     </div>
 </div>
-
+</div>
 </body>
 </html>

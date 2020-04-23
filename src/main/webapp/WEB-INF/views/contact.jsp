@@ -15,18 +15,30 @@
     pageContext.setAttribute("APP_PATH",request.getContextPath());
 %>
 <link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap3.css">
-<script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js" charset="utf-8"></script>
-<script src="${APP_PATH}/static/js/bootstrap3.js"></script>
+<link rel="stylesheet" href="${APP_PATH}/static/css/contact.css">
+<script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="${APP_PATH}/static/js/bootstrap3.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/contact.js"></script>
 <body>
 <input type="hidden" id="APP_PATH" value="${APP_PATH}" />
 <div class="container">
     <%--    标题--%>
-    <div class="row">
-        <div class="col-md-12">
-            <h1 align="center">企业网络百宝箱</h1>
+        <div class="row">
+            <div class="col-md-11">
+                <h1 align="center">企业网络百宝箱</h1>
+            </div>
+            <div class="userInfo">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle userBtn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        ${loginUser.userName}
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                        <li><a id="changeBtn">修改密码</a></li>
+                        <li><a id="exitBtn">登出</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
     <div>
         <ul class="nav nav-pills">
             <li role="presentation"><a href="${APP_PATH}/page1">记事本</a></li>

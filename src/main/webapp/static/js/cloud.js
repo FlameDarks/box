@@ -212,3 +212,11 @@ $(document).on("click", '#cloud_del_btn', function() {
         });
     }
 });
+
+// 登出
+$(document).on("click", '#exitBtn', function() {
+    // $("#exitBtn").on("onclick",function(){
+    path = $("#APP_PATH").val();
+    sessionStorage.clear();
+    location.href=path;
+});
