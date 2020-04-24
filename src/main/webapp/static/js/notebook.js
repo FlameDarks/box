@@ -4,6 +4,20 @@ var user;
 
 $(function () {
     notebook_to_page(1);
+
+    $("#changepwd_save_btn").click(function() {
+        changepwd();
+    });
+    $("#oldpwd").focusout(function () {
+        // $(document).on("change", '#user_name', function() {
+        check_user_pwd();
+    });
+    $("#newpwd").focusout(function () {
+        validate_pwd_form();
+    });
+    $("#newpwds").focusout(function () {
+        validate_pwd_form();
+    });
 });
 
 function notebook_to_page(pn) {
@@ -225,10 +239,5 @@ $(document).on("click", '#notebook_del_btn', function() {
     }
 });
 
-// 登出
-$(document).on("click", '#exitBtn', function() {
-    // $("#exitBtn").on("onclick",function(){
-    path = $("#APP_PATH").val();
-    sessionStorage.clear();
-    location.href=path;
-});
+
+

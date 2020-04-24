@@ -74,7 +74,6 @@ public class UserController {
             return Msg.success();
         }
         return Msg.fail().add("errorFields","密码不一样");
-
     }
 
     @RequestMapping("/checkuser")
@@ -93,4 +92,41 @@ public class UserController {
         }
     }
 
+    @RequestMapping("/checkpwd")
+    @ResponseBody
+    public Msg checkpwd(@RequestParam("userId")Integer userId,@RequestParam("userPassword")String pwd){
+        User user = userService.getUser(userId);
+        System.out.println(user.toString());
+        String base = pwd.substring(0,1)+pwd+pwd.substring(pwd.length()-1,pwd.length());
+        String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
+        System.out.println("提取的密码："+user.getUserPassword()+"\t原密码："+md5);
+        if (user.getUserPassword().equals(md5)){
+            return Msg.success();
+        }
+        return Msg.fail().add("va_msg","原密码错误");
+    }
+
+    @RequestMapping(value = "/savepwd",method = RequestMethod.POST)
+    @ResponseBody
+//    public Msg savepwd(@RequestParam("userId")Integer userId,@Valid @RequestParam("userPassword") String userPassword, @Valid @RequestParam("userPasswords") String userPasswords,BindingResult result){
+    public Msg savepwd(@Valid User user,BindingResult result){
+        System.out.println("进入Controller");
+        System.out.println(user.toString());
+        Map<String,Object> map = new HashMap<>();
+        if (result.hasErrors()){
+            List<FieldError> errors=result.getFieldErrors();
+            for (FieldError fieldError:errors){
+                System.out.println("错误字段名："+fieldError.getField());
+                System.out.println("错误信息"+fieldError.getDefaultMessage());
+                map.put(fieldError.getField(),fieldError.getDefaultMessage());
+            }
+            return Msg.fail().add("errorFields",map);
+        }
+        if (user.getUserPassword().equals(user.getUserPasswords())){
+            userService.update(user);
+            System.out.println("马上返回："+user.toString());
+            return Msg.success();
+        }
+        return Msg.fail().add("errorFields","密码不一样");
+    }
 }

@@ -1,6 +1,5 @@
 package com.zx.service;
 
-import com.mysql.cj.x.protobuf.MysqlxNotice;
 import com.zx.bean.User;
 import com.zx.bean.UserExample;
 import com.zx.dao.UserMapper;
@@ -8,12 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
-import javax.swing.*;
-import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -21,7 +14,7 @@ public class UserService {
 
     @Autowired
     UserMapper userMapper;
-
+//    获取user信息，登录
     public List<User> getAll(String name,String pwd) {
         UserExample userExample = new UserExample();
         UserExample.Criteria criteria = userExample.createCriteria();
@@ -32,17 +25,14 @@ public class UserService {
         }
         return userMapper.selectByExample(userExample);
     }
-
+//    注册
     public void reg(User user) {
         System.out.println("进入Service");
-        String pwd = user.getUserPassword();
-        String base = pwd.substring(0,1)+pwd+pwd.substring(pwd.length()-1,pwd.length());
-        user.setUserPassword(DigestUtils.md5DigestAsHex(base.getBytes()));
-        System.out.println("name:"+user.getUserName()+"password:"+user.getUserPassword());
+        safe(user);
         userMapper.insertSelective(user);
     }
 
-
+//    验证用户名是否重复
     public boolean checkUser(String username) {
         UserExample userExample = new UserExample();
         UserExample.Criteria criteria = userExample.createCriteria();
@@ -53,9 +43,19 @@ public class UserService {
     }
 //    通过Id获取用户信息
     public User getUser(Integer id){
-        User user = userMapper.selectByPrimaryKey(id);
-        user.setUserPassword(null);
-        return user;
+        return userMapper.selectByPrimaryKey(id);
+    }
+//    修改密码
+    public void update(User user){
+        safe(user);
+        userMapper.updateByPrimaryKeySelective(user);
+    }
+//    加密
+    public void safe(User user){
+        String pwd = user.getUserPassword();
+        String base = pwd.substring(0,1)+pwd+pwd.substring(pwd.length()-1,pwd.length());
+        user.setUserPassword(DigestUtils.md5DigestAsHex(base.getBytes()));
+        System.out.println("name:"+user.getUserName()+"\tpassword:"+user.getUserPassword());
     }
 }
 

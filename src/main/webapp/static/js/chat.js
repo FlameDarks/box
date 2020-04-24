@@ -2,8 +2,6 @@
 var user;
 var path;
 
-//发送人编号
-
 //接收人编号
 var to="-1";
 
@@ -44,7 +42,6 @@ function closeWebsocket(){
         websocket.close();
         websocket = null;
     }
-
 }
 
 // 监听消息
@@ -346,11 +343,15 @@ function initEmoji() {
 // 登出
 $(document).on("click", '#exitBtn', function() {
     // $("#exitBtn").on("onclick",function(){
+    logout()
+});
+
+function logout() {
     path = $("#APP_PATH").val();
     sessionStorage.clear();
     closeWebsocket();
     location.href=path;
-});
+}
 
 //使用ctrl+回车快捷键发送消息
 // function keySend(e) {

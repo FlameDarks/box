@@ -26,10 +26,10 @@ $(function () {
         check_user_name();
     });
     $("#user_password").focusout(function () {
-        validate_reg_form();
+        validate_pwd_form();
     });
     $("#user_passwords").focusout(function () {
-        validate_reg_form();
+        validate_pwd_form();
     });
 });
 //      登录请求
@@ -57,10 +57,10 @@ function loginuser(){
 }
 //      注册请求
 function reguser() {
-    if (!validate_reg_form()){
+    if (!validate_pwd_form()){
         return false;
     }
-    if($("#user_name").attr("ajax-va")=="error"){
+    if($("#user_reg_btn").attr("ajax-va")=="error"){
         return false;
     }
     var path = $("#APP_PATH").val();
@@ -93,7 +93,7 @@ function reguser() {
     });
 }
 //      注册校验
-function validate_reg_form() {
+function validate_pwd_form() {
     var username = $("#user_name").val().trim();
     var userpwd = $("#user_password").val().trim();
     var userpwds = $("#user_passwords").val().trim();
@@ -138,6 +138,7 @@ function show_validate_msg(element,status,msg) {
         $(element).next("span").text(msg);
     }
 }
+
 function check_user_name() {
     var path = $("#APP_PATH").val();
     var username = $("#user_name").val().trim();
@@ -156,7 +157,7 @@ function check_user_name() {
         }
     });
 }
-
+// 重置提示信息
 function reset_form(ele) {
     // $(ele)[0].reset;
     document.getElementById(ele).reset();

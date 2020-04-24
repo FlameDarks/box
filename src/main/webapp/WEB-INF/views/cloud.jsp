@@ -19,6 +19,7 @@
 <script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/bootstrap3.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/cloud.js"></script>
+<script type="text/javascript" src="${APP_PATH}/static/js/change.js"></script>
 <body>
 <input type="hidden" id="APP_PATH" value="${APP_PATH}" />
 <div class="container">
@@ -33,7 +34,7 @@
                         ${loginUser.userName}
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                        <li><a id="changeBtn">修改密码</a></li>
+                        <li><a id="changeBtn" data-toggle="modal"  data-target="#changepwd">修改密码</a></li>
                         <li><a id="exitBtn">登出</a></li>
                     </ul>
                 </div>
@@ -81,7 +82,52 @@
     </div>
 </div>
 
-
+<%--修改密码--%>
+<div class="modal fade" id="changepwd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">修改密码</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">用户名</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">${loginUser.userName}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="oldpwd" class="col-sm-2 control-label">原密码</label>
+                        <div class="col-sm-10">
+                            <input type="password" name="userPassword" class="form-control" id="oldpwd" placeholder="原密码">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="newpwd" class="col-sm-2 control-label">新密码</label>
+                        <div class="col-sm-10">
+                            <input type="password" name="userPassword" class="form-control" id="newpwd" placeholder="新密码">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="newpwds" class="col-sm-2 control-label">重复新密码</label>
+                        <div class="col-sm-10">
+                            <input type="password" name="userPasswords" class="form-control" id="newpwds" placeholder="重复新密码">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="changepwd_save_btn">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <%--新增--%>
 <div class="modal fade" id="cloud_add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
