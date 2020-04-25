@@ -46,10 +46,8 @@ public class UserController {
         }
         User user = users.get(0);
         user.setUserPassword(null);
-        System.out.println("准备");
-        System.out.println(user.toString());
         session.setAttribute("loginUser", user);
-        System.out.println("获取的："+user.getUserName() + "///////" + user.getUserPassword());
+        System.out.println("获取的："+user.getUserName() + "\t" + user.getUserPassword());
         return Msg.success().add("userId", user.getUserId()).add("userName",user.getUserName());
 
     }
@@ -84,7 +82,6 @@ public class UserController {
             return Msg.fail().add("va_msg","6-10个英文和数字组合或者3-5个汉字");
         }
         boolean b = userService.checkUser(username);
-        System.out.println("输入的名字：");
         if (b){
             return Msg.success();
         }else {
@@ -99,7 +96,6 @@ public class UserController {
         System.out.println(user.toString());
         String base = pwd.substring(0,1)+pwd+pwd.substring(pwd.length()-1,pwd.length());
         String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
-        System.out.println("提取的密码："+user.getUserPassword()+"\t原密码："+md5);
         if (user.getUserPassword().equals(md5)){
             return Msg.success();
         }
@@ -111,7 +107,6 @@ public class UserController {
 //    public Msg savepwd(@RequestParam("userId")Integer userId,@Valid @RequestParam("userPassword") String userPassword, @Valid @RequestParam("userPasswords") String userPasswords,BindingResult result){
     public Msg savepwd(@Valid User user,BindingResult result){
         System.out.println("进入Controller");
-        System.out.println(user.toString());
         Map<String,Object> map = new HashMap<>();
         if (result.hasErrors()){
             List<FieldError> errors=result.getFieldErrors();
@@ -124,7 +119,6 @@ public class UserController {
         }
         if (user.getUserPassword().equals(user.getUserPasswords())){
             userService.update(user);
-            System.out.println("马上返回："+user.toString());
             return Msg.success();
         }
         return Msg.fail().add("errorFields","密码不一样");

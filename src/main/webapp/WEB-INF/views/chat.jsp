@@ -55,14 +55,9 @@
 </div>
 <div class="chatroom">
 <div class="userList">
-    <div class="list-group">
-        <a href="#" class="list-group-item active">
-            Cras justo odio
-        </a>
-        <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-        <a href="#" class="list-group-item">Morbi leo risus</a>
-        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-        <a href="#" class="list-group-item">Vestibulum at eros</a>
+    <div class="list-group" id="LoginUserList">
+<%--        <a href="#" class="list-group-item active">--%>
+<%--        <a href="#" class="list-group-item" id="LoginUser">在线成员</a>--%>
     </div>
 </div>
 <div class="wrapper">

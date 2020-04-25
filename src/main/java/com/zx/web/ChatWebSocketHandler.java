@@ -9,10 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
@@ -57,9 +53,11 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         for (Entry<String, WebSocketSession> entry : entrySet) {
             msg.getUserList().add((User)entry.getValue().getAttributes().get("loginUser"));
         }
-
+//        System.out.println(msg.toString());
+        JSONObject jsonObject = JSONUtil.parseObj(msg);;
         //将消息转换为json
-        TextMessage message = new TextMessage(GsonUtils.toJson(msg));
+        TextMessage message = new TextMessage(jsonObject.toStringPretty());
+//        System.out.println(GsonUtils.toJson(msg));
         //群发消息
         sendMessageToAll(message);
 
@@ -87,10 +85,13 @@ public class ChatWebSocketHandler implements WebSocketHandler {
 //        msg.setChatUserId(jsonObject.getInt("userId"));
         System.out.println("消息（可存数据库作为历史记录）:"+chat.getPayload().toString());
         chatService.insert(msg);
+        //将消息转换为json
+        JSONObject jsonObject = JSONUtil.parseObj(msg);;
+        System.out.println(jsonObject.toStringPretty());
         //判断是群发还是单发
 //        if(msg.getToUser()==null||msg.getToUser().equals("-1")){
             //群发
-            sendMessageToAll(new TextMessage(GsonUtils.toJson(msg)));
+            sendMessageToAll(new TextMessage(jsonObject.toStringPretty()));
 //        }else{
 //            //单发
 //            sendMessageToUser(msg.getToUser(), new TextMessage(GsonUtils.toJson(msg)));
@@ -137,7 +138,10 @@ public class ChatWebSocketHandler implements WebSocketHandler {
             msg.getUserList().add((User)entry.getValue().getAttributes().get("loginUser"));
         }
 
-        TextMessage message = new TextMessage(GsonUtils.toJson(msg));
+        JSONObject jsonObject = JSONUtil.parseObj(msg);;
+        System.out.println(jsonObject.toStringPretty());
+        //将消息转换为json
+        TextMessage message = new TextMessage(jsonObject.toStringPretty());
         sendMessageToAll(message);
 
     }
@@ -185,7 +189,10 @@ public class ChatWebSocketHandler implements WebSocketHandler {
             msg.getUserList().add((User)entry.getValue().getAttributes().get("loginUser"));
         }
 
-        TextMessage message = new TextMessage(GsonUtils.toJson(msg));
+        JSONObject jsonObject = JSONUtil.parseObj(msg);;
+        System.out.println(jsonObject.toStringPretty());
+        //将消息转换为json
+        TextMessage message = new TextMessage(jsonObject.toStringPretty());
         sendMessageToAll(message);
     }
 
@@ -215,33 +222,6 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         }
     }
 
-//    public void showImage() {
-//        if (!imageFile.isEmpty()) {
-//            String imageName = userName + "_" + (int) (Math.random() * 1000000) + ".jpg";
-//            String path = request.getSession().getServletContext().getRealPath(IMAGE_PREFIX) + "/" + imageName;
-//            File localImageFile = new File(path);
-//            try {
-//                //上传图片到目录
-//                byte[] bytes = imageFile.getBytes();
-//                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(localImageFile));
-//                bufferedOutputStream.write(bytes);
-//                bufferedOutputStream.close();
-//                Chat message = new Chat();
-//                message.setChatType(2);
-//                message.setUserName(userName);
-//                message.setChatTime(new Date());
-//                message.setChatContent(request.getContextPath() + IMAGE_PREFIX + imageName);
-//                //保存发送图片信息
-//                Chat userByName = chatService.getUserName(message.getChatUserId());
-//                Chat chat = Chat.builder().userId(userByName == null ? null : userByName.getChatUserId())
-//                        .chatContent(message.getChatContent()).chatTime(new Date()).build();
-//                chatService.insert(chat);
-//            } catch (IOException e) {
-//                System.out.println("图片上传失败：" + e.getMessage());
-//            }
-//        }
-//    }
-
     /**
      *
      * 说明：群发信息：给所有在线用户发送消息
@@ -267,9 +247,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
                             e.printStackTrace();
                         }
                     }
-
                 }).start();
-
             }
         }
     }

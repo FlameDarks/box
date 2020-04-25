@@ -72,6 +72,7 @@ websocket.onmessage = function(event) {
             showNewUser(data);
             console.log("在线人数"+data.userList.length);
             showActiveUserNumber(data.userList.length);
+            showLoginUser(data.userList);
         }else {
             showUserLogout(data);
             showActiveUserNumber(data.userList.length);
@@ -189,6 +190,17 @@ function sendMsg(){
         //发送完消息，清空输入框
         $("#messageInput").val("");
     }
+}
+
+
+function showLoginUser(userList) {
+    $("#LoginUserList").empty();
+    console.log(userList);
+    $("<a></a>").addClass("list-group-item").append("在线成员").appendTo("#LoginUserList");
+    $.each(userList,function (index,item) {
+        console.log(item);
+        $("<a></a>").addClass("list-group-item").append(item.userName).appendTo("#LoginUserList");
+    });
 }
 
 

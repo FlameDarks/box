@@ -130,7 +130,6 @@ $(document).on("click", '#exitBtn', function() {
 function logout() {
     path = $("#APP_PATH").val();
     sessionStorage.clear();
-
     location.href=path;
 }
 
