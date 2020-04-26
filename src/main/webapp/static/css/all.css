@@ -1,0 +1,9 @@
+﻿.userInfo{
+    float: right;
+}
+
+.userBtn{
+    background-color:rgba(0,0,0,0);
+    border: none;
+    outline: none;
+}

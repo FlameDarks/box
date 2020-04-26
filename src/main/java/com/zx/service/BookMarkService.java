@@ -15,10 +15,10 @@ public class BookMarkService {
 
     @Autowired
     BookMarkMapper bookMarkMapper;
-    public List<BookMark> getAll(Integer userid) {
+    public List<BookMark> getAll(Integer userId) {
         BookMarkExample bookmarkExample = new BookMarkExample();
         BookMarkExample.Criteria criteria = bookmarkExample.createCriteria();
-        criteria.andUserIdEqualTo(userid);
+        criteria.andUserIdEqualTo(userId);
         return bookMarkMapper.selectByExample(bookmarkExample);
     }
 
@@ -43,5 +43,17 @@ public class BookMarkService {
         BookMarkExample.Criteria criteria = bookmarkExample.createCriteria();
         criteria.andBookmarkIdIn(ids);
         bookMarkMapper.deleteByExample(bookmarkExample);
+    }
+
+    public List<BookMark> select(Integer userId, String data, Integer check) {
+        BookMarkExample bookmarkExample = new BookMarkExample();
+        BookMarkExample.Criteria criteria = bookmarkExample.createCriteria();
+        criteria.andUserIdEqualTo(userId);
+        if (check == 1){
+            criteria.andBookmarkTitleLike(data);
+        }else {
+            criteria.andBookmarkContentLike(data);
+        }
+        return bookMarkMapper.selectByExample(bookmarkExample);
     }
 }

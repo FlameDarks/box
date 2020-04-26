@@ -12,6 +12,7 @@
     $("#newpwds").focusout(function () {
         validate_pwd_form();
     });
+
 });
 
 //      修改密码请求

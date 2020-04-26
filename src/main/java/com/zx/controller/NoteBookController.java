@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zx.bean.Msg;
 import com.zx.bean.NoteBook;
+import com.zx.bean.User;
 import com.zx.service.NoteBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,6 +83,10 @@ public class NoteBookController {
             return Msg.success();
         }
     }
+
+
+
+
 
 //    public String getNoteBook(@RequestParam(value = "pn",defaultValue = "1")Integer pn, Model model){
 //        PageHelper.startPage(pn,1);

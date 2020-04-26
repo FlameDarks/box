@@ -2,7 +2,6 @@ package com.zx.controller;
 
 import com.zx.bean.Chat;
 import com.zx.bean.Msg;
-import com.zx.bean.User;
 import com.zx.service.ChatService;
 import com.zx.service.UserService;
 import com.zx.web.ChatWebSocketHandler;

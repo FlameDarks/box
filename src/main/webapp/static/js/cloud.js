@@ -212,3 +212,27 @@ $(document).on("click", '#cloud_del_btn', function() {
         });
     }
 });
+
+
+$(document).on("click", '#selectBtn', function() {
+    selectContent();
+});
+
+function selectContent() {
+    var path = $("#APP_PATH").val();
+    var content = $("#selectInput").val().trim();
+    var type = $("#selectBtn").attr("select");
+    var check = $("#check").val();
+    if (content!=null || content!=undefined){
+        $.ajax({
+            data:"check="+check+"&data="+content+"&type="+type,
+            url:path+"/select",
+            type:"POST",
+            success:function (result) {
+                build_cloud_table(result);
+                build_cloud_pageinfo(result);
+                build_cloud_page(result);
+            }
+        });
+    }
+}

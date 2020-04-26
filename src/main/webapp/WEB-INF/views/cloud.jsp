@@ -16,11 +16,12 @@
 %>
 <link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap3.css">
 <link rel="stylesheet" href="${APP_PATH}/static/css/cloud.css">
+<link rel="stylesheet" href="${APP_PATH}/static/css/all.css">
 <script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/bootstrap3.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/cloud.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/change.js"></script>
-<body>
+<body background="${APP_PATH}/static/images/image/bg.jpg">
 <input type="hidden" id="APP_PATH" value="${APP_PATH}" />
 <div class="container">
     <%--    标题--%>
@@ -40,18 +41,29 @@
                 </div>
             </div>
         </div>
-    <div>
-        <ul class="nav nav-pills">
-            <li role="presentation"><a href="${APP_PATH}/page1">记事本</a></li>
-            <li role="presentation"><a href="${APP_PATH}/page2">通讯录</a></li>
-            <li role="presentation"><a href="${APP_PATH}/page3">收藏夹</a></li>
-            <li role="presentation" class="active"><a href="${APP_PATH}/page4">文件箱</a></li>
-            <li role="presentation"><a href="${APP_PATH}/page5">聊天室</a></li>
-        </ul>
-    </div>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="nav nav-pills">
+                    <li role="presentation"><a href="${APP_PATH}/page1">记事本</a></li>
+                    <li role="presentation"><a href="${APP_PATH}/page2">通讯录</a></li>
+                    <li role="presentation"><a href="${APP_PATH}/page3">收藏夹</a></li>
+                    <li role="presentation" class="active"><a href="${APP_PATH}/page4">文件箱</a></li>
+                    <li role="presentation"><a href="${APP_PATH}/page5">聊天室</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <select class="form-control col-md-1" id="check" style="width:75px">
+                        <option value="1">文件名</option>
+                    </select>
+                    <input class="col-md-4" placeholder="请输入" id="selectInput" style="height: 34px">
+                    <button class="btn btn-primary col-md-1" id="selectBtn" select="4">搜索</button>
+                </div>
+            </div>
+        </div>
     <%--    按钮--%>
     <div class="row">
-        <div class="col-md-4 col-md-offset-8">
+        <div class="col-md-3 col-md-offset-9">
             <button class="btn btn-primary" id="cloud_add_btn" data-toggle="modal"  data-target="#cloud_add">新增</button>
 <%--            <input class="btn btn-primary" id="cloud_add_btn" type="file" name="fileName"/>--%>
             <button class="btn btn-danger" id="cloud_del_btn">删除</button>

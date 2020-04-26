@@ -49,4 +49,16 @@ public class NoteBookService {
         criteria.andNotebookIdIn(ids);
         noteBookMapper.deleteByExample(noteBookExample);
     }
+
+    public List<NoteBook> select(Integer userId, String data,Integer check){
+        NoteBookExample noteBookExample = new NoteBookExample();
+        NoteBookExample.Criteria criteria = noteBookExample.createCriteria();
+        criteria.andUserIdEqualTo(userId);
+        if (check==1){
+            criteria.andNotebookTitleLike(data);
+        }else{
+            criteria.andNotebookContentLike(data);
+        }
+        return noteBookMapper.selectByExample(noteBookExample);
+    }
 }

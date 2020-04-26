@@ -225,3 +225,28 @@ $(document).on("click", '#contact_del_btn', function() {
         });
     }
 });
+
+
+$(document).on("click", '#selectBtn', function() {
+    selectContent();
+});
+
+function selectContent() {
+    var path = $("#APP_PATH").val();
+    var content = $("#selectInput").val().trim();
+    var type = $("#selectBtn").attr("select");
+    var check = $("#check").val();
+    alert(content);
+    if (content!=null || content!=undefined){
+        $.ajax({
+            data:"check="+check+"&data="+content+"&type="+type,
+            url:path+"/select",
+            type:"POST",
+            success:function (result) {
+                build_contact_table(result);
+                build_contact_pageinfo(result);
+                build_contact_page(result);
+            }
+        });
+    }
+}

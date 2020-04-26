@@ -16,13 +16,14 @@
 %>
 <link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap3.css">
 <link rel="stylesheet" href="${APP_PATH}/static/css/chat.css">
+<link rel="stylesheet" href="${APP_PATH}/static/css/all.css">
 <script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/bootstrap3.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/stomp.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/sockjs.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/chat.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/change.js"></script>
-<body>
+<body background="${APP_PATH}/static/images/image/bg.jpg">
 <input type="hidden" id="APP_PATH" value="${APP_PATH}" />
 <input type="hidden" id="loginUserName" value="${loginUser.userName}"/>
 <div class="container">

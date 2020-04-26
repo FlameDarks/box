@@ -16,15 +16,13 @@ public class CloudService {
     CloudMapper cloudMapper;
     
     public void save(Cloud cloud) {
-        System.out.println("没有");
         cloudMapper.insertSelective(cloud);
-        System.out.println("有");
     }
 
-    public List<Cloud> getAll(Integer id) {
+    public List<Cloud> getAll(Integer userId) {
         CloudExample cloudExample = new CloudExample();
         CloudExample.Criteria criteria = cloudExample.createCriteria();
-        criteria.andUserIdEqualTo(id);
+        criteria.andUserIdEqualTo(userId);
         return cloudMapper.selectByExample(cloudExample);
     }
 
@@ -38,5 +36,13 @@ public class CloudService {
         CloudExample.Criteria criteria = cloudExample.createCriteria();
         criteria.andCloudIdIn(ids);
         cloudMapper.deleteByExample(cloudExample);
+    }
+
+    public List<Cloud> select(Integer userId, String data) {
+        CloudExample cloudExample = new CloudExample();
+        CloudExample.Criteria criteria = cloudExample.createCriteria();
+        criteria.andUserIdEqualTo(userId);
+        criteria.andCloudNameLike(data);
+        return cloudMapper.selectByExample(cloudExample);
     }
 }

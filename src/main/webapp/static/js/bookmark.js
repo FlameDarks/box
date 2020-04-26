@@ -20,6 +20,14 @@ function bookmark_to_page(pn) {
     });
 }
 
+function regurl(url) {
+    var reghttp = /(http|https):\/\/([\w.]+\/?)\S*/;
+    if (!reghttp.test(url)){
+        return "http://"+url;
+    }
+    return url;
+}
+
 // 解析显示记事本数据
 function build_bookmark_table(result) {
     $("#bookmark_table tbody").empty();
@@ -29,7 +37,9 @@ function build_bookmark_table(result) {
         var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>")
         checkBoxTd.find("input").attr("check_id",item.bookmarkId);
         var bookmarkTitleTd = $("<td></td>").append(item.bookmarkTitle);
-        var bookmarkContentTd = $("<td></td>").append(item.bookmarkContent);
+        // var bookmarkContentTd = $("<td></td>").append(item.bookmarkContent);
+        var url = regurl(item.bookmarkContent);
+        var bookmarkContentTd = $("<td></td>").append($("<a></a>").attr("href",url).append(url));
         var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit")
             .append($("<span></span>").addClass("glyphicon glyphicon-pencil").append("编辑"));
         editBtn.attr("edit_id",item.bookmarkId);
@@ -222,3 +232,26 @@ $(document).on("click", '#bookmark_del_btn', function() {
         });
     }
 });
+
+$(document).on("click", '#selectBtn', function() {
+    selectContent();
+});
+
+function selectContent() {
+    var path = $("#APP_PATH").val();
+    var content = $("#selectInput").val().trim();
+    var type = $("#selectBtn").attr("select");
+    var check = $("#check").val();
+    if (content!=null || content!=undefined){
+        $.ajax({
+            data:"check="+check+"&data="+content+"&type="+type,
+            url:path+"/select",
+            type:"POST",
+            success:function (result) {
+                build_bookmark_table(result);
+                build_bookmark_pageinfo(result);
+                build_bookmark_page(result);
+            }
+        });
+    }
+}

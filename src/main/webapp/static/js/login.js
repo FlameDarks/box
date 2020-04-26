@@ -165,17 +165,3 @@ function reset_form(ele) {
     $(eles).find("*").removeClass("has-error has-success");
     $(eles).find(".help-block").text("");
 }
-
-//     登录校验
-// function validate_login_form() {
-//     var username = $("#username").val();
-//     var userpwd = $("#userpassword").val();
-//     var regname = /(^[a-zA-Z0-9_-]{6,10})|(^[\u2E80-\u9FFF]{3,5})/;
-//     var regpwd = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9_-]{8,16}$/
-//     if (!regname.test(username) || !regpwd.test(userpwd)){
-//         alert("用户名或密码不合法");
-//         return false;
-//     }
-//     alert("成功");
-//     return true;
-// }

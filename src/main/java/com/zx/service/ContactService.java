@@ -13,10 +13,10 @@ public class ContactService {
     @Autowired
     ContactMapper contactMapper;
 
-    public List<Contact> getAll(Integer userid) {
+    public List<Contact> getAll(Integer userId) {
         ContactExample contactExample = new ContactExample();
         ContactExample.Criteria criteria = contactExample.createCriteria();
-        criteria.andUserIdEqualTo(userid);
+        criteria.andUserIdEqualTo(userId);
         return contactMapper.selectByExample(contactExample);
     }
 
@@ -41,5 +41,19 @@ public class ContactService {
         ContactExample.Criteria criteria = contactExample.createCriteria();
         criteria.andContactIdIn(ids);
         contactMapper.deleteByExample(contactExample);
+    }
+
+    public List<Contact> select(Integer userId, String data, Integer check) {
+        ContactExample contactExample = new ContactExample();
+        ContactExample.Criteria criteria = contactExample.createCriteria();
+        criteria.andUserIdEqualTo(userId);
+        if (check == 1){
+            criteria.andContactNameLike(data);
+        }else if (check == 2){
+            criteria.andContactPhoneLike(data);
+        }else{
+            criteria.andContactAddressLike(data);
+        }
+        return contactMapper.selectByExample(contactExample);
     }
 }

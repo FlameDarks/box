@@ -2,15 +2,6 @@
     margin-top: 5px;
 }
 
-.userInfo{
-    float: right;
-}
-
-.userBtn{
-    border: none;
-    outline: none;
-}
-
 .userList{
     float: left;
     margin-left: 250px;

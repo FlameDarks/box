@@ -4,20 +4,6 @@ var user;
 
 $(function () {
     notebook_to_page(1);
-
-    $("#changepwd_save_btn").click(function() {
-        changepwd();
-    });
-    $("#oldpwd").focusout(function () {
-        // $(document).on("change", '#user_name', function() {
-        check_user_pwd();
-    });
-    $("#newpwd").focusout(function () {
-        validate_pwd_form();
-    });
-    $("#newpwds").focusout(function () {
-        validate_pwd_form();
-    });
 });
 
 function notebook_to_page(pn) {
@@ -238,6 +224,29 @@ $(document).on("click", '#notebook_del_btn', function() {
         });
     }
 });
+
+$(document).on("click", '#selectBtn', function() {
+    selectContent();
+});
+
+function selectContent() {
+    var path = $("#APP_PATH").val();
+    var content = $("#selectInput").val().trim();
+    var type = $("#selectBtn").attr("select");
+    var check = $("#check").val();
+    if (content!=null || content!=undefined){
+        $.ajax({
+            data:"check="+check+"&data="+content+"&type="+type,
+            url:path+"/select",
+            type:"POST",
+            success:function (result) {
+                build_notebook_table(result);
+                build_notebook_pageinfo(result);
+                build_notebook_page(result);
+            }
+        });
+    }
+}
 
 
 
