@@ -9,8 +9,9 @@ $(function () {
 function notebook_to_page(pn) {
     var path = $("#APP_PATH").val();
     user = sessionStorage.getItem("userId");
+    console.log(user);
     $.ajax({
-        url:path+"/notebook",
+        url:path+"/notebook/selectNotebook",
         data:"pn="+pn+"&userId="+user,
         type:"GET",
         async: false,
@@ -128,7 +129,7 @@ $(document).on("click", '#notebook_save_btn', function() {
     console.log($('#notebook_add form').serialize() + "&userId=" + user);
     var path = $("#APP_PATH").val();
     $.ajax({
-        url: path + "/saveNoteBook",
+        url: path + "/notebook/saveNoteBook",
         type: "POST",
         async: false,
         data: $('#notebook_add form').serialize() + "&userId=" + user,
@@ -151,7 +152,7 @@ $(document).on("click", '.edit', function() {
 function echo(id) {
     var path = $("#APP_PATH").val();
     $.ajax({
-        url:path+"/echoNoteBook",
+        url:path+"/notebook/echoNoteBook",
         data:"Id="+id,
         type:"GET",
         success:function (result) {
@@ -167,7 +168,7 @@ $(document).on("click", '#notebook_update_btn', function() {
     console.log("notebookId="+$(this).attr("edit_id")+"&"+$('#notebook_update form').serialize());
     user = sessionStorage.getItem("userId");
     $.ajax({
-        url:path+"/editNoteBook",
+        url:path+"/notebook/editNoteBook",
         data:"notebookId="+$(this).attr("edit_id")+"&"+$('#notebook_update form').serialize()+"&userId="+user,
         type:"PUT",
         success:function () {
@@ -182,7 +183,7 @@ $(document).on("click", '.del', function() {
     var title = $(this).parents("tr").find("td:eq(1)").text();
     if (confirm("确认删除"+title+"吗？")){
         $.ajax({
-            url:path+"/delNoteBook",
+            url:path+"/notebook/delNoteBook",
             data:"Id="+$(this).attr("del_id"),
             type:"DELETE",
             success:function () {
@@ -215,7 +216,7 @@ $(document).on("click", '#notebook_del_btn', function() {
     id = id.substring(0,id.length-1);
     if (confirm("确认删除"+title+"吗？")){
         $.ajax({
-            url:path+"/delNoteBook",
+            url:path+"/notebook/delNoteBook",
             data:"Id="+id,
             type:"DELETE",
             success:function () {

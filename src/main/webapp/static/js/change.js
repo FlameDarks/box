@@ -2,8 +2,10 @@
     $("#changepwd_save_btn").click(function() {
         changepwd();
     });
+    $("#changepwd").on('hidden.bs.modal', function (){
+        reset_form("change_pwd_form");
+    });
     $("#oldpwd").focusout(function () {
-        // $(document).on("change", '#user_name', function() {
         check_user_pwd();
     });
     $("#newpwd").focusout(function () {
@@ -12,7 +14,6 @@
     $("#newpwds").focusout(function () {
         validate_pwd_form();
     });
-
 });
 
 //      修改密码请求
@@ -30,7 +31,7 @@ function changepwd() {
     var data = "userId="+userId+"&userName="+userName+"&userPassword="+userPassword+"&userPasswords="+userPasswords;
     var path = $("#APP_PATH").val();
     $.ajax({
-        url: path+"/savepwd",
+        url: path+"/user/savePwd",
         type: "POST",
         async:false,
         data: data,
@@ -98,8 +99,9 @@ function check_user_pwd() {
     var path = $("#APP_PATH").val();
     var userId = sessionStorage.getItem("userId");
     var oldpwd = $("#oldpwd").val().trim();
+    console.log(oldpwd);
     $.ajax({
-        url: path+"/checkpwd",
+        url: path+"/user/checkPwd",
         type: "POST",
         data: "userId="+userId+"&userPassword="+oldpwd,
         success:function (result) {
@@ -115,22 +117,31 @@ function check_user_pwd() {
 }
 // 重置提示信息
 function reset_form(ele) {
-    // $(ele)[0].reset;
     document.getElementById(ele).reset();
     var eles = "#"+ele;
     $(eles).find("*").removeClass("has-error has-success");
     $(eles).find(".help-block").text("");
 }
 
+$(document).on("click", '#change_btn', function() {
+    reset_form("#change_pwd_form");
+    $('#changepwd').modal({
+        backdrop: 'static'
+    });
+    // $(document).on("focusout", '#oldpwd', function() {
+
+});
+
+
+
 // 登出
 $(document).on("click", '#exitBtn', function() {
-    // $("#exitBtn").on("onclick",function(){
     logout();
 });
 
 function logout() {
     path = $("#APP_PATH").val();
     sessionStorage.clear();
-    location.href=path;
+    location.href=path+"/logout";
 }
 

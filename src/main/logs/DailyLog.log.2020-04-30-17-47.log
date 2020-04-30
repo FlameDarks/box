@@ -1,0 +1,339 @@
+[2020-04-30 14:28:44:076] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-30 14:28:44:115] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
+{dataSource-1} closing ...
+
+[2020-04-30 14:28:44:128] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2075)]
+{dataSource-1} closed
+
+[2020-04-30 14:28:50:345] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-30 14:28:51:651] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:51:942] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'cacheManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:52:414] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'comboPooledDataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:070] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sqlSessionFactory' of type [org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:074] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:095] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:099] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:104] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'userMapper' of type [com.sun.proxy.$Proxy62] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:108] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'userService' of type [com.zx.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:156] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'dataSourceTransactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:197] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean '(inner bean)#4eb706fd' of type [org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:200] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:284] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#601fa82c' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:319] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:329] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
+Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+
+[2020-04-30 14:28:53:400] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
+Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+
+[2020-04-30 14:28:53:402] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:429] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor#0' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 14:28:53:688] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-30 14:28:54:237] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 3888 ms
+
+[2020-04-30 14:28:54:389] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-30 14:28:54:913] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-30 14:28:55:838] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1449 ms
+
+[2020-04-30 14:29:20:785] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:1010)]
+{dataSource-1} inited
+
+[2020-04-30 16:30:37:919] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-30 16:30:37:986] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
+{dataSource-1} closing ...
+
+[2020-04-30 16:30:38:006] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2075)]
+{dataSource-1} closed
+
+[2020-04-30 16:30:45:068] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-30 16:30:46:514] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:46:769] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'cacheManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:47:258] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'comboPooledDataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:47:940] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sqlSessionFactory' of type [org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:47:944] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:47:965] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:47:969] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:47:974] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'userMapper' of type [com.sun.proxy.$Proxy101] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:47:977] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'userService' of type [com.zx.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:48:025] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'dataSourceTransactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:48:065] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean '(inner bean)#6207184' of type [org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:48:068] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:48:152] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#3f1ca718' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:48:190] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:48:210] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
+Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+
+[2020-04-30 16:30:48:287] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
+Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+
+[2020-04-30 16:30:48:288] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:48:313] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor#0' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:30:48:578] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-30 16:30:49:190] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 4118 ms
+
+[2020-04-30 16:30:49:358] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-30 16:30:49:932] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-30 16:30:50:826] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1468 ms
+
+[2020-04-30 16:32:27:238] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-30 16:32:27:277] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
+{dataSource-0} closing ...
+
+[2020-04-30 16:32:33:586] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-30 16:32:34:887] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:35:143] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'cacheManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:35:594] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'comboPooledDataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:173] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sqlSessionFactory' of type [org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:178] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:209] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:214] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:222] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'userMapper' of type [com.sun.proxy.$Proxy136] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:231] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'userService' of type [com.zx.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:278] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'dataSourceTransactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:321] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean '(inner bean)#2683b656' of type [org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:325] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:411] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#4a713652' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:449] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:456] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
+Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+
+[2020-04-30 16:32:36:526] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
+Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+
+[2020-04-30 16:32:36:528] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:553] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor#0' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 16:32:36:793] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-30 16:32:37:324] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 3735 ms
+
+[2020-04-30 16:32:37:478] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-30 16:32:37:985] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-30 16:32:38:865] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1386 ms
+
+[2020-04-30 16:32:53:985] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:1010)]
+{dataSource-1} inited
+
+[2020-04-30 17:46:07:090] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-30 17:46:09:771] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
+{dataSource-1} closing ...
+
+[2020-04-30 17:46:10:019] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2075)]
+{dataSource-1} closed
+
+[2020-04-30 17:46:22:678] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-30 17:46:24:144] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:24:546] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'cacheManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:25:029] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'comboPooledDataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:117] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sqlSessionFactory' of type [org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:123] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:149] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:154] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:191] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'userMapper' of type [com.sun.proxy.$Proxy176] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:196] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'userService' of type [com.zx.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:246] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'dataSourceTransactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:317] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean '(inner bean)#592c2508' of type [org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:319] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:404] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#34bd4a5d' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:467] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:476] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
+Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+
+[2020-04-30 17:46:26:631] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
+Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+
+[2020-04-30 17:46:26:633] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:26:659] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor#0' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-30 17:46:27:035] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-30 17:46:27:578] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 4897 ms
+
+[2020-04-30 17:46:27:795] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-30 17:46:28:376] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-30 17:46:29:371] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 1576 ms
+
+[2020-04-30 17:46:38:487] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:1010)]
+{dataSource-1} inited
+
+[2020-04-30 17:47:50:278] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-30 17:47:50:368] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
+{dataSource-1} closing ...
+
+[2020-04-30 17:47:50:374] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2075)]
+{dataSource-1} closed
+

@@ -1,0 +1,338 @@
+[2020-04-29 14:09:37:712] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-29 14:09:39:381] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-29 14:09:39:663] [WARN ] [method:org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:558)]
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shiroFilter' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor#0' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'securityManager' while setting bean property 'securityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cacheManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.FatalBeanException: Error initializing bean [cacheManager]; nested exception is org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+
+[2020-04-29 14:09:39:669] [ERROR] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:313)]
+Context initialization failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shiroFilter' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor#0' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'securityManager' while setting bean property 'securityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cacheManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.FatalBeanException: Error initializing bean [cacheManager]; nested exception is org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:512)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:240)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:722)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:535)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:401)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:292)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4690)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5151)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1728)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:289)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:456)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:405)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:289)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at java.management/com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1466)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1307)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1406)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:827)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor#0' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'securityManager' while setting bean property 'securityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cacheManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.FatalBeanException: Error initializing bean [cacheManager]; nested exception is org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1699)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1444)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1141)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1114)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:506)
+	... 56 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cacheManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.FatalBeanException: Error initializing bean [cacheManager]; nested exception is org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1699)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1444)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 72 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cacheManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.FatalBeanException: Error initializing bean [cacheManager]; nested exception is org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 82 more
+Caused by: org.springframework.beans.FatalBeanException: Error initializing bean [cacheManager]; nested exception is org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at org.apache.shiro.spring.LifecycleBeanPostProcessor.postProcessBeforeInitialization(LifecycleBeanPostProcessor.java:91)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 88 more
+Caused by: org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at org.apache.shiro.cache.ehcache.EhCacheManager.ensureCacheManager(EhCacheManager.java:223)
+	at org.apache.shiro.cache.ehcache.EhCacheManager.init(EhCacheManager.java:198)
+	at org.apache.shiro.spring.LifecycleBeanPostProcessor.postProcessBeforeInitialization(LifecycleBeanPostProcessor.java:89)
+	... 91 more
+Caused by: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at net.sf.ehcache.config.Configuration.setupFor(Configuration.java:236)
+	at net.sf.ehcache.CacheManager.doInit(CacheManager.java:411)
+	at net.sf.ehcache.CacheManager.init(CacheManager.java:377)
+	at net.sf.ehcache.CacheManager.<init>(CacheManager.java:339)
+	at org.apache.shiro.cache.ehcache.EhCacheManager.ensureCacheManager(EhCacheManager.java:212)
+	... 93 more
+[2020-04-29 14:11:24:719] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-29 14:11:25:982] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+[2020-04-29 14:11:26:200] [WARN ] [method:org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:558)]
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shiroFilter' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor#0' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'securityManager' while setting bean property 'securityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cacheManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.FatalBeanException: Error initializing bean [cacheManager]; nested exception is org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+
+[2020-04-29 14:11:26:204] [ERROR] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:313)]
+Context initialization failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shiroFilter' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor#0' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'securityManager' while setting bean property 'securityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cacheManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.FatalBeanException: Error initializing bean [cacheManager]; nested exception is org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:512)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:240)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:722)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:535)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:401)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:292)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4690)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5151)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1728)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:289)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:456)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:405)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:289)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at java.management/com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1466)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1307)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1406)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:827)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor#0' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'securityManager' while setting bean property 'securityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cacheManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.FatalBeanException: Error initializing bean [cacheManager]; nested exception is org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1699)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1444)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1141)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1114)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:506)
+	... 56 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cacheManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.FatalBeanException: Error initializing bean [cacheManager]; nested exception is org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1699)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1444)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 72 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cacheManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.FatalBeanException: Error initializing bean [cacheManager]; nested exception is org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 82 more
+Caused by: org.springframework.beans.FatalBeanException: Error initializing bean [cacheManager]; nested exception is org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at org.apache.shiro.spring.LifecycleBeanPostProcessor.postProcessBeforeInitialization(LifecycleBeanPostProcessor.java:91)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 88 more
+Caused by: org.apache.shiro.cache.CacheException: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at org.apache.shiro.cache.ehcache.EhCacheManager.ensureCacheManager(EhCacheManager.java:223)
+	at org.apache.shiro.cache.ehcache.EhCacheManager.init(EhCacheManager.java:198)
+	at org.apache.shiro.spring.LifecycleBeanPostProcessor.postProcessBeforeInitialization(LifecycleBeanPostProcessor.java:89)
+	... 91 more
+Caused by: net.sf.ehcache.config.InvalidConfigurationException: There are 3 errors in your configuration: 
+	* Cache 'authenticationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'authorizationCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+	* Cache 'shiro-activeSessionCache' error: If your CacheManager has no maxBytesLocalHeap set, you need to either set maxEntriesLocalHeap or maxBytesLocalHeap at the Cache level
+
+
+	at net.sf.ehcache.config.Configuration.setupFor(Configuration.java:236)
+	at net.sf.ehcache.CacheManager.doInit(CacheManager.java:411)
+	at net.sf.ehcache.CacheManager.init(CacheManager.java:377)
+	at net.sf.ehcache.CacheManager.<init>(CacheManager.java:339)
+	at org.apache.shiro.cache.ehcache.EhCacheManager.ensureCacheManager(EhCacheManager.java:212)
+	... 93 more

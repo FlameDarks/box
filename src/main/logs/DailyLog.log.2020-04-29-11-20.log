@@ -1,0 +1,87 @@
+[2020-04-29 11:20:29:699] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:271)]
+Root WebApplicationContext: initialization started
+
+[2020-04-29 11:20:33:613] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-29 11:20:34:285] [INFO ] [method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)]
+Root WebApplicationContext initialized in 4580 ms
+
+[2020-04-29 11:20:34:920] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'springMVC'
+
+[2020-04-29 11:20:35:651] [INFO ] [method:org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21)]
+HV000001: Hibernate Validator 6.1.2.Final
+
+[2020-04-29 11:20:36:934] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 2013 ms
+
+[2020-04-29 11:22:51:269] [WARN ] [method:MapperTest.main(MapperTest.java:29)]
+warm
+
+[2020-04-29 11:22:51:272] [ERROR] [method:MapperTest.main(MapperTest.java:30)]
+error
+
+[2020-04-29 11:23:21:823] [WARN ] [method:MapperTest.main(MapperTest.java:29)]
+warm
+
+[2020-04-29 11:23:21:828] [ERROR] [method:MapperTest.main(MapperTest.java:30)]
+error
+
+[2020-04-29 11:25:17:227] [WARN ] [method:MapperTest.main(MapperTest.java:29)]
+warm
+
+[2020-04-29 11:25:17:231] [ERROR] [method:MapperTest.main(MapperTest.java:30)]
+error
+
+[2020-04-29 11:26:09:894] [WARN ] [method:MapperTest.main(MapperTest.java:29)]
+warm
+
+[2020-04-29 11:26:09:898] [ERROR] [method:MapperTest.main(MapperTest.java:30)]
+error
+
+[2020-04-29 11:29:15:174] [WARN ] [method:MapperTest.main(MapperTest.java:29)]
+warm
+
+[2020-04-29 11:29:15:178] [ERROR] [method:MapperTest.main(MapperTest.java:30)]
+error
+
+[2020-04-29 11:39:02:289] [WARN ] [method:MapperTest.main(MapperTest.java:29)]
+warm
+
+[2020-04-29 11:39:02:294] [ERROR] [method:MapperTest.main(MapperTest.java:30)]
+error
+
+[2020-04-29 11:39:52:418] [WARN ] [method:MapperTest.main(MapperTest.java:30)]
+warm
+
+[2020-04-29 11:39:52:421] [ERROR] [method:MapperTest.main(MapperTest.java:31)]
+error
+
+[2020-04-29 11:40:20:116] [WARN ] [method:MapperTest.main(MapperTest.java:30)]
+warm
+
+[2020-04-29 11:40:20:124] [ERROR] [method:MapperTest.main(MapperTest.java:31)]
+error
+
+[2020-04-29 11:40:20:125] [INFO ] [method:MapperTest.main(MapperTest.java:32)]
+info
+
+[2020-04-29 11:55:10:154] [WARN ] [method:MapperTest.main(MapperTest.java:30)]
+warm
+
+[2020-04-29 11:55:10:158] [ERROR] [method:MapperTest.main(MapperTest.java:31)]
+error
+
+[2020-04-29 11:55:10:158] [INFO ] [method:MapperTest.main(MapperTest.java:32)]
+info
+
+[2020-04-29 11:57:40:282] [WARN ] [method:MapperTest.main(MapperTest.java:30)]
+warm
+
+[2020-04-29 11:57:40:286] [ERROR] [method:MapperTest.main(MapperTest.java:31)]
+error
+
+[2020-04-29 11:57:40:286] [INFO ] [method:MapperTest.main(MapperTest.java:32)]
+info
+

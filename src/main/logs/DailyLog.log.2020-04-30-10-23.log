@@ -1,0 +1,6 @@
+[2020-04-30 10:23:02:418] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:1010)]
+{dataSource-1} inited
+
+[2020-04-30 10:23:03:543] [WARN ] [method:org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException(AbstractHandlerExceptionResolver.java:199)]
+Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "null"]
+

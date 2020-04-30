@@ -7,3 +7,11 @@
     border: none;
     outline: none;
 }
+
+#check{
+    width: 90px;
+}
+
+#selectInput{
+    height: 34px;
+}

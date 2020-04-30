@@ -24,7 +24,7 @@
     <!-- 将日志信息输出到文件，但是当文件的大小达到某个阈值的时候，日志文件会自动回滚 -->
     <appender name="RollingFileAppender" class="org.apache.log4j.RollingFileAppender">
         <!-- 设置日志信息输出文件全路径名 -->
-        <param name="File" value="D:/log4j/RollingFileAppender.log" />
+        <param name="File" value="D:/box/src/main/logs/RollingFileAppender.log" />
         <!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->
         <param name="Append" value="true" />
         <!-- 设置保存备份回滚日志的最大个数 -->
@@ -39,7 +39,7 @@
     </appender>
 
     <!-- 将日志信息输出到文件，可以配置多久产生一个新的日志信息文件 -->
-    <appender name="DailyRollingFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+    <appender name="DailyLog" class="org.apache.log4j.DailyRollingFileAppender">
         <!-- 设置日志信息输出文件全路径名 -->
         <param name="File" value="D:/box/src/main/logs/DailyLog.log" />
         <!-- 设置日志每分钟回滚一次，即产生一个新的日志文件 -->
@@ -66,7 +66,7 @@
     <!-- 指定logger的设置，additivity指示是否遵循缺省的继承机制-->
     <logger name="test.log4j.test8.UseLog4j" additivity="false">
         <level value ="WARN"/>
-        <appender-ref ref="DailyRollingFileAppender"/>
+        <appender-ref ref="DailyLog"/>
     </logger>
 
     <!--指定logger的设置，additivity指示是否遵循缺省的继承机制 -->
@@ -79,7 +79,7 @@
     <root>
         <level value ="INFO"/>
         <appender-ref ref="ConsoleAppender"/>
-        <appender-ref ref="DailyRollingFileAppender"/>
+        <appender-ref ref="DailyLog"/>
     </root>
 
 </log4j:configuration>

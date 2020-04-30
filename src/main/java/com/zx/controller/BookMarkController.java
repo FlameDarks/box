@@ -16,10 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/bookmark")
 public class BookMarkController {
     @Autowired
     BookMarkService bookmarkService;
-    @RequestMapping("/bookmark")
+    @RequestMapping("/selectBookmark")
     @ResponseBody
     public Msg getContactWithJson(@RequestParam(value = "pn",defaultValue = "1")Integer pn, @RequestParam(value = "userId")Integer id){
 //        每页显示条数

@@ -1,0 +1,6 @@
+[2020-04-30 11:29:59:813] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-30 11:29:59:850] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
+{dataSource-0} closing ...
+

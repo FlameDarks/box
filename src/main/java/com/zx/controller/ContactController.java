@@ -16,11 +16,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/contact")
 public class ContactController {
     @Autowired
     ContactService contactService;
 
-    @RequestMapping("/contact")
+    @RequestMapping("/selectContact")
     @ResponseBody
     public Msg getContactWithJson(@RequestParam(value = "pn",defaultValue = "1")Integer pn,@RequestParam(value = "userId")Integer id){
 //        每页显示条数

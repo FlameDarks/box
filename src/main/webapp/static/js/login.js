@@ -1,6 +1,5 @@
 ﻿var success;
 $(function () {
-    // $(document).on("click", '#login_btn', function() {
     $("#login_btn").click(function(){
         success=false;
         loginuser();
@@ -10,36 +9,15 @@ $(function () {
             alert("登陆失败");
         }
     });
-    $(document).on("click", '#reg_btn', function() {
-        // $('#reg_btn').click(function() {
-        // $("#user_reg_form")[0].reset;
-        reset_form("user_reg_form");
-        $('#user_reg').modal({
-            backdrop: 'static'
-        });
-    });
     $("#user_reg_btn").click(function() {
         reguser();
-    });
-    $("#user_name").focusout(function () {
-        // $(document).on("change", '#user_name', function() {
-        check_user_name();
-    });
-    $("#user_password").focusout(function () {
-        validate_pwd_form();
-    });
-    $("#user_passwords").focusout(function () {
-        validate_pwd_form();
     });
 });
 //      登录请求
 function loginuser(){
-    // if (!validate_login_form()){
-    //     return false;
-    // }
     var path = $("#APP_PATH").val();
     $.ajax({
-        url:path+"/user",
+        url:path+"/user/selectUser",
         data:$('#login_form').serialize(),
         type:"POST",
         async: false,
@@ -65,7 +43,7 @@ function reguser() {
     }
     var path = $("#APP_PATH").val();
     $.ajax({
-        url: path+"/saveuser",
+        url: path+"/user/saveUser",
         type: "POST",
         async:false,
         data: $('#user_reg form').serialize(),
@@ -94,17 +72,9 @@ function reguser() {
 }
 //      注册校验
 function validate_pwd_form() {
-    var username = $("#user_name").val().trim();
     var userpwd = $("#user_password").val().trim();
     var userpwds = $("#user_passwords").val().trim();
-    var regname = /(^[a-zA-Z0-9_-]{6,10})|(^[\u2E80-\u9FFF]{3,5})/;
     var regpwd = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9_-]{8,16}$/;
-    if (!regname.test(username)){
-        show_validate_msg("#user_name","error","6-10个英文和数字组合或者3-5个汉字");
-        return false;
-    }else {
-        show_validate_msg("#user_name","success","");
-    }
     if (!regpwd.test(userpwd)){
         show_validate_msg("#user_password","error","应包含至少一个大写字母、小写字母和数字的8-16位组合");
         return false;
@@ -142,15 +112,19 @@ function show_validate_msg(element,status,msg) {
 function check_user_name() {
     var path = $("#APP_PATH").val();
     var username = $("#user_name").val().trim();
+    console.log(username);
     $.ajax({
-        url: path+"/checkuser",
+        url: path+"/user/checkUser",
         type: "POST",
         data: "user_name="+username,
+        async:false,
         success:function (result) {
+            console.log(result.code);
             if (result.code==100){
                 show_validate_msg("#user_name","success","用户名可用");
                 $("#user_reg_btn").attr("ajax-va","success");
             }else{
+                console.log(result.extend.va_msg);
                 show_validate_msg("#user_name","error",result.extend.va_msg);
                 $("#user_reg_btn").attr("ajax-va","error");
             }
@@ -165,3 +139,20 @@ function reset_form(ele) {
     $(eles).find("*").removeClass("has-error has-success");
     $(eles).find(".help-block").text("");
 }
+
+
+$(document).on("click", '#reg_btn', function() {
+    reset_form("user_reg_form");
+    $('#user_reg').modal({
+        backdrop: 'static'
+    });
+    $("#user_name").focusout(function () {
+            check_user_name();
+    });
+    $("#user_password").focusout(function () {
+            validate_pwd_form();
+    });
+    $("#user_passwords").focusout(function () {
+            validate_pwd_form();
+    });
+});

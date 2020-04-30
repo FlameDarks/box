@@ -20,12 +20,13 @@ import java.io.IOException;
 import java.util.*;
 
 @Controller
+@RequestMapping("/cloud")
 public class CloudController {
     @Autowired
     CloudService cloudService;
 
 
-    @RequestMapping("/cloud")
+    @RequestMapping("/selectCloud")
     @ResponseBody
     public Msg getCloudWithJson(@RequestParam(value = "pn",defaultValue = "1")Integer pn,@RequestParam(value = "userId")Integer id){
 //        每页显示条数

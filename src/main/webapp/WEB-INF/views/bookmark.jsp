@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <html>
 <head>
     <title>收藏夹</title>
@@ -50,15 +51,16 @@
                     <li role="presentation" class="active"><a href="${APP_PATH}/page3">收藏夹</a></li>
                     <li role="presentation"><a href="${APP_PATH}/page4">文件箱</a></li>
                     <li role="presentation"><a href="${APP_PATH}/page5">聊天室</a></li>
+                    <shiro:hasRole name="admin"><li role="presentation"><a href="${APP_PATH}/page6">用户管理</a></li></shiro:hasRole>
                 </ul>
             </div>
             <div class="col-md-6">
                 <div class="row">
-                    <select class="form-control col-md-1" id="check" style="width:75px">
+                    <select class="form-control col-md-1" id="check">
                         <option value="1">书签名</option>
                         <option value="2">网址</option>
                     </select>
-                    <input class="col-md-4" placeholder="请输入" id="selectInput" style="height: 34px">
+                    <input class="col-md-4" placeholder="请输入" id="selectInput">
                     <button class="btn btn-primary col-md-1" id="selectBtn" select="3">搜索</button>
                 </div>
             </div>
@@ -104,7 +106,7 @@
                 <h4 class="modal-title">修改密码</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="change_pwd_form">
                     <div class="form-group">
                         <label class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-10">

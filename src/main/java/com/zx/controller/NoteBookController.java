@@ -19,13 +19,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/notebook")
 public class NoteBookController {
 
     @Autowired
     NoteBookService noteBookService;
 
 //    显示记事本列表
-    @RequestMapping("/notebook")
+    @RequestMapping("/selectNotebook")
     @ResponseBody
     public Msg getNoteBookWithJson(@RequestParam(value = "pn",defaultValue = "1")Integer pn,@RequestParam(value = "userId")Integer id){
 //        每页显示条数

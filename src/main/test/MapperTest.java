@@ -4,9 +4,13 @@ import com.zx.bean.UserExample;
 import com.zx.dao.ChatMapper;
 import com.zx.dao.NoteBookMapper;
 import com.zx.dao.UserMapper;
+import org.apache.log4j.Logger;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.SqlSessionTemplate;
+
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -20,6 +24,10 @@ import java.util.UUID;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/applicationContext.xml"})
 public class MapperTest {
+    public static void main(String[] args) {
+        Object result = new SimpleHash("MD5","123456","123456",1024);
+        System.out.println(result);
+    }
 
 //    @Autowired
 //    UserMapper userMapper;

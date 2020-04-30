@@ -9,7 +9,7 @@ function bookmark_to_page(pn) {
     var path = $("#APP_PATH").val();
     user = sessionStorage.getItem("userId");
     $.ajax({
-        url:path+"/bookmark",
+        url:path+"/bookmark/selectBookmark",
         data:"pn="+pn+"&userId="+user,
         type:"GET",
         success:function (result) {
@@ -136,7 +136,7 @@ $(document).on("click", '#bookmark_save_btn', function() {
     console.log($('#bookmark_add form').serialize() + "&userId=" + user);
     var path = $("#APP_PATH").val();
     $.ajax({
-        url: path + "/saveBookMark",
+        url: path + "/bookmark/saveBookMark",
         type: "POST",
         async: false,
         data: $('#bookmark_add form').serialize() + "&userId=" + user,
@@ -159,7 +159,7 @@ $(document).on("click", '.edit', function() {
 function echo(id) {
     var path = $("#APP_PATH").val();
     $.ajax({
-        url:path+"/echoBookMark",
+        url:path+"/bookmark/echoBookMark",
         data:"Id="+id,
         type:"GET",
         success:function (result) {
@@ -175,7 +175,7 @@ $(document).on("click", '#bookmark_update_btn', function() {
     console.log("bookmarkId="+$(this).attr("edit_id")+"&"+$('#bookmark_update form').serialize());
     user = sessionStorage.getItem("userId");
     $.ajax({
-        url:path+"/editBookMark",
+        url:path+"/bookmark/editBookMark",
         data:"bookmarkId="+$(this).attr("edit_id")+"&"+$('#bookmark_update form').serialize()+"&userId="+user,
         type:"PUT",
         success:function () {
@@ -190,7 +190,7 @@ $(document).on("click", '.del', function() {
     var title = $(this).parents("tr").find("td:eq(1)").text();
     if (confirm("确认删除"+title+"吗？")){
         $.ajax({
-            url:path+"/delBookMark",
+            url:path+"/bookmark/delBookMark",
             data:"Id="+$(this).attr("del_id"),
             type:"DELETE",
             success:function () {
@@ -223,7 +223,7 @@ $(document).on("click", '#bookmark_del_btn', function() {
     id = id.substring(0,id.length-1);
     if (confirm("确认删除"+title+"吗？")){
         $.ajax({
-            url:path+"/delBookMark",
+            url:path+"/bookmark/delBookMark",
             data:"Id="+id,
             type:"DELETE",
             success:function () {

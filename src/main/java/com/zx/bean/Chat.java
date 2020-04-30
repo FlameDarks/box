@@ -14,7 +14,7 @@ public class Chat {
      *
      * @mbg.generated Mon Apr 13 15:41:33 HKT 2020
      */
-
+    @Expose
     private Integer chatId;
 
     /**
@@ -24,7 +24,7 @@ public class Chat {
      *
      * @mbg.generated Mon Apr 13 15:41:33 HKT 2020
      */
-
+    @Expose
     private String chatContent;
 
     /**
@@ -35,7 +35,7 @@ public class Chat {
      * @mbg.generated Mon Apr 13 15:41:33 HKT 2020
      */
     //0=system 1=text 2=image
-
+    @Expose
     private Integer chatType;
 
     /**
@@ -45,7 +45,7 @@ public class Chat {
      *
      * @mbg.generated Mon Apr 13 15:41:33 HKT 2020
      */
-
+    @Expose
     private Date chatTime;
 
     /**
@@ -55,19 +55,19 @@ public class Chat {
      *
      * @mbg.generated Mon Apr 13 15:41:33 HKT 2020
      */
-
+    @Expose
     private Integer chatUserId;
 
-
+    @Expose
     private Boolean type;
 
-
+    @Expose
     User user;
 
-
+    @Expose
     String userName;
 
-
+    @Expose
     private List<User> userList = new ArrayList<>();
 
 

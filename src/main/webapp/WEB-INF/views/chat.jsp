@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <html>
 <head>
     <title>聊天室</title>
@@ -51,6 +52,7 @@
             <li role="presentation"><a href="${APP_PATH}/page3">收藏夹</a></li>
             <li role="presentation"><a href="${APP_PATH}/page4">文件箱</a></li>
             <li role="presentation" class="active"><a href="${APP_PATH}/page5">聊天室</a></li>
+            <shiro:hasRole name="admin"><li role="presentation"><a href="${APP_PATH}/page6">用户管理</a></li></shiro:hasRole>
         </ul>
     </div>
 </div>
@@ -100,7 +102,7 @@
                 <h4 class="modal-title">修改密码</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="change_pwd_form">
                     <div class="form-group">
                         <label class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-10">

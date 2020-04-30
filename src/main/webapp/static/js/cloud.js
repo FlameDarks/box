@@ -10,7 +10,7 @@ function cloud_to_page(pn) {
     var path = $("#APP_PATH").val();
     user = sessionStorage.getItem("userId");
     $.ajax({
-        url:path+"/cloud",
+        url:path+"/cloud/selectCloud",
         data:"pn="+pn+"&userId="+user,
         type:"GET",
         success:function (result) {
@@ -145,7 +145,7 @@ $(document).on("click", '#cloud_save_btn', function() {
     console.log("data:"+formData.get("data"));
     console.log("userId:"+formData.get("userId"));
     $.ajax({
-        url: path + "/saveCloud",
+        url: path + "/cloud/saveCloud",
         type: "POST",
         processData: false,
         contentType: false,
@@ -170,7 +170,7 @@ $(document).on("click", '.del', function() {
     var title = $(this).parents("tr").find("td:eq(1)").text();
     if (confirm("确认删除"+title+"吗？")){
         $.ajax({
-            url:path+"/delCloud",
+            url:path+"/cloud/delCloud",
             data:"Id="+$(this).attr("del_id"),
             type:"DELETE",
             success:function () {
@@ -203,7 +203,7 @@ $(document).on("click", '#cloud_del_btn', function() {
     id = id.substring(0,id.length-1);
     if (confirm("确认删除"+title+"吗？")){
         $.ajax({
-            url:path+"/delCloud",
+            url:path+"/cloud/delCloud",
             data:"Id="+id,
             type:"DELETE",
             success:function () {

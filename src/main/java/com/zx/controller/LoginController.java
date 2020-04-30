@@ -1,5 +1,6 @@
 package com.zx.controller;
 
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -24,5 +25,9 @@ public class LoginController {
     @RequestMapping("/page5")
     public String getPage5(){
         return "chat";
+    }
+    @RequestMapping("/page6")
+    public String getPage6(){
+        return "admin";
     }
 }

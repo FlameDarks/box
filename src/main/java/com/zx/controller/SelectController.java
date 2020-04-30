@@ -3,10 +3,8 @@ package com.zx.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zx.bean.*;
-import com.zx.service.BookMarkService;
-import com.zx.service.CloudService;
-import com.zx.service.ContactService;
-import com.zx.service.NoteBookService;
+import com.zx.service.*;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +26,8 @@ public class SelectController {
     CloudService cloudService;
     @Autowired
     ContactService contactService;
+    @Autowired
+    AdminService adminService;
 
     @RequestMapping(value = "/select",method = RequestMethod.POST)
     @ResponseBody
@@ -57,7 +57,17 @@ public class SelectController {
             List<Cloud> list = cloudService.select(userId,data);
             PageInfo pageInfo = new PageInfo(list,3);
             return Msg.success().add("cloud_pageInfo",pageInfo);
+        }else if (type == 5){
+            return selectAdmin(data,check);
         }
         return Msg.fail();
+    }
+
+    @RequiresRoles({"admin"})
+    private Msg selectAdmin(String data,Integer check){
+        PageHelper.orderBy("user_id asc");
+        List<User> list = adminService.select(data,check);
+        PageInfo pageInfo = new PageInfo(list,3);
+        return Msg.success().add("admin_pageInfo",pageInfo);
     }
 }

@@ -4,6 +4,11 @@ package com.zx.controller;
 import com.zx.bean.Msg;
 import com.zx.bean.User;
 import com.zx.service.UserService;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.DigestUtils;
@@ -22,12 +27,13 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/user",method = RequestMethod.POST)
+    @RequestMapping(value = "/selectUser",method = RequestMethod.POST)
     @ResponseBody
     public Msg getUserWithJson(@RequestParam(value = "userName")String name,@RequestParam(value = "userPassword")String pwd, HttpServletRequest request){
         HttpSession session = request.getSession();
@@ -37,22 +43,44 @@ public class UserController {
             // 清除旧的用户
             session.removeAttribute("loginUser");
         }
-        String base = pwd.substring(0,1)+pwd+pwd.substring(pwd.length()-1,pwd.length());
-        String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
-        List<User> users = userService.getAll(name,md5);
-        if (users==null){
-            System.out.println("全错了!");
-            return Msg.fail();
+        Subject currentUser = SecurityUtils.getSubject();
+        if (!currentUser.isAuthenticated()) {
+            // 把用户名和密码封装为 UsernamePasswordToken 对象
+            UsernamePasswordToken token = new UsernamePasswordToken(name, pwd);
+            // rememberme
+            token.setRememberMe(false);
+            try {
+                System.out.println("1. " + token.hashCode());
+                // 执行登录.
+                currentUser.login(token);
+            }
+            // ... catch more exceptions here (maybe custom ones specific to your application?
+            // 所有认证时异常的父类.
+            catch (AuthenticationException ae) {
+                //unexpected condition?  error?
+                System.out.println("登录失败: " + ae.getMessage());
+                return Msg.fail();
+            }
         }
-        User user = users.get(0);
-        user.setUserPassword(null);
+//        String base = pwd.substring(0,1)+pwd+pwd.substring(pwd.length()-1,pwd.length());
+//        String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
+//        List<User> users = userService.getAll(name,md5);
+
+        System.out.println("来到了");
+//        System.out.println(currentUser.getPrincipal().toString());
+//        System.out.println(currentUser.getPrincipals().toString());
+//        System.out.println(currentUser.getSession().toString());
+//        User user = users.get(0);
+//        user.setUserPassword(null);
+        User user = userService.getUserByName(currentUser.getPrincipal().toString());
+        System.out.println(user.toString());
         session.setAttribute("loginUser", user);
         System.out.println("获取的："+user.getUserName() + "\t" + user.getUserPassword());
         return Msg.success().add("userId", user.getUserId()).add("userName",user.getUserName());
-
+//        return Msg.success();
     }
 
-    @RequestMapping(value = "/saveuser",method = RequestMethod.POST)
+    @RequestMapping(value = "/saveUser",method = RequestMethod.POST)
     @ResponseBody
     public Msg save(@Valid User user, BindingResult result){
         System.out.println("进入Controller");
@@ -74,35 +102,38 @@ public class UserController {
         return Msg.fail().add("errorFields","密码不一样");
     }
 
-    @RequestMapping("/checkuser")
+    @RequestMapping("/checkUser")
     @ResponseBody
     public Msg checkuser(@RequestParam("user_name")String username){
+        System.out.println(username);
         String reg = "(^[a-zA-Z0-9_-]{6,10})|(^[\\u2E80-\\u9FFF]{3,5})";
         if (!username.matches(reg)){
             return Msg.fail().add("va_msg","6-10个英文和数字组合或者3-5个汉字");
         }
         boolean b = userService.checkUser(username);
-        if (b){
-            return Msg.success();
-        }else {
+        System.out.println("验证用户名中");
+        if (!b){
+            System.out.println("error");
             return Msg.fail().add("va_msg","用户名不可用");
+        }else {
+            System.out.println("success");
+            return Msg.success();
         }
     }
 
-    @RequestMapping("/checkpwd")
+    @RequestMapping("/checkPwd")
     @ResponseBody
     public Msg checkpwd(@RequestParam("userId")Integer userId,@RequestParam("userPassword")String pwd){
+        System.out.println("进来了!!!!!!!");
         User user = userService.getUser(userId);
-        System.out.println(user.toString());
-        String base = pwd.substring(0,1)+pwd+pwd.substring(pwd.length()-1,pwd.length());
-        String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
-        if (user.getUserPassword().equals(md5)){
+        String result = String.valueOf(new SimpleHash("MD5",pwd,user.getUserName(),1024));
+        if (user.getUserPassword().equals(result)){
             return Msg.success();
         }
         return Msg.fail().add("va_msg","原密码错误");
     }
 
-    @RequestMapping(value = "/savepwd",method = RequestMethod.POST)
+    @RequestMapping(value = "/savePwd",method = RequestMethod.POST)
     @ResponseBody
 //    public Msg savepwd(@RequestParam("userId")Integer userId,@Valid @RequestParam("userPassword") String userPassword, @Valid @RequestParam("userPasswords") String userPasswords,BindingResult result){
     public Msg savepwd(@Valid User user,BindingResult result){

@@ -3,6 +3,7 @@ package com.zx.service;
 import com.zx.bean.User;
 import com.zx.bean.UserExample;
 import com.zx.dao.UserMapper;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
@@ -20,6 +21,7 @@ public class UserService {
         UserExample.Criteria criteria = userExample.createCriteria();
         criteria.andUserNameEqualTo(name);
         criteria.andUserPasswordEqualTo(pwd);
+        System.out.println("111111111");
         if (userMapper.selectByExample(userExample).isEmpty()){
             return null;
         }
@@ -27,8 +29,8 @@ public class UserService {
     }
 //    注册
     public void reg(User user) {
-        System.out.println("进入Service");
-        safe(user);
+        String results = String.valueOf(new SimpleHash("MD5",user.getUserPassword(),user.getUserName(),1024));
+        user.setUserPassword(results);
         userMapper.insertSelective(user);
     }
 
@@ -38,16 +40,26 @@ public class UserService {
         UserExample.Criteria criteria = userExample.createCriteria();
         criteria.andUserNameEqualTo(username);
         long count = userMapper.countByExample(userExample);
-        System.out.println("找到："+count);
         return count == 0;
     }
 //    通过Id获取用户信息
     public User getUser(Integer id){
         return userMapper.selectByPrimaryKey(id);
     }
+
+    public User getUserByName(String userName){
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andUserNameEqualTo(userName);
+        User user = userMapper.selectByExample(userExample).get(0);
+        user.setUserPassword(null);
+        return user;
+    }
 //    修改密码
     public void update(User user){
-        safe(user);
+//        safe(user);
+        String results = String.valueOf(new SimpleHash("MD5",user.getUserPassword(),user.getUserName(),1024));
+        user.setUserPassword(results);
         userMapper.updateByPrimaryKeySelective(user);
     }
 //    加密

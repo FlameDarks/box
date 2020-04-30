@@ -10,7 +10,7 @@ function contact_to_page(pn) {
     var path = $("#APP_PATH").val();
     user = sessionStorage.getItem("userId");
     $.ajax({
-        url:path+"/contact",
+        url:path+"/contact/selectContact",
         data:"pn="+pn+"&userId="+user,
         type:"GET",
         success:function (result) {
@@ -129,7 +129,7 @@ $(document).on("click", '#contact_save_btn', function() {
     console.log($('#contact_add form').serialize() + "&userId=" + user);
     var path = $("#APP_PATH").val();
     $.ajax({
-        url: path + "/saveContact",
+        url: path + "/contact/saveContact",
         type: "POST",
         async: false,
         data: $('#contact_add form').serialize() + "&userId=" + user,
@@ -152,7 +152,7 @@ $(document).on("click", '.edit', function() {
 function echo(id) {
     var path = $("#APP_PATH").val();
     $.ajax({
-        url:path+"/echoContact",
+        url:path+"/contact/echoContact",
         data:"Id="+id,
         type:"GET",
         success:function (result) {
@@ -168,7 +168,7 @@ $(document).on("click", '#contact_update_btn', function() {
     console.log("contactId="+$(this).attr("edit_id")+"&"+$('#contact_update form').serialize());
     user = sessionStorage.getItem("userId");
     $.ajax({
-        url:path+"/editContact",
+        url:path+"/contact/editContact",
         data:"contactId="+$(this).attr("edit_id")+"&"+$('#contact_update form').serialize()+"&userId="+user,
         type:"PUT",
         success:function () {
@@ -183,7 +183,7 @@ $(document).on("click", '.del', function() {
     var title = $(this).parents("tr").find("td:eq(1)").text();
     if (confirm("确认删除"+title+"吗？")){
         $.ajax({
-            url:path+"/delContact",
+            url:path+"/contact/delContact",
             data:"Id="+$(this).attr("del_id"),
             type:"DELETE",
             success:function () {
@@ -216,7 +216,7 @@ $(document).on("click", '#contact_del_btn', function() {
     id = id.substring(0,id.length-1);
     if (confirm("确认删除"+title+"吗？")){
         $.ajax({
-            url:path+"/delContact",
+            url:path+"/contact/delContact",
             data:"Id="+id,
             type:"DELETE",
             success:function () {

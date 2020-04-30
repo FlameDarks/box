@@ -1,0 +1,15 @@
+[2020-04-29 11:57:50:903] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-04-29 11:57:50:908] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
+{dataSource-0} closing ...
+
+[2020-04-29 11:57:56:541] [WARN ] [method:MapperTest.main(MapperTest.java:30)]
+warm
+
+[2020-04-29 11:57:56:544] [ERROR] [method:MapperTest.main(MapperTest.java:31)]
+error
+
+[2020-04-29 11:57:56:545] [INFO ] [method:MapperTest.main(MapperTest.java:32)]
+info
+
