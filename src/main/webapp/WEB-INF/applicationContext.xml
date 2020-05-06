@@ -193,6 +193,7 @@
 
                 /page6 = authc,roles[admin]
                 /admin/** = authc,roles[admin]
+                /getout = authc,roles[admin]
 
                 /page? = authc,roles[user]
                 /user/** = authc,roles[user]

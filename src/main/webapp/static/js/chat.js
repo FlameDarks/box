@@ -30,90 +30,6 @@ var websocket;
 console.log(websocket);
 // console.log("ws://" + path + "ws");
 
-//打开Socket,
-websocket.onopen = function(event) {
-    console.log("WebSocket:已连接");
-
-}
-
-//关闭Websocket连接
-function closeWebsocket(){
-    if (websocket != null) {
-        websocket.close();
-        websocket = null;
-    }
-}
-
-// 监听消息
-//onmessage事件提供了一个data属性，它可以包含消息的Body部分。消息的Body部分必须是一个字符串，可以进行序列化/反序列化操作，以便传递更多的数据。
-websocket.onmessage = function(event) {
-    console.log('Client received a message',event);
-    //var data=JSON.parse(event.data);
-    var data=$.parseJSON(event.data);
-    console.log("WebSocket:收到一条消息",data);
-    var userName = $("#loginUserName").val();
-    //2种推送的消息
-    //1.用户聊天信息：发送消息触发
-    //2.系统消息：登录和退出触发
-
-    //判断是否是欢迎消息（没用户编号的就是欢迎消息）
-    //data.chatUserId==undefined||data.chatUserId==null||data.chatUserId==""
-    if(data.chatType==0){
-        //===系统消息
-        // $("#contentUl").append("<li><b>"+data.date+"</b><em>系统消息：</em><span>"+data.text+"</span></li>");
-        // //刷新在线用户列表
-        // $("#chatOnline").val(data.userList.length);
-        // $("#chatUserList").empty();
-        // $(data.userList).each(function(){
-        //     $("#chatUserList").append("<li>"+this.userName+"</li>");
-        // });
-
-        if (data.type){
-            showNewUser(data);
-            console.log("在线人数"+data.userList.length);
-            showActiveUserNumber(data.userList.length);
-            showLoginUser(data.userList);
-        }else {
-            showUserLogout(data);
-            showActiveUserNumber(data.userList.length);
-        }
-    }
-    if (data.chatType == 1){
-        //===普通消息
-        //处理一下个人信息的显示：
-        if(data.userName==userName){
-            showNewMessage("我",null,data.chatContent);
-            // $("#contentUl").append("<li><span  style='display:block; float:right;'><em>"+data.userName+"</em><span>"+data.text+"</span><b>"+data.date+"</b></span></li><br/>");
-        }else{
-            // $("#contentUl").append("<li><b>"+data.date+"</b><em>"+data.userName+"</em><span>"+data.text+"</span></li><br/>");
-            showNewMessage(data.userName,null,data.chatContent);
-        }
-    }
-    if (data.chatType == 2){
-        if(data.userName==userName){
-            showNewImage("我",null,data.chatContent);
-        }else{
-            showNewImage(data.userName,null,data.chatContent);
-        }
-    }
-    scrollToBottom();
-};
-
-// 监听WebSocket的关闭
-websocket.onclose = function(event) {
-    // $("#contentUl").append("<li><b>"+formatDate(null)+"</b><em>系统消息：</em><span>连接已断开！</span></li>");
-    // scrollToBottom();
-    showNewMessage("系统消息",null,"连接已断开！");
-    console.log("WebSocket:已关闭：Client notified socket has closed",event);
-};
-
-//监听异常
-websocket.onerror = function(event) {
-    // $("#contentUl").append("<li><b>"+formatDate(null)+"</b><em>系统消息：</em><span>连接异常，建议重新登录</span></li>");
-    // scrollToBottom();
-    showNewMessage("系统消息",null,"连接发生异常！");
-    console.log("WebSocket:发生错误 ",event);
-};
 
 //onload初始化
 $(function(){
@@ -167,6 +83,121 @@ $(function(){
 
 });
 
+function showUserList(userList) {
+    $("#getout").empty();
+    console.log(userList);
+    $.each(userList,function (index,item) {
+        console.log(item);
+        $("<li></li>").append($("<a></a>").addClass("getout").attr("out",item.userName).append(item.userName)).appendTo("#getout");
+    });
+}
+
+
+//打开Socket,
+websocket.onopen = function(event) {
+    console.log("WebSocket:已连接");
+
+}
+
+//关闭Websocket连接
+function closeWebsocket(){
+    if (websocket != null) {
+        websocket.close();
+        websocket = null;
+    }
+}
+
+// 监听消息
+//onmessage事件提供了一个data属性，它可以包含消息的Body部分。消息的Body部分必须是一个字符串，可以进行序列化/反序列化操作，以便传递更多的数据。
+websocket.onmessage = function(event) {
+    console.log('Client received a message',event);
+    //var data=JSON.parse(event.data);
+    var data=$.parseJSON(event.data);
+    console.log("WebSocket:收到一条消息",data);
+    var userName = $("#loginUserName").val();
+    //2种推送的消息
+    //1.用户聊天信息：发送消息触发
+    //2.系统消息：登录和退出触发
+
+    //判断是否是欢迎消息（没用户编号的就是欢迎消息）
+    //data.chatUserId==undefined||data.chatUserId==null||data.chatUserId==""
+    if(data.chatType==0){
+        //===系统消息
+        // $("#contentUl").append("<li><b>"+data.date+"</b><em>系统消息：</em><span>"+data.text+"</span></li>");
+        // //刷新在线用户列表
+        // $("#chatOnline").val(data.userList.length);
+        // $("#chatUserList").empty();
+        // $(data.userList).each(function(){
+        //     $("#chatUserList").append("<li>"+this.userName+"</li>");
+        // });
+
+        console.log(data.type);
+        console.log(data.ban);
+        if (data.type){
+            showNewUser(data);
+            console.log("在线人数"+data.userList.length);
+            shows(data);
+        }
+        if(data.ban==false && data.type==false) {
+            showUserLogout(data);
+            shows(data);
+        }
+        if (data.ban){
+            showGetOut(data);
+            shows(data);
+        }
+    }
+    if (data.chatType == 1){
+        //===普通消息
+        //处理一下个人信息的显示：
+        if(data.userName==userName){
+            showNewMessage("我",null,data.chatContent);
+            // $("#contentUl").append("<li><span  style='display:block; float:right;'><em>"+data.userName+"</em><span>"+data.text+"</span><b>"+data.date+"</b></span></li><br/>");
+        }else{
+            // $("#contentUl").append("<li><b>"+data.date+"</b><em>"+data.userName+"</em><span>"+data.text+"</span></li><br/>");
+            showNewMessage(data.userName,null,data.chatContent);
+        }
+    }
+    if (data.chatType == 2){
+        if(data.userName==userName){
+            showNewImage("我",null,data.chatContent);
+        }else{
+            showNewImage(data.userName,null,data.chatContent);
+        }
+    }
+    scrollToBottom();
+};
+
+
+function showGetOut(data) {
+    var date = data.chatTime;
+    var user = "系统消息";
+    var msg = data.chatContent;
+    showNewMessage(user, date, msg);
+}
+
+function shows(data){
+    showActiveUserNumber(data.userList.length);
+    showLoginUser(data.userList);
+    showUserList(data.userList);
+}
+
+// 监听WebSocket的关闭
+websocket.onclose = function(event) {
+    // $("#contentUl").append("<li><b>"+formatDate(null)+"</b><em>系统消息：</em><span>连接已断开！</span></li>");
+    // scrollToBottom();
+    showNewMessage("系统消息",null,"连接已断开！");
+    console.log("WebSocket:已关闭：Client notified socket has closed",event);
+};
+
+//监听异常
+websocket.onerror = function(event) {
+    // $("#contentUl").append("<li><b>"+formatDate(null)+"</b><em>系统消息：</em><span>连接异常，建议重新登录</span></li>");
+    // scrollToBottom();
+    showNewMessage("系统消息",null,"连接发生异常！");
+    console.log("WebSocket:发生错误 ",event);
+};
+
 //发送消息
 function sendMsg(){
     //对象为空了
@@ -218,7 +249,7 @@ function showUserLogout(message) {
     // var json = JSON.parse(message);
     console.log("登出信息："+message);
     var logoutUser = message.userName;
-    var date = message.sendDate;
+    var date = message.chatTime;
     var user = "系统消息";
     var msg = logoutUser + "离开了聊天室~";
     showNewMessage(user, date, msg);
@@ -362,8 +393,21 @@ function logout() {
     path = $("#APP_PATH").val();
     sessionStorage.clear();
     closeWebsocket();
-    location.href=path;
+    location.href="/logout";
 }
+
+$(document).on("click", '.getout', function() {
+    path = $("#APP_PATH").val();
+    alert("getout");
+    $.ajax({
+        url:path+"/getout",
+        data: "userName="+$(this).attr("out"),
+        type: "POST",
+        success:function (result) {
+            alert("已踢出");
+        }
+    });
+});
 
 //使用ctrl+回车快捷键发送消息
 // function keySend(e) {

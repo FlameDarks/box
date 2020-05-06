@@ -3,7 +3,7 @@
   <component name="SshConfigs">
     <configs>
       <sshConfig host="39.106.190.142" id="93972c80-5ea4-4a70-a253-81d7f46bd22a" keyPath="f:\360安全浏览器下载\jia.pem" port="22" customName="Ali" nameFormat="CUSTOM" username="root" />
-      <sshConfig host="39.106.190.142" id="fe823a85-6c1b-4aa5-a2a8-c2bfd4ee6bbb" keyPath="f:\360安全浏览器下载\jia.pem" port="22" customName="Ali" nameFormat="CUSTOM" username="root" />
+      <sshConfig host="39.106.190.142" id="1c87adc5-1555-46db-a2de-7849489bccfa" keyPath="f:\360安全浏览器下载\jia.pem" port="22" customName="Ali" nameFormat="CUSTOM" username="root" />
     </configs>
   </component>
 </project>

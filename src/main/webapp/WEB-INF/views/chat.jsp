@@ -56,41 +56,53 @@
         </ul>
     </div>
 </div>
-<div class="chatroom">
-<div class="userList">
-    <div class="list-group" id="LoginUserList">
-<%--        <a href="#" class="list-group-item active">--%>
-<%--        <a href="#" class="list-group-item" id="LoginUser">在线成员</a>--%>
-    </div>
-</div>
-<div class="wrapper">
-    <div class="banner">
-        <div id="activeUserWraper">
-            <span class="label label-info" id="status"></span><span class="label">位用户当前在线</span>
+<div class="chatroom row">
+    <div class="userList col-md-2 col-md-offset-1">
+        <div class="list-group" id="LoginUserList">
+    <%--        <a href="#" class="list-group-item active">--%>
+    <%--        <a href="#" class="list-group-item" id="LoginUser">在线成员</a>--%>
         </div>
     </div>
-    <div id="historyMsg">
-    </div>
-    <div class="controls">
-        <div class="items">
-<%--            <input id="uploadUrl" type="hidden" value="<c:url value="/upload/image"/> "/>--%>
-            <input id="websocketUrl" type="hidden" value="<c:url value="/websocket"/> "/>
-            <form id="sendImageForm" enctype="multipart/form-data" method="post">
-                <input id="emoji" class="btn btn-primary" type="button" value="emoji" title="emoji"/>
-                <label for="sendImage" class="imageLable">
-                    <input id="sendImageBtn" class="btn btn-success" type="button" value="发送图片"/>
-                    <input id="sendImage" type="file" value="发送图片" name="image"
-                           accept="image/jpg,image/jpeg,image/png,image/gif"/>
-                </label>
-                <input id="clearBtn" class="btn btn-warning" type="button" value="清屏" title="清除屏幕消息"/>
-                <input type="hidden" id="loginUserId" name="userId" value="${loginUser.userId}"/>
-            </form>
+    <div class="wrapper col-md-4">
+        <div class="banner">
+            <div id="activeUserWraper">
+                <span class="label label-info" id="status"></span><span class="label">位用户当前在线</span>
+            </div>
         </div>
-        <textarea class="form-control" id="messageInput" placeHolder="回车键发送"></textarea>
-        <div id="emojiWrapper">
+        <div id="historyMsg">
+        </div>
+        <div class="controls">
+            <div class="items">
+    <%--            <input id="uploadUrl" type="hidden" value="<c:url value="/upload/image"/> "/>--%>
+    <%--            <input id="websocketUrl" type="hidden" value="<c:url value="/websocket"/> "/>--%>
+                <form id="sendImageForm" enctype="multipart/form-data" method="post">
+                    <input id="emoji" class="btn btn-primary" type="button" value="emoji" title="emoji"/>
+                    <label for="sendImage" class="imageLable">
+                        <input id="sendImageBtn" class="btn btn-success" type="button" value="发送图片"/>
+                        <input id="sendImage" type="file" value="发送图片" name="image"
+                               accept="image/jpg,image/jpeg,image/png,image/gif"/>
+                    </label>
+                    <input id="clearBtn" class="btn btn-warning" type="button" value="清屏" title="清除屏幕消息"/>
+                    <input type="hidden" id="loginUserId" name="userId" value="${loginUser.userId}"/>
+                </form>
+            </div>
+            <div id="inputMessage">
+                <textarea class="form-control" id="messageInput" placeHolder="回车键发送"></textarea>
+            </div>
+            <div id="emojiWrapper">
+            </div>
         </div>
     </div>
-</div>
+    <shiro:hasRole name="admin">
+        <div class="dropdown col-md-2">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                踢出人员
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" id="getout">
+            </ul>
+        </div>
+    </shiro:hasRole>
 </div>
 
 <%--修改密码--%>

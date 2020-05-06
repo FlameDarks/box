@@ -23,12 +23,15 @@ public class ChatWebSocketHandler implements WebSocketHandler {
     ChatService chatService;
     //在线用户的SOCKETsession(存储了所有的通信通道)
     public static final Map<String, WebSocketSession> USER_SOCKETSESSION_MAP;
+
+    public static final Map<String, Long> USER_GETOUT_MAP;
     //图片上传目录
     private static final String IMAGE_PREFIX = "/resources/image/";
 
     //存储所有的在线用户
     static {
         USER_SOCKETSESSION_MAP = new HashMap<String, WebSocketSession>();
+        USER_GETOUT_MAP = new HashMap<String, Long>();
     }
 
     /**
@@ -42,6 +45,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
 
         //群发消息告知大家
         Chat msg = new Chat();
+
 //        msg.setContent("风骚的【"+loginUser.getUserName()+"】踩着轻盈的步伐来啦。。。大家欢迎！");
         msg.setUserName(loginUser.getUserName());
         msg.setType(true);
@@ -71,24 +75,38 @@ public class ChatWebSocketHandler implements WebSocketHandler {
     public void handleMessage(WebSocketSession webSocketSession, WebSocketMessage<?> chat) throws Exception {
         //如果消息没有任何内容，则直接返回
         if(chat.getPayloadLength()==0)return;
+        boolean b = false;
         //反序列化服务端收到的json消息
         Chat msg = GsonUtils.fromJson(chat.getPayload().toString(), Chat.class);
-        msg.setChatTime(new Date());
-        //处理html的字符，转义：
+        User loginUser=(User) webSocketSession.getAttributes().get("loginUser");
+        Set<Map.Entry<String, Long>> entrySets = USER_GETOUT_MAP.entrySet();
+        for (Map.Entry<String, Long> entry : entrySets) {
+            if(entry.getKey().equals(String.valueOf(loginUser.getUserId()))){
+                System.out.println(entry.getKey()+"\t"+entry.getValue());
+                b=true;
+                if (new Date().getTime()>=entry.getValue()){
+                    b=false;
+                }
+                break;
+            }
+        }
+        if (b==false){
+            msg.setChatTime(new Date());
+            //处理html的字符，转义：
 //        String text = msg.getContent();
-        //转换为HTML转义字符表示
+            //转换为HTML转义字符表示
 //        String htmlEscapeText = HtmlUtils.htmlEscape(text);
 //        JSONObject jsonObject = new JSONObject(chat.getPayload().toString());
 //        msg.setChatContent(jsonObject.getStr("chatContent"));
 //        System.out.println(msg.toString());
-        msg.setChatType(1);
+            msg.setChatType(1);
 //        msg.setChatUserId(jsonObject.getInt("userId"));
-        System.out.println("消息（可存数据库作为历史记录）:"+chat.getPayload().toString());
-        chatService.insert(msg);
-        //将消息转换为json
-        JSONObject jsonObject = JSONUtil.parseObj(msg);;
-        System.out.println(jsonObject.toStringPretty());
-        //判断是群发还是单发
+            System.out.println("消息（可存数据库作为历史记录）:"+chat.getPayload().toString());
+            chatService.insert(msg);
+            //将消息转换为json
+            JSONObject jsonObject = JSONUtil.parseObj(msg);;
+            System.out.println(jsonObject.toStringPretty());
+            //判断是群发还是单发
 //        if(msg.getToUser()==null||msg.getToUser().equals("-1")){
             //群发
             sendMessageToAll(new TextMessage(jsonObject.toStringPretty()));
@@ -96,6 +114,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
 //            //单发
 //            sendMessageToUser(msg.getToUser(), new TextMessage(GsonUtils.toJson(msg)));
 //        }
+        }
     }
 
     @Override
@@ -125,6 +144,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
 //                msg.setContent("万众瞩目的【"+loginUser.getUserName()+"】已经退出。。。！");
                 //清除在线会话
                 msg.setType(false);
+                msg.setChatType(0);
                 msg.setUserName(loginUser.getUserName());
                 USER_SOCKETSESSION_MAP.remove(entry.getKey());
                 //记录日志：
@@ -176,6 +196,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
                 msg.setUserName(loginUser.getUserName());
                 System.out.println("登出人的姓名："+msg.getUserName());;
                 msg.setType(false);
+                msg.setChatType(0);
                 //清除在线会话
                 USER_SOCKETSESSION_MAP.remove(entry.getKey());
                 //记录日志：

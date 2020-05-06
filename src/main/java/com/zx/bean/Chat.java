@@ -70,6 +70,20 @@ public class Chat {
     @Expose
     private List<User> userList = new ArrayList<>();
 
+    @Expose
+    private Boolean ban;
+
+    public long getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(long endTime) {
+        this.endTime = endTime;
+    }
+
+    @Expose
+    private long endTime;
+
 
 
     public List<User> getUserList() {
@@ -89,20 +103,11 @@ public class Chat {
     }
 
 
-    public Boolean getType() {
-        return type;
-    }
-
-    public void setType(Boolean type) {
-        this.type = type;
-    }
-
-
 
     public Chat() {
     }
 
-    public Chat(Integer chatId, String chatContent, Integer chatType, Date chatTime, Integer chatUserId, String userName, User user, Boolean type, List<User> userList) {
+    public Chat(Integer chatId, String chatContent, Integer chatType, Date chatTime, Integer chatUserId, String userName, User user, Boolean type, List<User> userList, Boolean ban, long endTime) {
         this.chatId = chatId;
         this.chatContent = chatContent;
         this.chatType = chatType;
@@ -112,6 +117,8 @@ public class Chat {
         this.user = user;
         this.type = type;
         this.userList = userList;
+        this.ban = ban;
+        this.endTime = endTime;
     }
 
     /**
@@ -234,10 +241,6 @@ public class Chat {
         this.chatUserId = chatUserId;
     }
 
-    public static ChatBuilder builder(){
-        return new ChatBuilder();
-    }
-
     public String getUserName() {
         return userName;
     }
@@ -258,63 +261,23 @@ public class Chat {
                 ", user=" + user +
                 ", userName='" + userName + '\'' +
                 ", userList=" + userList +
+                ", ban=" + ban +
                 '}';
     }
 
-    public static class ChatBuilder {
-        private Integer chatId;
-        private String chatContent;
-        private Integer chatType;
-        private Date chatTime;
-        private Integer userId;
-        private String userName;
-        private User user;
-        private Boolean type;
-        private List<User> userList;
+    public void setType(Boolean type) {
+        this.type = type;
+    }
 
-        public ChatBuilder chatId(Integer chatId){
-            this.chatId = chatId;
-            return this;
-        }
-        public ChatBuilder chatContent(String chatContent){
-            this.chatContent = chatContent;
-            return this;
-        }
-        public ChatBuilder chatType(Integer chatType){
-            this.chatType = chatType;
-            return this;
-        }
-        public ChatBuilder chatTime(Date chatTime){
-            this.chatTime = chatTime;
-            return this;
-        }
-        public ChatBuilder userId(Integer userId){
-            this.userId = userId;
-            return this;
-        }
+    public void setBan(Boolean ban) {
+        this.ban = ban;
+    }
 
-        public ChatBuilder userName(String userName){
-            this.userName = userName;
-            return this;
-        }
+    public Boolean getType() {
+        return type;
+    }
 
-        public ChatBuilder user(User user){
-            this.user = user;
-            return this;
-        }
-
-        public ChatBuilder type(Boolean type){
-            this.type = type;
-            return this;
-        }
-
-        public ChatBuilder userList(List<User> userList){
-            this.userList = userList;
-            return this;
-        }
-
-        public Chat build(){
-            return new Chat(chatId,chatContent,chatType,chatTime,userId,userName,user,type,userList);
-        }
+    public Boolean getBan() {
+        return ban;
     }
 }

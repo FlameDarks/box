@@ -57,17 +57,9 @@ public class UserService {
     }
 //    修改密码
     public void update(User user){
-//        safe(user);
         String results = String.valueOf(new SimpleHash("MD5",user.getUserPassword(),user.getUserName(),1024));
         user.setUserPassword(results);
         userMapper.updateByPrimaryKeySelective(user);
-    }
-//    加密
-    public void safe(User user){
-        String pwd = user.getUserPassword();
-        String base = pwd.substring(0,1)+pwd+pwd.substring(pwd.length()-1,pwd.length());
-        user.setUserPassword(DigestUtils.md5DigestAsHex(base.getBytes()));
-        System.out.println("name:"+user.getUserName()+"\tpassword:"+user.getUserPassword());
     }
 }
 
