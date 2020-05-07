@@ -589,3 +589,12 @@ Completed initialization in 1354 ms
 [2020-05-06 18:16:09:874] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:1010)]
 {dataSource-1} inited
 
+[2020-05-06 18:18:10:260] [INFO ] [method:org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'defaultSockJsTaskScheduler'
+
+[2020-05-06 18:18:10:298] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2003)]
+{dataSource-1} closing ...
+
+[2020-05-06 18:18:10:303] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:2075)]
+{dataSource-1} closed
+

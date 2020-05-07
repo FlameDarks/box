@@ -53,7 +53,7 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#32a97a06' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 09:54:17:832] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 09:54:17:840] [WARN ] [method:org.apache.shiro.web.mgt.DefaultWebSecurityManager.setSessionMode(DefaultWebSecurityManager.java:143)]
 The 'sessionMode' property has been deprecated.  Please configure an appropriate WebSessionManager instance instead of using this property.  This property/method will be removed in a later version.
@@ -62,10 +62,10 @@ The 'sessionMode' property has been deprecated.  Please configure an appropriate
 native mode - enabling DefaultWebSessionManager (non-HTTP and HTTP Sessions)
 
 [2020-04-30 09:54:17:847] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 09:54:18:043] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 09:54:18:044] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -152,7 +152,7 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#4187c161' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 10:06:26:182] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 10:06:26:190] [WARN ] [method:org.apache.shiro.web.mgt.DefaultWebSecurityManager.setSessionMode(DefaultWebSecurityManager.java:143)]
 The 'sessionMode' property has been deprecated.  Please configure an appropriate WebSessionManager instance instead of using this property.  This property/method will be removed in a later version.
@@ -161,10 +161,10 @@ The 'sessionMode' property has been deprecated.  Please configure an appropriate
 native mode - enabling DefaultWebSessionManager (non-HTTP and HTTP Sessions)
 
 [2020-04-30 10:06:26:199] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 10:06:26:296] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 10:06:26:298] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -242,7 +242,7 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#1e9d6b8d' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 10:07:55:201] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 10:07:55:207] [WARN ] [method:org.apache.shiro.web.mgt.DefaultWebSecurityManager.setSessionMode(DefaultWebSecurityManager.java:143)]
 The 'sessionMode' property has been deprecated.  Please configure an appropriate WebSessionManager instance instead of using this property.  This property/method will be removed in a later version.
@@ -251,10 +251,10 @@ The 'sessionMode' property has been deprecated.  Please configure an appropriate
 native mode - enabling DefaultWebSessionManager (non-HTTP and HTTP Sessions)
 
 [2020-04-30 10:07:55:216] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 10:07:55:301] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 10:07:55:303] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)

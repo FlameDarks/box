@@ -50,13 +50,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#51615b9d' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 18:45:50:569] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 18:45:50:578] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 18:45:50:658] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 18:45:50:660] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -134,13 +134,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#96d2062' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 18:48:31:317] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 18:48:31:326] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 18:48:31:399] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 18:48:31:401] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -218,13 +218,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#533a62d1' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:06:58:147] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:06:58:156] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 20:06:58:228] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 20:06:58:230] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -302,13 +302,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#6e0d6ac0' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:10:33:594] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:10:33:605] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 20:10:33:687] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 20:10:33:688] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -386,13 +386,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#51d85d71' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:12:56:208] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:12:56:216] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 20:12:56:287] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 20:12:56:289] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -470,13 +470,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#490b9ace' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:15:18:758] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:15:18:767] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 20:15:18:838] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 20:15:18:839] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -554,13 +554,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#47053510' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:18:18:936] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:18:18:944] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 20:18:19:014] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 20:18:19:016] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -638,13 +638,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#13c6e8d0' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:20:00:291] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:20:00:300] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 20:20:00:373] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 20:20:00:375] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -722,13 +722,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#2d79c50e' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:30:00:649] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:30:00:657] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 20:30:00:727] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 20:30:00:728] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -806,13 +806,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#7cb080b2' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:35:41:489] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:35:41:498] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 20:35:41:569] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 20:35:41:570] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -890,13 +890,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#185088a3' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:37:24:619] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:37:24:628] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 20:37:24:698] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 20:37:24:700] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -974,13 +974,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#79cca1ce' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:40:11:559] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:40:11:568] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 20:40:11:638] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 20:40:11:639] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -1058,13 +1058,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#3760e421' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:58:42:484] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 20:58:42:493] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 20:58:42:557] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 20:58:42:559] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -1142,13 +1142,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#6a15232' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:13:05:322] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:13:05:332] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 21:13:05:399] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 21:13:05:400] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -1226,13 +1226,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#48a231fa' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:17:26:027] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:17:26:036] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 21:17:26:105] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 21:17:26:107] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -1310,13 +1310,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#4f8e77fa' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:18:39:759] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:18:39:768] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 21:18:39:840] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 21:18:39:842] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -1394,13 +1394,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#54ec0ec0' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:21:32:228] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:21:32:236] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 21:21:32:308] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 21:21:32:309] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -1478,13 +1478,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#6ef0e439' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:23:11:864] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:23:11:893] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 21:23:11:962] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 21:23:11:964] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -1562,13 +1562,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#197893b7' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:24:31:617] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:24:31:630] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 21:24:31:699] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 21:24:31:700] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -1646,13 +1646,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#22978e44' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:31:14:443] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:31:14:452] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 21:31:14:522] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 21:31:14:523] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -1730,13 +1730,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#258d68d0' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:40:11:838] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:40:11:858] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 21:40:11:939] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 21:40:11:940] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -1814,13 +1814,13 @@ Bean 'txAdvice' of type [org.springframework.transaction.interceptor.Transaction
 Bean 'org.apache.shiro.authc.credential.HashedCredentialsMatcher#12358a5f' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:41:20:284] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
-Bean 'jdbcRealm' of type [com.zx.shiro.realms.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Bean 'jdbcRealm' of type [ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 
 [2020-04-30 21:41:20:292] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:158)]
-Cache with name 'com.zx.shiro.realms.ShiroRealm.authorizationCache' does not yet exist.  Creating now.
+Cache with name 'ShiroRealm.authorizationCache' does not yet exist.  Creating now.
 
 [2020-04-30 21:41:20:359] [INFO ] [method:org.apache.shiro.cache.ehcache.EhCacheManager.getCache(EhCacheManager.java:165)]
-Added EhCache named [com.zx.shiro.realms.ShiroRealm.authorizationCache]
+Added EhCache named [ShiroRealm.authorizationCache]
 
 [2020-04-30 21:41:20:360] [INFO ] [method:org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)

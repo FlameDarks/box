@@ -6,7 +6,6 @@ import com.zx.dao.UserMapper;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.DigestUtils;
 
 import java.util.List;
 
@@ -15,26 +14,39 @@ public class UserService {
 
     @Autowired
     UserMapper userMapper;
-//    获取user信息，登录
+
+    /**
+     * 查询用户名是否存在，密码是否正确
+     * @param name
+     * @param pwd
+     * @return
+     */
     public List<User> getAll(String name,String pwd) {
         UserExample userExample = new UserExample();
         UserExample.Criteria criteria = userExample.createCriteria();
         criteria.andUserNameEqualTo(name);
         criteria.andUserPasswordEqualTo(pwd);
-        System.out.println("111111111");
         if (userMapper.selectByExample(userExample).isEmpty()){
             return null;
         }
         return userMapper.selectByExample(userExample);
     }
-//    注册
+
+    /**
+     * 注册用户
+     * @param user
+     */
     public void reg(User user) {
         String results = String.valueOf(new SimpleHash("MD5",user.getUserPassword(),user.getUserName(),1024));
         user.setUserPassword(results);
         userMapper.insertSelective(user);
     }
 
-//    验证用户名是否重复
+    /**
+     * 验证用户名是否重复
+     * @param username
+     * @return
+     */
     public boolean checkUser(String username) {
         UserExample userExample = new UserExample();
         UserExample.Criteria criteria = userExample.createCriteria();
@@ -42,11 +54,21 @@ public class UserService {
         long count = userMapper.countByExample(userExample);
         return count == 0;
     }
-//    通过Id获取用户信息
+
+    /**
+     * 通过Id获取用户信息
+     * @param id
+     * @return
+     */
     public User getUser(Integer id){
         return userMapper.selectByPrimaryKey(id);
     }
 
+    /**
+     * 通过名字获取用户信息
+     * @param userName
+     * @return
+     */
     public User getUserByName(String userName){
         UserExample userExample = new UserExample();
         UserExample.Criteria criteria = userExample.createCriteria();
@@ -55,7 +77,11 @@ public class UserService {
         user.setUserPassword(null);
         return user;
     }
-//    修改密码
+
+    /**
+     * 修改密码
+     * @param user
+     */
     public void update(User user){
         String results = String.valueOf(new SimpleHash("MD5",user.getUserPassword(),user.getUserName(),1024));
         user.setUserPassword(results);

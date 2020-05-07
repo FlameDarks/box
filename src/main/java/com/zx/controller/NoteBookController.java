@@ -4,7 +4,6 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zx.bean.Msg;
 import com.zx.bean.NoteBook;
-import com.zx.bean.User;
 import com.zx.service.NoteBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +22,12 @@ public class NoteBookController {
     @Autowired
     NoteBookService noteBookService;
 
-//    显示记事本列表
+    /**
+     * 显示记事本列表
+     * @param pn
+     * @param id
+     * @return
+     */
     @RequestMapping("/selectNotebook")
     @ResponseBody
     public Msg getNoteBookWithJson(@RequestParam(value = "pn",defaultValue = "1")Integer pn,@RequestParam(value = "userId")Integer id){
@@ -37,11 +39,14 @@ public class NoteBookController {
         List<NoteBook> noteBooks = noteBookService.getAll(id);
 //        连续显示的页数
         PageInfo pageInfo = new PageInfo(noteBooks,3);
-        System.out.println("连续显示的页数："+pageInfo.getPages()+"时间戳："+System.currentTimeMillis());
         return Msg.success().add("notebook_pageInfo",pageInfo);
     }
 
-//  保存记事本
+    /**
+     * 保存记事本
+     * @param noteBook
+     * @return
+     */
     @RequestMapping(value = "/saveNoteBook",method = RequestMethod.POST)
     @ResponseBody
     public Msg save(NoteBook noteBook){
@@ -49,7 +54,11 @@ public class NoteBookController {
         return Msg.success();
     }
 
-//  回显记事本
+    /**
+     * 回显记事本
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/echoNoteBook",method = RequestMethod.GET)
     @ResponseBody
     public Msg echo(@RequestParam(value = "Id")Integer id){
@@ -57,7 +66,11 @@ public class NoteBookController {
         return Msg.success().add("note",noteBook);
     }
 
-//  修改记事本
+    /**
+     * 修改记事本
+     * @param noteBook
+     * @return
+     */
     @RequestMapping(value = "/editNoteBook",method = RequestMethod.PUT)
     @ResponseBody
     public Msg edit(NoteBook noteBook){
@@ -65,7 +78,11 @@ public class NoteBookController {
         return Msg.success();
     }
 
-//   删除记事本
+    /**
+     * 删除记事本
+     * @param ids
+     * @return
+     */
     @RequestMapping(value = "/delNoteBook",method = RequestMethod.DELETE)
     @ResponseBody
     public Msg delete(@RequestParam(value = "Id")String ids){

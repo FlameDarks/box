@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.zx.bean.Msg;
 import com.zx.bean.User;
 import com.zx.service.AdminService;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,11 +18,16 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
+@RequiresRoles({"admin"})
 public class AdminController {
     @Autowired
     AdminService adminService;
 
-    //    显示记事本列表
+    /**
+     * 显示用户列表
+     * @param pn
+     * @return
+     */
     @RequestMapping("/selectAdmin")
     @ResponseBody
     public Msg getNoteBookWithJson(@RequestParam(value = "pn",defaultValue = "1")Integer pn){
@@ -33,11 +39,14 @@ public class AdminController {
         List<User> users = adminService.getAll();
 //        连续显示的页数
         PageInfo pageInfo = new PageInfo(users,3);
-        System.out.println("连续显示的页数："+pageInfo.getPages()+"时间戳："+System.currentTimeMillis());
         return Msg.success().add("admin_pageInfo",pageInfo);
     }
 
-    //  添加用户
+    /**
+     * 添加用户
+     * @param user
+     * @return
+     */
     @RequestMapping(value = "/saveAdmin",method = RequestMethod.POST)
     @ResponseBody
     public Msg save(User user){
@@ -45,10 +54,15 @@ public class AdminController {
         return Msg.success();
     }
 
-    //   删除用户
+    /**
+     * 删除用户
+     * @param ids
+     * @return
+     */
     @RequestMapping(value = "/delAdmin",method = RequestMethod.DELETE)
     @ResponseBody
     public Msg delete(@RequestParam(value = "Id")String ids){
+//        判断是批量还是单独
         if (ids.contains("-")){
             String[] str_ids = ids.split("-");
             List<Integer> del_ids = new ArrayList<>();
@@ -59,7 +73,6 @@ public class AdminController {
             return Msg.success();
         }else {
             Integer id = Integer.parseInt(ids);
-            System.out.println("删除的id："+id);
             adminService.delete(id);
             return Msg.success();
         }

@@ -14,11 +14,20 @@ public class CloudService {
     
     @Autowired
     CloudMapper cloudMapper;
-    
+
+    /**
+     * 插入文件信息
+     * @param cloud
+     */
     public void save(Cloud cloud) {
         cloudMapper.insertSelective(cloud);
     }
 
+    /**
+     * 获取Id下所有文件信息
+     * @param userId
+     * @return
+     */
     public List<Cloud> getAll(Integer userId) {
         CloudExample cloudExample = new CloudExample();
         CloudExample.Criteria criteria = cloudExample.createCriteria();
@@ -26,11 +35,18 @@ public class CloudService {
         return cloudMapper.selectByExample(cloudExample);
     }
 
-
+    /**
+     * 删除文件
+     * @param id
+     */
     public void delete(Integer id) {
         cloudMapper.deleteByPrimaryKey(id);
     }
 
+    /**
+     * 批量删除文件
+     * @param ids
+     */
     public void deleteAll(List<Integer> ids) {
         CloudExample cloudExample = new CloudExample();
         CloudExample.Criteria criteria = cloudExample.createCriteria();
@@ -38,6 +54,12 @@ public class CloudService {
         cloudMapper.deleteByExample(cloudExample);
     }
 
+    /**
+     * 搜索文件信息
+     * @param userId
+     * @param data
+     * @return
+     */
     public List<Cloud> select(Integer userId, String data) {
         CloudExample cloudExample = new CloudExample();
         CloudExample.Criteria criteria = cloudExample.createCriteria();

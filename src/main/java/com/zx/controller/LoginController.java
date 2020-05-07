@@ -4,8 +4,12 @@ import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * 跳转页面
+ */
 @Controller
 public class LoginController {
+
     @RequestMapping("/page1")
     public String getPage1(){
         return "notebook";
@@ -27,6 +31,7 @@ public class LoginController {
         return "chat";
     }
     @RequestMapping("/page6")
+    @RequiresRoles({"admin"})
     public String getPage6(){
         return "admin";
     }

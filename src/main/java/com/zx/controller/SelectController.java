@@ -29,6 +29,14 @@ public class SelectController {
     @Autowired
     AdminService adminService;
 
+    /**
+     * 搜索
+     * @param check
+     * @param data
+     * @param type
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/select",method = RequestMethod.POST)
     @ResponseBody
     public Msg select(@RequestParam(value = "check")Integer check, @RequestParam(value = "data")String data, @RequestParam(value = "type")Integer type, HttpServletRequest request){
@@ -63,6 +71,12 @@ public class SelectController {
         return Msg.fail();
     }
 
+    /**
+     * 搜索用户列表
+     * @param data
+     * @param check
+     * @return
+     */
     @RequiresRoles({"admin"})
     private Msg selectAdmin(String data,Integer check){
         PageHelper.orderBy("user_id asc");

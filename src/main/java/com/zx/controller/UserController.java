@@ -1,17 +1,14 @@
 package com.zx.controller;
 
-
 import com.zx.bean.Msg;
 import com.zx.bean.User;
 import com.zx.service.UserService;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.DigestUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,11 +30,17 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    /**
+     * 登录
+     * @param name
+     * @param pwd
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/selectUser",method = RequestMethod.POST)
     @ResponseBody
     public Msg getUserWithJson(@RequestParam(value = "userName")String name,@RequestParam(value = "userPassword")String pwd, HttpServletRequest request){
         HttpSession session = request.getSession();
-        // 登录操作
         // 判断是否是一个已经登录的用户，没有则登录
         if (null != session.getAttribute("loginUser")) {
             // 清除旧的用户
@@ -54,43 +57,39 @@ public class UserController {
                 // 执行登录.
                 currentUser.login(token);
             }
-            // ... catch more exceptions here (maybe custom ones specific to your application?
+            catch (UnknownAccountException e){
+                return Msg.fail().add("error","用户不存在");
+            }
+            catch (IncorrectCredentialsException e){
+                return Msg.fail().add("error","密码不对");
+            }
+            catch (LockedAccountException e){
+                return Msg.fail().add("error","用户被锁定");
+            }
             // 所有认证时异常的父类.
-            catch (AuthenticationException ae) {
-                //unexpected condition?  error?
-                System.out.println("登录失败: " + ae.getMessage());
-                return Msg.fail();
+            catch (AuthenticationException e) {
+                return Msg.fail().add("error","登录失败");
             }
         }
-//        String base = pwd.substring(0,1)+pwd+pwd.substring(pwd.length()-1,pwd.length());
-//        String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
-//        List<User> users = userService.getAll(name,md5);
-
-        System.out.println("来到了");
-//        System.out.println(currentUser.getPrincipal().toString());
-//        System.out.println(currentUser.getPrincipals().toString());
-//        System.out.println(currentUser.getSession().toString());
-//        User user = users.get(0);
-//        user.setUserPassword(null);
         User user = userService.getUserByName(currentUser.getPrincipal().toString());
-        System.out.println(user.toString());
         session.setAttribute("loginUser", user);
-        System.out.println("获取的："+user.getUserName() + "\t" + user.getUserPassword());
         return Msg.success().add("userId", user.getUserId()).add("userName",user.getUserName());
-//        return Msg.success();
     }
 
+    /**
+     * 注册
+     * @param user
+     * @param result
+     * @return
+     */
     @RequestMapping(value = "/saveUser",method = RequestMethod.POST)
     @ResponseBody
     public Msg save(@Valid User user, BindingResult result){
-        System.out.println("进入Controller");
-        System.out.println(user.toString());
         Map<String,Object> map = new HashMap<>();
+//        查询是否不符合标准
         if (result.hasErrors()){
             List<FieldError> errors=result.getFieldErrors();
             for (FieldError fieldError:errors){
-                System.out.println("错误字段名："+fieldError.getField());
-                System.out.println("错误信息"+fieldError.getDefaultMessage());
                 map.put(fieldError.getField(),fieldError.getDefaultMessage());
             }
             return Msg.fail().add("errorFields",map);
@@ -102,6 +101,11 @@ public class UserController {
         return Msg.fail().add("errorFields","密码不一样");
     }
 
+    /**
+     * 验证用户名
+     * @param username
+     * @return
+     */
     @RequestMapping("/checkUser")
     @ResponseBody
     public Msg checkuser(@RequestParam("user_name")String username){
@@ -111,7 +115,7 @@ public class UserController {
             return Msg.fail().add("va_msg","6-10个英文和数字组合或者3-5个汉字");
         }
         boolean b = userService.checkUser(username);
-        System.out.println("验证用户名中");
+//        如果没找到
         if (!b){
             System.out.println("error");
             return Msg.fail().add("va_msg","用户名不可用");
@@ -121,11 +125,17 @@ public class UserController {
         }
     }
 
+    /**
+     * 验证密码
+     * @param userId
+     * @param pwd
+     * @return
+     */
     @RequestMapping("/checkPwd")
     @ResponseBody
     public Msg checkpwd(@RequestParam("userId")Integer userId,@RequestParam("userPassword")String pwd){
-        System.out.println("进来了!!!!!!!");
         User user = userService.getUser(userId);
+//        加盐加密
         String result = String.valueOf(new SimpleHash("MD5",pwd,user.getUserName(),1024));
         if (user.getUserPassword().equals(result)){
             return Msg.success();
@@ -133,17 +143,20 @@ public class UserController {
         return Msg.fail().add("va_msg","原密码错误");
     }
 
+    /**
+     * 修改密码
+     * @param user
+     * @param result
+     * @return
+     */
     @RequestMapping(value = "/savePwd",method = RequestMethod.POST)
     @ResponseBody
-//    public Msg savepwd(@RequestParam("userId")Integer userId,@Valid @RequestParam("userPassword") String userPassword, @Valid @RequestParam("userPasswords") String userPasswords,BindingResult result){
     public Msg savepwd(@Valid User user,BindingResult result){
-        System.out.println("进入Controller");
         Map<String,Object> map = new HashMap<>();
+//        查询是否不符合标准
         if (result.hasErrors()){
             List<FieldError> errors=result.getFieldErrors();
             for (FieldError fieldError:errors){
-                System.out.println("错误字段名："+fieldError.getField());
-                System.out.println("错误信息"+fieldError.getDefaultMessage());
                 map.put(fieldError.getField(),fieldError.getDefaultMessage());
             }
             return Msg.fail().add("errorFields",map);

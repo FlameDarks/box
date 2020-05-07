@@ -59,8 +59,6 @@
 <div class="chatroom row">
     <div class="userList col-md-2 col-md-offset-1">
         <div class="list-group" id="LoginUserList">
-    <%--        <a href="#" class="list-group-item active">--%>
-    <%--        <a href="#" class="list-group-item" id="LoginUser">在线成员</a>--%>
         </div>
     </div>
     <div class="wrapper col-md-4">
@@ -73,8 +71,6 @@
         </div>
         <div class="controls">
             <div class="items">
-    <%--            <input id="uploadUrl" type="hidden" value="<c:url value="/upload/image"/> "/>--%>
-    <%--            <input id="websocketUrl" type="hidden" value="<c:url value="/websocket"/> "/>--%>
                 <form id="sendImageForm" enctype="multipart/form-data" method="post">
                     <input id="emoji" class="btn btn-primary" type="button" value="emoji" title="emoji"/>
                     <label for="sendImage" class="imageLable">

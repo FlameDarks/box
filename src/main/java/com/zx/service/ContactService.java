@@ -13,6 +13,11 @@ public class ContactService {
     @Autowired
     ContactMapper contactMapper;
 
+    /**
+     * 获取用户ID下所有通讯录信息
+     * @param userId
+     * @return
+     */
     public List<Contact> getAll(Integer userId) {
         ContactExample contactExample = new ContactExample();
         ContactExample.Criteria criteria = contactExample.createCriteria();
@@ -20,22 +25,43 @@ public class ContactService {
         return contactMapper.selectByExample(contactExample);
     }
 
+    /**
+     * 插入通讯录
+     * @param contact
+     */
     public void save(Contact contact) {
         contactMapper.insertSelective(contact);
     }
 
+    /**
+     * 通过Id获取通讯录信息
+     * @param id
+     * @return
+     */
     public Contact echocontacts(Integer id) {
         return contactMapper.selectByPrimaryKey(id);
     }
 
+    /**
+     * 更新通讯录
+     * @param contact
+     */
     public void update(Contact contact) {
         contactMapper.updateByPrimaryKeySelective(contact);
     }
 
+    /**
+     * 删除通讯录
+     * @param id
+     */
     public void delete(Integer id) {
         contactMapper.deleteByPrimaryKey(id);
     }
 
+    /**
+     * 批量删除通讯录
+     * @param ids
+     */
     public void deleteAll(List<Integer> ids) {
         ContactExample contactExample = new ContactExample();
         ContactExample.Criteria criteria = contactExample.createCriteria();
@@ -43,6 +69,13 @@ public class ContactService {
         contactMapper.deleteByExample(contactExample);
     }
 
+    /**
+     * 搜索通讯录
+     * @param userId
+     * @param data
+     * @param check
+     * @return
+     */
     public List<Contact> select(Integer userId, String data, Integer check) {
         ContactExample contactExample = new ContactExample();
         ContactExample.Criteria criteria = contactExample.createCriteria();

@@ -21,6 +21,12 @@ public class ContactController {
     @Autowired
     ContactService contactService;
 
+    /**
+     * 获取通讯录列表
+     * @param pn
+     * @param id
+     * @return
+     */
     @RequestMapping("/selectContact")
     @ResponseBody
     public Msg getContactWithJson(@RequestParam(value = "pn",defaultValue = "1")Integer pn,@RequestParam(value = "userId")Integer id){
@@ -32,11 +38,14 @@ public class ContactController {
         List<Contact> contacts = contactService.getAll(id);
 //        连续显示的页数
         PageInfo pageInfo = new PageInfo(contacts,2);
-        System.out.println("连续显示的页数："+pageInfo.getPages()+"一共有："+pageInfo.getTotal()
-                );
         return Msg.success().add("contact_pageInfo",pageInfo);
     }
-    //  保存
+
+    /**
+     * 保存通讯录
+     * @param contact
+     * @return
+     */
     @RequestMapping(value = "/saveContact",method = RequestMethod.POST)
     @ResponseBody
     public Msg save(Contact contact){
@@ -44,7 +53,11 @@ public class ContactController {
         return Msg.success();
     }
 
-    //  回显
+    /**
+     * 回显通讯录
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/echoContact",method = RequestMethod.GET)
     @ResponseBody
     public Msg echo(@RequestParam(value = "Id")Integer id){
@@ -52,7 +65,11 @@ public class ContactController {
         return Msg.success().add("contacts",contact);
     }
 
-    //  修改
+    /**
+     * 修改通讯录
+     * @param contact
+     * @return
+     */
     @RequestMapping(value = "/editContact",method = RequestMethod.PUT)
     @ResponseBody
     public Msg edit(Contact contact){
@@ -60,7 +77,11 @@ public class ContactController {
         return Msg.success();
     }
 
-    //   删除
+    /**
+     * 删除通讯录
+     * @param ids
+     * @return
+     */
     @RequestMapping(value = "/delContact",method = RequestMethod.DELETE)
     @ResponseBody
     public Msg delete(@RequestParam(value = "Id")String ids){
