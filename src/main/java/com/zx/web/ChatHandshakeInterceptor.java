@@ -33,7 +33,7 @@ public class ChatHandshakeInterceptor implements HandshakeInterceptor {
                 //获取登录的用户
                 User loginUser=(User)session.getAttribute("loginUser") ;
                 //将用户放入socket处理器的会话(WebSocketSession)中
-//                attributes.put("loginUser", loginUser);
+                attributes.put("loginUser", loginUser);
                 System.out.println("Websocket:用户[ID:" + (loginUser.getUserId() + ",Name:"+loginUser.getUserName()+"]要建立连接"));
             }else{
                 //用户没有登录，拒绝聊天

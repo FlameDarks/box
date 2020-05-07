@@ -5,8 +5,6 @@ $(function () {
         loginuser();
         if (success==true){
             document.loginform.action = "page1";
-        }else {
-            alert("登陆失败");
         }
     });
     $("#user_reg_btn").click(function() {
@@ -22,13 +20,14 @@ function loginuser(){
         type:"POST",
         async: false,
         success:function (result) {
-            // alert("找到用户："+result.extend.user_Info);
             if (result.code == 100){
                 var id = result.extend.userId;
                 var name = result.extend.userName;
                 sessionStorage.setItem("userId",id);
                 sessionStorage.setItem("userName",name);
                 success = true;
+            }else {
+                alert(result.extend.error);
             }
         }
     });

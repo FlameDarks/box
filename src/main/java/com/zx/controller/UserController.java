@@ -53,22 +53,25 @@ public class UserController {
             // rememberme
             token.setRememberMe(false);
             try {
-                System.out.println("1. " + token.hashCode());
                 // 执行登录.
                 currentUser.login(token);
             }
             catch (UnknownAccountException e){
-                return Msg.fail().add("error","用户不存在");
+                System.out.println("用户不存在！");
+                return Msg.fail().add("error","用户不存在！");
             }
             catch (IncorrectCredentialsException e){
-                return Msg.fail().add("error","密码不对");
+                System.out.println("密码不对！");
+                return Msg.fail().add("error","密码不对！");
             }
             catch (LockedAccountException e){
-                return Msg.fail().add("error","用户被锁定");
+                System.out.println("用户被锁定！");
+                return Msg.fail().add("error","用户被锁定！");
             }
             // 所有认证时异常的父类.
             catch (AuthenticationException e) {
-                return Msg.fail().add("error","登录失败");
+                System.out.println("登录失败！");
+                return Msg.fail().add("error","登录失败！");
             }
         }
         User user = userService.getUserByName(currentUser.getPrincipal().toString());

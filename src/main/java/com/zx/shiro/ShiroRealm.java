@@ -44,7 +44,7 @@ public class ShiroRealm extends AuthorizingRealm {
         user.setUserPassword(null);
         String realmName = getName();
         ByteSource credentialsSalt = ByteSource.Util.bytes((Object) name);
-        return new SimpleAuthenticationInfo(name,pwd,credentialsSalt,realmName);
+        return new SimpleAuthenticationInfo(name,result,credentialsSalt,realmName);
     }
 
     /**
