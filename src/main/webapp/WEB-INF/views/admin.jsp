@@ -153,7 +153,7 @@
                 <h4 class="modal-title">添加用户</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="admin_add_form">
                     <div class="form-group">
                         <label for="userName_add" class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-10">

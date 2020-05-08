@@ -151,7 +151,7 @@
                 <h4 class="modal-title">添加记事本</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="notebook_add_form">
                     <div class="form-group">
                         <label for="notebookTitle_add" class="col-sm-2 control-label">标题</label>
                         <div class="col-sm-10">

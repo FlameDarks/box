@@ -154,7 +154,7 @@
                 <h4 class="modal-title">添加通讯录</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="contact_add_form">
                     <div class="form-group">
                         <label for="contactName_add" class="col-sm-2 control-label">姓名</label>
                         <div class="col-sm-10">

@@ -131,7 +131,6 @@ $('#contact_add_btn').click(function () {
  */
 $(document).on("click", '#contact_save_btn', function() {
     user = sessionStorage.getItem("userId");
-    console.log($('#contact_add form').serialize() + "&userId=" + user);
     var path = $("#APP_PATH").val();
     $.ajax({
         url: path + "/contact/saveContact",
@@ -139,7 +138,7 @@ $(document).on("click", '#contact_save_btn', function() {
         async: false,
         data: $('#contact_add form').serialize() + "&userId=" + user,
         success: function (result) {
-            console.log(result.msg);
+            document.getElementById("contact_add_form").reset();
             $('#contact_add').modal("hide");
             contact_to_page(pagenum);
         }
@@ -179,7 +178,6 @@ function echo(id) {
  */
 $(document).on("click", '#contact_update_btn', function() {
     var path = $("#APP_PATH").val();
-    console.log("contactId="+$(this).attr("edit_id")+"&"+$('#contact_update form').serialize());
     user = sessionStorage.getItem("userId");
     $.ajax({
         url:path+"/contact/editContact",

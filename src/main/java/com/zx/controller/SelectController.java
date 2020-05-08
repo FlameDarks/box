@@ -40,7 +40,6 @@ public class SelectController {
     @RequestMapping(value = "/select",method = RequestMethod.POST)
     @ResponseBody
     public Msg select(@RequestParam(value = "check")Integer check, @RequestParam(value = "data")String data, @RequestParam(value = "type")Integer type, HttpServletRequest request){
-        System.out.println(data+"\t"+type);
         HttpSession session = request.getSession();
         Integer userId = ((User) session.getAttribute("loginUser")).getUserId();
         data = "%"+data+"%";

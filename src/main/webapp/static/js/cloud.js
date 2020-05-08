@@ -165,13 +165,13 @@ $(document).on("click", '#cloud_save_btn', function() {
         cache: false,
         data: formData,
         success: function (result) {
-            if (result.code == 200){
+            if (result.code == 100){
+                document.getElementById("cloud_add_form").reset();
                 $('#cloud_add').modal("hide");
                 cloud_to_page(pagenum);
             }else {
-                alert(result.extend.result);
+                alert("上传出错！");
             }
-
         }
     });
 });

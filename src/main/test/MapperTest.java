@@ -25,7 +25,7 @@ import java.util.UUID;
 @ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/applicationContext.xml"})
 public class MapperTest {
     public static void main(String[] args) {
-        Object result = new SimpleHash("MD5","123456","123456",1024);
+        Object result = new SimpleHash("MD5","Az123456","842356712",1024);
         System.out.println(result);
     }
 

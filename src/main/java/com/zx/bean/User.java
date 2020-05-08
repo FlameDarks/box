@@ -168,6 +168,7 @@ public class User {
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
                 ", userPassword='" + userPassword + '\'' +
+                ", userType='" + userType + '\'' +
                 ", userPasswords='" + userPasswords + '\'' +
                 '}';
     }

@@ -45,11 +45,9 @@ function build_bookmark_table(result) {
     $("#bookmark_table tbody").empty();
     var bookmark = result.extend.bookmark_pageInfo.list;
     $.each(bookmark,function (index,item) {
-        // var bookmarkIdTd = $("<td></td>").append(item.bookmarkId);
         var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>")
         checkBoxTd.find("input").attr("check_id",item.bookmarkId);
         var bookmarkTitleTd = $("<td></td>").append(item.bookmarkTitle);
-        // var bookmarkContentTd = $("<td></td>").append(item.bookmarkContent);
         var url = regurl(item.bookmarkContent);
         var bookmarkContentTd = $("<td></td>").append($("<a></a>").attr("href",url).append(url));
         var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit")
@@ -60,7 +58,6 @@ function build_bookmark_table(result) {
         delBtn.attr("del_id",item.bookmarkId);
         var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn)
         $("<tr></tr>")
-            // .append(bookmarkIdTd)
             .append(checkBoxTd)
             .append(bookmarkTitleTd)
             .append(bookmarkContentTd)
@@ -162,7 +159,6 @@ $('#bookmark_add_btn').click(function () {
  */
 $(document).on("click", '#bookmark_save_btn', function() {
     user = sessionStorage.getItem("userId");
-    console.log($('#bookmark_add form').serialize() + "&userId=" + user);
     var path = $("#APP_PATH").val();
     $.ajax({
         url: path + "/bookmark/saveBookMark",
@@ -170,7 +166,7 @@ $(document).on("click", '#bookmark_save_btn', function() {
         async: false,
         data: $('#bookmark_add form').serialize() + "&userId=" + user,
         success: function (result) {
-            console.log(result.msg);
+            document.getElementById("bookmark_add_form").reset();
             $('#bookmark_add').modal("hide");
             bookmark_to_page(pagenum);
         }
@@ -210,7 +206,6 @@ function echo(id) {
  */
 $(document).on("click", '#bookmark_update_btn', function() {
     var path = $("#APP_PATH").val();
-    console.log("bookmarkId="+$(this).attr("edit_id")+"&"+$('#bookmark_update form').serialize());
     user = sessionStorage.getItem("userId");
     $.ajax({
         url:path+"/bookmark/editBookMark",

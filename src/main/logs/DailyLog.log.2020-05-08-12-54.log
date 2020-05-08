@@ -1,0 +1,3 @@
+[2020-05-08 12:54:06:940] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:1010)]
+{dataSource-1} inited
+

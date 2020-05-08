@@ -13,7 +13,6 @@ $(function () {
 function notebook_to_page(pn) {
     var path = $("#APP_PATH").val();
     user = sessionStorage.getItem("userId");
-    console.log(user);
     $.ajax({
         url:path+"/notebook/selectNotebook",
         data:"pn="+pn+"&userId="+user,
@@ -148,7 +147,6 @@ $('#notebook_add_btn').click(function () {
  */
 $(document).on("click", '#notebook_save_btn', function() {
     user = sessionStorage.getItem("userId");
-    console.log($('#notebook_add form').serialize() + "&userId=" + user);
     var path = $("#APP_PATH").val();
     $.ajax({
         url: path + "/notebook/saveNoteBook",
@@ -156,7 +154,7 @@ $(document).on("click", '#notebook_save_btn', function() {
         async: false,
         data: $('#notebook_add form').serialize() + "&userId=" + user,
         success: function (result) {
-            console.log(result.msg);
+            document.getElementById("notebook_add_form").reset();
             $('#notebook_add').modal("hide");
             notebook_to_page(pagenum);
         }
@@ -196,7 +194,6 @@ function echo(id) {
  */
 $(document).on("click", '#notebook_update_btn', function() {
     var path = $("#APP_PATH").val();
-    console.log("notebookId="+$(this).attr("edit_id")+"&"+$('#notebook_update form').serialize());
     user = sessionStorage.getItem("userId");
     $.ajax({
         url:path+"/notebook/editNoteBook",

@@ -4,29 +4,9 @@ var path;
 
 // 创建一个Socket实例
 var websocket;
-//不同浏览器的WebSocket对象类型不同
-//alert("ws://" + path + "/ws?uid="+uid);
-// if ('WebSocket' in window) {
-//     console.log(sessionStorage.getItem("userId"));
-//     path = $("#APP_PATH").val();
-//     console.log(path);
-//     console.log("ws://" + "box_war_exploded" + "/ws");
-//     websocket = new WebSocket("ws://localhost:8080/box_war_exploded/ws");
-//     console.log("=============WebSocket");
-//     //火狐
-// } else if ('MozWebSocket' in window) {
-//     path = $("#APP_PATH").val();
-//     websocket = new MozWebSocket("ws://" + "localhost:8080/box_war_exploded" + "/ws");
-//     console.log("=============MozWebSocket");
-// } else {
-//     path = $("#APP_PATH").val();
-    websocket = new SockJS("http://localhost:8080/box_war_exploded" + "/ws/sockjs");
-    console.log("=============SockJS");
-// }
-console.log(websocket);
+websocket = new SockJS("http://localhost:8080/box_war_exploded" + "/ws/sockjs");
+console.log("=============SockJS");
 
-
-//onload初始化
 $(function(){
     /**
      * 键盘enter事件，用来发送消息
@@ -80,9 +60,10 @@ $(function(){
 
 function showUserList(userList) {
     $("#getout").empty();
-    console.log(userList);
     $.each(userList,function (index,item) {
-        console.log(item);
+        if (item.userName == sessionStorage.getItem("userName")){
+            return true;
+        }
         $("<li></li>").append($("<a></a>").addClass("getout").attr("out",item.userName).append(item.userName)).appendTo("#getout");
     });
 }
@@ -138,7 +119,6 @@ websocket.onmessage = function(event) {
         //上线
         if (data.type == 0){
             showNewUser(data);
-            console.log("在线人数"+data.userList.length);
             shows(data);
         }
         // 被禁言
@@ -233,10 +213,8 @@ function sendMsg(){
  */
 function showLoginUser(userList) {
     $("#LoginUserList").empty();
-    console.log(userList);
     $("<a></a>").addClass("list-group-item").append("在线成员").appendTo("#LoginUserList");
     $.each(userList,function (index,item) {
-        console.log(item);
         $("<a></a>").addClass("list-group-item").append(item.userName).appendTo("#LoginUserList");
     });
 }
@@ -245,7 +223,6 @@ function showLoginUser(userList) {
  * div滚动条(scrollbar)保持在最底部
  */
 function scrollToBottom(){
-    //var div = document.getElementById('chatCon');
     var div = document.getElementById('historyMsg');
     div.scrollTop = div.scrollHeight;
 }
@@ -404,7 +381,6 @@ function logout() {
  */
 $(document).on("click", '.getout', function() {
     path = $("#APP_PATH").val();
-    alert("getout");
     $.ajax({
         url:path+"/getout",
         data: "userName="+$(this).attr("out"),

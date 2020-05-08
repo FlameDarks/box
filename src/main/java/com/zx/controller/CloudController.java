@@ -39,7 +39,6 @@ public class CloudController {
         List<Cloud> clouds = cloudService.getAll(id);
 //        连续显示的页数
         PageInfo pageInfo = new PageInfo(clouds,3);
-        System.out.println("连续显示的页数："+pageInfo.getPages()+"时间戳："+System.currentTimeMillis());
         return Msg.success().add("cloud_pageInfo",pageInfo);
     }
 
@@ -69,6 +68,7 @@ public class CloudController {
             JSONObject jsonObject1 = new JSONObject(result);
 //            通过MD5获取文件
             String data1 =HttpUtil.get("http://127.0.0.1:8081/group1/get_file_info?md5="+jsonObject1.getStr("md5"));
+            cloud.setCloudMd5(jsonObject1.getStr("md5"));
 //            获得文件信息
             JSONObject jsonObject3 = new JSONObject(data1).getJSONObject("data");
 //            获取文件名
@@ -94,17 +94,33 @@ public class CloudController {
     @RequestMapping(value = "/delCloud",method = RequestMethod.DELETE)
     @ResponseBody
     public Msg delete(@RequestParam(value = "Id")String ids){
+        String DELETE_PATH = "http://127.0.0.1:8081/group1/delete";
         if (ids.contains("-")){
             String[] str_ids = ids.split("-");
             List<Integer> del_ids = new ArrayList<>();
             for (String string : str_ids){
+                Map<String, Object> params = new HashMap<>();
                 del_ids.add(Integer.parseInt(string));
+                String MD5 = cloudService.getMD5(Integer.parseInt(string));
+                params.put("md5",MD5);
+                try {
+                    HttpUtil.post(DELETE_PATH,params);
+                }catch (Exception e){
+                    return Msg.fail();
+                }
             }
             cloudService.deleteAll(del_ids);
             return Msg.success();
         }else {
+            Map<String, Object> params = new HashMap<>();
             Integer id = Integer.parseInt(ids);
-            System.out.println("删除的id："+id);
+            String MD5 = cloudService.getMD5(id);
+            params.put("md5",MD5);
+            try {
+                HttpUtil.post(DELETE_PATH,params);
+            }catch (Exception e){
+                return Msg.fail();
+            }
             cloudService.delete(id);
             return Msg.success();
         }

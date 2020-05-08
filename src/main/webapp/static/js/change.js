@@ -40,7 +40,7 @@ function changepwd() {
         data: data,
         success:function (result) {
             if (result.code == 100){
-                alert("注册成功");
+                alert("密码修改成功，即将登出！");
                 $('#changepwd').modal("hide");
                 logout();
             }else {

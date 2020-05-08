@@ -153,7 +153,7 @@
                 <h4 class="modal-title">添加书签</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="bookmark_add_form">
                     <div class="form-group">
                         <label for="bookmarkTitle_add" class="col-sm-2 control-label">书签名</label>
                         <div class="col-sm-10">

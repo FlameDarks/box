@@ -13,7 +13,6 @@ $(function () {
 function admin_to_page(pn) {
     var path = $("#APP_PATH").val();
     user = sessionStorage.getItem("userId");
-    console.log(user);
     $.ajax({
         url:path+"/admin/selectAdmin",
         data:"pn="+pn,
@@ -157,9 +156,7 @@ $('#admin_add_btn').click(function () {
  * 添加用户保存按钮
  */
 $(document).on("click", '#admin_save_btn', function() {
-    //需要执行的逻辑
     user = sessionStorage.getItem("userId");
-    console.log($('#admin_add form').serialize());
     var path = $("#APP_PATH").val();
     $.ajax({
         url: path + "/admin/saveAdmin",
@@ -167,7 +164,7 @@ $(document).on("click", '#admin_save_btn', function() {
         async: false,
         data: $('#admin_add form').serialize(),
         success: function (result) {
-            console.log(result.msg);
+            document.getElementById("admin_add_form").reset();
             $('#admin_add').modal("hide");
             admin_to_page(pagenum);
         }

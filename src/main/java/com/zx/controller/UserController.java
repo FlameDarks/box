@@ -112,7 +112,6 @@ public class UserController {
     @RequestMapping("/checkUser")
     @ResponseBody
     public Msg checkuser(@RequestParam("user_name")String username){
-        System.out.println(username);
         String reg = "(^[a-zA-Z0-9_-]{6,10})|(^[\\u2E80-\\u9FFF]{3,5})";
         if (!username.matches(reg)){
             return Msg.fail().add("va_msg","6-10个英文和数字组合或者3-5个汉字");
@@ -120,10 +119,8 @@ public class UserController {
         boolean b = userService.checkUser(username);
 //        如果没找到
         if (!b){
-            System.out.println("error");
             return Msg.fail().add("va_msg","用户名不可用");
         }else {
-            System.out.println("success");
             return Msg.success();
         }
     }

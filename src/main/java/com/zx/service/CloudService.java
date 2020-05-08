@@ -67,4 +67,13 @@ public class CloudService {
         criteria.andCloudNameLike(data);
         return cloudMapper.selectByExample(cloudExample);
     }
+
+    /**
+     * 通过文件Id获取MD5码
+     * @param Id
+     * @return
+     */
+    public String getMD5(Integer Id){
+        return cloudMapper.selectByPrimaryKey(Id).getCloudMd5();
+    }
 }

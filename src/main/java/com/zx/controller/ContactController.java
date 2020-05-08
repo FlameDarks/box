@@ -95,7 +95,6 @@ public class ContactController {
             return Msg.success();
         }else {
             Integer id = Integer.parseInt(ids);
-            System.out.println("删除的id："+id);
             contactService.delete(id);
             return Msg.success();
         }

@@ -96,7 +96,6 @@ public class BookMarkController {
             return Msg.success();
         }else {
             Integer id = Integer.parseInt(ids);
-            System.out.println("删除的id："+id);
             bookmarkService.delete(id);
             return Msg.success();
         }

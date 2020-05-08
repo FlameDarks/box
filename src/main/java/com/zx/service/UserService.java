@@ -39,6 +39,7 @@ public class UserService {
     public void reg(User user) {
         String results = String.valueOf(new SimpleHash("MD5",user.getUserPassword(),user.getUserName(),1024));
         user.setUserPassword(results);
+        user.setUserType("user");
         userMapper.insertSelective(user);
     }
 

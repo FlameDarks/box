@@ -1,5 +1,6 @@
 ﻿//判断是否登陆成功
 var success;
+
 $(function () {
     $("#login_btn").click(function(){
         success=false;
