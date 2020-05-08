@@ -104,14 +104,13 @@ public class ChatController {
         Date date = new Date();
         for (Map.Entry<String, WebSocketSession> entry : entrySet) {
             if(entry.getKey().equals(String.valueOf(user.getUserId()))){
-                msg.setChatContent(userName+"已被管理员禁言10秒");
-                msg.setType(false);
+                msg.setChatContent(userName+"已被管理员禁言30秒");
+                msg.setType(1);
                 msg.setChatType(0);
                 msg.setUserName(userName);
                 msg.setChatTime(date);
                 msg.setBan(true);
-//                msg.setEndTime(date.getTime()+10000);
-                USER_GETOUT_MAP.put(String.valueOf(user.getUserId()),date.getTime()+10000);
+                USER_GETOUT_MAP.put(String.valueOf(user.getUserId()),date.getTime()+30000);
                 break;
             }
         }

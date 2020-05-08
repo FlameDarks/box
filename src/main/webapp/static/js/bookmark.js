@@ -5,6 +5,10 @@ $(function () {
     bookmark_to_page(1);
 });
 
+/**
+ * 书签列表当前页
+ * @param pn
+ */
 function bookmark_to_page(pn) {
     var path = $("#APP_PATH").val();
     user = sessionStorage.getItem("userId");
@@ -20,6 +24,11 @@ function bookmark_to_page(pn) {
     });
 }
 
+/**
+ * 正则匹配http
+ * @param url
+ * @returns {string|*}
+ */
 function regurl(url) {
     var reghttp = /(http|https):\/\/([\w.]+\/?)\S*/;
     if (!reghttp.test(url)){
@@ -28,7 +37,10 @@ function regurl(url) {
     return url;
 }
 
-// 解析显示记事本数据
+/**
+ * 显示当页书签
+ * @param result
+ */
 function build_bookmark_table(result) {
     $("#bookmark_table tbody").empty();
     var bookmark = result.extend.bookmark_pageInfo.list;
@@ -57,19 +69,26 @@ function build_bookmark_table(result) {
     });
 }
 
-// 解析显示分页信息
+/**
+ * 解析显示分页信息
+ * @param result
+ */
 function build_bookmark_pageinfo(result) {
     $("#bookmark_pageinfo").empty();
     $("#bookmark_pageinfo").append("第"+result.extend.bookmark_pageInfo.pageNum+"页，总共"+result.extend.bookmark_pageInfo.pages+"页，总共"+result.extend.bookmark_pageInfo.total+"条记录")
     pagenum = result.extend.bookmark_pageInfo.pageNum;
 }
 
-// 解析显示分页条数据
+/**
+ * 解析显示分页条数据
+ * @param result
+ */
 function build_bookmark_page(result) {
     $("#bookmark_page").empty();
     var ul = $("<ul></ul>").addClass("pagination");
     var first = $("<li></li>").append($("<a></a>").append("首页").attr("href","#"));
     var pre = $("<li></li>").append($("<a></a>").append("&laquo;"));
+    //如果没有上一页
     if (result.extend.bookmark_pageInfo.hasPreviousPage == false){
         first.addClass("disabled");
         pre.addClass("disabled");
@@ -84,6 +103,7 @@ function build_bookmark_page(result) {
 
     var next = $("<li></li>").append($("<a></a>").append("&raquo;"));
     var last = $("<li></li>").append($("<a></a>").append("尾页").attr("href","#"));
+    //如果没有下一页
     if (result.extend.bookmark_pageInfo.hasNextPage == false){
         next.addClass("disabled");
         last.addClass("disabled");
@@ -111,7 +131,12 @@ function build_bookmark_page(result) {
     var navigation = $("<nav></nav>").append(ul);
     navigation.appendTo("#bookmark_page");
 }
-// 时间换算
+
+/**
+ * 时间换算
+ * @param time
+ * @returns {string}
+ */
 function bookmark_time(time) {
     var datetime = new Date();
     datetime.setTime(time);
@@ -124,14 +149,18 @@ function bookmark_time(time) {
     return year + "-" + month + "-" + date+" "+hour+":"+minute+":"+second;
 }
 
+/**
+ * 添加书签模态框
+ */
 $('#bookmark_add_btn').click(function () {
     $('#bookmark_add').modal({
         backdrop: 'static'
     });
 });
-
+/**
+ * 添加书签的保存按钮
+ */
 $(document).on("click", '#bookmark_save_btn', function() {
-    //需要执行的逻辑
     user = sessionStorage.getItem("userId");
     console.log($('#bookmark_add form').serialize() + "&userId=" + user);
     var path = $("#APP_PATH").val();
@@ -147,7 +176,9 @@ $(document).on("click", '#bookmark_save_btn', function() {
         }
     });
 });
-
+/**
+ * 编辑书签模态框
+ */
 $(document).on("click", '.edit', function() {
     echo($(this).attr("edit_id"));
     $('#bookmark_update_btn').attr("edit_id",$(this).attr("edit_id"));
@@ -155,7 +186,11 @@ $(document).on("click", '.edit', function() {
         backdrop: 'static'
     });
 });
-// 回显信息
+
+/**
+ * 回显信息
+ * @param id
+ */
 function echo(id) {
     var path = $("#APP_PATH").val();
     $.ajax({
@@ -170,6 +205,9 @@ function echo(id) {
     });
 }
 
+/**
+ * 编辑书签的保存按钮
+ */
 $(document).on("click", '#bookmark_update_btn', function() {
     var path = $("#APP_PATH").val();
     console.log("bookmarkId="+$(this).attr("edit_id")+"&"+$('#bookmark_update form').serialize());
@@ -184,7 +222,9 @@ $(document).on("click", '#bookmark_update_btn', function() {
         }
     });
 });
-
+/**
+ * 删除书签的按钮
+ */
 $(document).on("click", '.del', function() {
     var path = $("#APP_PATH").val();
     var title = $(this).parents("tr").find("td:eq(1)").text();
@@ -199,19 +239,23 @@ $(document).on("click", '.del', function() {
         });
     }
 });
-// 全选
+/**
+ * 选择checkbox
+ */
 $(document).on("click", '#check_all', function() {
     $(".check_item").prop("checked",$(this).prop("checked"));
 });
-
+/**
+ * 全选或全不选
+ */
 $(document).on("click", '.check_item', function() {
     var flag = $(".check_item:checked").length==$(".check_item").length;
     $("#check_all").prop("checked",flag);
 });
-
-// 批量删除
+/**
+ * 批量删除
+ */
 $(document).on("click", '#bookmark_del_btn', function() {
-// $("#bookmark_del_btn").click(function () {
     var title = "";
     var id = "";
     var path = $("#APP_PATH").val();
@@ -232,7 +276,9 @@ $(document).on("click", '#bookmark_del_btn', function() {
         });
     }
 });
-
+/**
+ * 搜索
+ */
 $(document).on("click", '#selectBtn', function() {
     selectContent();
 });

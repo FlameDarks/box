@@ -47,7 +47,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         //群发消息告知大家
         Chat msg = new Chat();
         msg.setUserName(loginUser.getUserName());
-        msg.setType(true);
+        msg.setType(0);
         msg.setChatType(0);
         msg.setChatTime(new Date());
         //获取在线用户列表
@@ -92,6 +92,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         if (b==false){
             msg.setChatTime(new Date());
             msg.setChatType(1);
+            msg.setType(1);
             chatService.insert(msg);
             //将消息转换为json
             JSONObject jsonObject = JSONUtil.parseObj(msg);;
@@ -125,7 +126,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         for (Entry<String, WebSocketSession> entry : entrySet) {
             if(entry.getKey().equals(String.valueOf(loginUser.getUserId()))){
                 //清除在线会话
-                msg.setType(false);
+                msg.setType(2);
                 msg.setChatType(0);
                 msg.setUserName(loginUser.getUserName());
                 USER_SOCKETSESSION_MAP.remove(entry.getKey());
@@ -162,7 +163,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
             if(entry.getKey().equals(String.valueOf(loginUser.getUserId()))){
                 //群发消息告知大家
                 msg.setUserName(loginUser.getUserName());
-                msg.setType(false);
+                msg.setType(2);
                 msg.setChatType(0);
                 //清除在线会话
                 USER_SOCKETSESSION_MAP.remove(entry.getKey());

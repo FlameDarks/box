@@ -1,4 +1,5 @@
-﻿var success;
+﻿//判断是否登陆成功
+var success;
 $(function () {
     $("#login_btn").click(function(){
         success=false;
@@ -11,7 +12,10 @@ $(function () {
         reguser();
     });
 });
-//      登录请求
+
+/**
+ * 登录请求
+ */
 function loginuser(){
     var path = $("#APP_PATH").val();
     $.ajax({
@@ -32,7 +36,11 @@ function loginuser(){
         }
     });
 }
-//      注册请求
+
+/**
+ * 注册请求
+ * @returns {boolean}
+ */
 function reguser() {
     if (!validate_pwd_form()){
         return false;
@@ -51,7 +59,6 @@ function reguser() {
                 alert("注册成功");
                 $('#user_reg').modal("hide");
             }else {
-                // console.log(result);
                 if (undefined != result.extend.errorFields.userName){
                     show_validate_msg("#user_name","error",result.extend.errorFields.userName);
                 }
@@ -69,7 +76,11 @@ function reguser() {
         }
     });
 }
-//      注册校验
+
+/**
+ * 注册校验
+ * @returns {boolean}
+ */
 function validate_pwd_form() {
     var userpwd = $("#user_password").val().trim();
     var userpwds = $("#user_passwords").val().trim();
@@ -95,7 +106,12 @@ function validate_pwd_form() {
     return true;
 }
 
-// 注册校验提示信息
+/**
+ * 注册校验提示信息
+ * @param element  目标ID
+ * @param status  状态（符合或不符合）
+ * @param msg    显示信息
+ */
 function show_validate_msg(element,status,msg) {
     $(element).parent().removeClass("has-success has-error");
     $(element).next("span").text("");
@@ -108,38 +124,43 @@ function show_validate_msg(element,status,msg) {
     }
 }
 
+/**
+ * 验证用户名是否重复
+ */
 function check_user_name() {
     var path = $("#APP_PATH").val();
     var username = $("#user_name").val().trim();
-    console.log(username);
     $.ajax({
         url: path+"/user/checkUser",
         type: "POST",
         data: "user_name="+username,
         async:false,
         success:function (result) {
-            console.log(result.code);
             if (result.code==100){
                 show_validate_msg("#user_name","success","用户名可用");
                 $("#user_reg_btn").attr("ajax-va","success");
             }else{
-                console.log(result.extend.va_msg);
                 show_validate_msg("#user_name","error",result.extend.va_msg);
                 $("#user_reg_btn").attr("ajax-va","error");
             }
         }
     });
 }
-// 重置提示信息
+
+/**
+ * 重置提示信息
+ * @param ele  目标ID
+ */
 function reset_form(ele) {
-    // $(ele)[0].reset;
     document.getElementById(ele).reset();
     var eles = "#"+ele;
     $(eles).find("*").removeClass("has-error has-success");
     $(eles).find(".help-block").text("");
 }
 
-
+/**
+ * 注册页面的模态框
+ */
 $(document).on("click", '#reg_btn', function() {
     reset_form("user_reg_form");
     $('#user_reg').modal({

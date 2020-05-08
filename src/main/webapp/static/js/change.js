@@ -16,7 +16,10 @@
     });
 });
 
-//      修改密码请求
+/**
+ * 修改密码
+ * @returns {boolean}
+ */
 function changepwd() {
     if (!validate_pwd_form()){
         return false;
@@ -41,7 +44,6 @@ function changepwd() {
                 $('#changepwd').modal("hide");
                 logout();
             }else {
-                // console.log(result);
                 if (undefined != result.extend.errorFields.userPassword){
                     show_validate_msg("#newpwd","error",result.extend.errorFields.userPassword);
                 }
@@ -56,7 +58,11 @@ function changepwd() {
         }
     });
 }
-//      注册校验
+
+/**
+ * 注册校验
+ * @returns {boolean}
+ */
 function validate_pwd_form() {
     var newpwd = $("#newpwd").val().trim();
     var newpwds = $("#newpwds").val().trim();
@@ -82,7 +88,12 @@ function validate_pwd_form() {
     return true;
 }
 
-// 注册校验提示信息
+/**
+ * 注册校验提示信息
+ * @param element
+ * @param status
+ * @param msg
+ */
 function show_validate_msg(element,status,msg) {
     $(element).parent().removeClass("has-success has-error");
     $(element).next("span").text("");
@@ -94,12 +105,14 @@ function show_validate_msg(element,status,msg) {
         $(element).next("span").text(msg);
     }
 }
-// 校验原密码
+
+/**
+ * 校验原密码
+ */
 function check_user_pwd() {
     var path = $("#APP_PATH").val();
     var userId = sessionStorage.getItem("userId");
     var oldpwd = $("#oldpwd").val().trim();
-    console.log(oldpwd);
     $.ajax({
         url: path+"/user/checkPwd",
         type: "POST",
@@ -115,7 +128,11 @@ function check_user_pwd() {
         }
     });
 }
-// 重置提示信息
+
+/**
+ *
+ * @param ele
+ */
 function reset_form(ele) {
     document.getElementById(ele).reset();
     var eles = "#"+ele;
@@ -123,18 +140,19 @@ function reset_form(ele) {
     $(eles).find(".help-block").text("");
 }
 
+/**
+ * 修改密码模态框
+ */
 $(document).on("click", '#change_btn', function() {
     reset_form("#change_pwd_form");
     $('#changepwd').modal({
         backdrop: 'static'
     });
-    // $(document).on("focusout", '#oldpwd', function() {
-
 });
 
-
-
-// 登出
+/**
+ * 重置提示信息
+ */
 $(document).on("click", '#exitBtn', function() {
     logout();
 });

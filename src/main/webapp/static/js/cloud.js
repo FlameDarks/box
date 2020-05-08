@@ -5,7 +5,10 @@ var user;
 $(function () {
     cloud_to_page(1);
 });
-
+/**
+ * 文件列表当前页
+ * @param pn
+ */
 function cloud_to_page(pn) {
     var path = $("#APP_PATH").val();
     user = sessionStorage.getItem("userId");
@@ -21,12 +24,14 @@ function cloud_to_page(pn) {
     });
 }
 
-// 解析显示数据
+/**
+ * 显示当页文件
+ * @param result
+ */
 function build_cloud_table(result) {
     $("#cloud_table tbody").empty();
     var cloud = result.extend.cloud_pageInfo.list;
     $.each(cloud,function (index,item) {
-        // var cloudIdTd = $("<td></td>").append(item.cloudId);
         var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>")
         checkBoxTd.find("input").attr("check_id",item.cloudId);
         var cloudNameTd = $("<td></td>").append(item.cloudName);
@@ -41,7 +46,6 @@ function build_cloud_table(result) {
         delBtn.attr("del_id",item.cloudId);
         var btnTd = $("<td></td>").append(downBtn).append(" ").append(delBtn)
         $("<tr></tr>")
-            // .append(cloudIdTd)
             .append(checkBoxTd)
             .append(cloudNameTd)
             .append(cloudTimeTd)
@@ -50,19 +54,26 @@ function build_cloud_table(result) {
     });
 }
 
-// 解析显示分页信息
+/**
+ * 解析显示分页信息
+ * @param result
+ */
 function build_cloud_pageinfo(result) {
     $("#cloud_pageinfo").empty();
     $("#cloud_pageinfo").append("第"+result.extend.cloud_pageInfo.pageNum+"页，总共"+result.extend.cloud_pageInfo.pages+"页，总共"+result.extend.cloud_pageInfo.total+"条记录")
     pagenum = result.extend.cloud_pageInfo.pageNum;
 }
 
-// 解析显示分页条数据
+/**
+ * 解析显示分页条数据
+ * @param result
+ */
 function build_cloud_page(result) {
     $("#cloud_page").empty();
     var ul = $("<ul></ul>").addClass("pagination");
     var first = $("<li></li>").append($("<a></a>").append("首页").attr("href","#"));
     var pre = $("<li></li>").append($("<a></a>").append("&laquo;"));
+    //如果没有上一页
     if (result.extend.cloud_pageInfo.hasPreviousPage == false){
         first.addClass("disabled");
         pre.addClass("disabled");
@@ -77,6 +88,7 @@ function build_cloud_page(result) {
 
     var next = $("<li></li>").append($("<a></a>").append("&raquo;"));
     var last = $("<li></li>").append($("<a></a>").append("尾页").attr("href","#"));
+    //如果没有下一页
     if (result.extend.cloud_pageInfo.hasNextPage == false){
         next.addClass("disabled");
         last.addClass("disabled");
@@ -104,7 +116,12 @@ function build_cloud_page(result) {
     var navigation = $("<nav></nav>").append(ul);
     navigation.appendTo("#cloud_page");
 }
-// 时间换算
+
+/**
+ * 时间换算
+ * @param time
+ * @returns {string}
+ */
 function cloud_time(time) {
     var datetime = new Date();
     datetime.setTime(time);
@@ -117,33 +134,29 @@ function cloud_time(time) {
     return year + "-" + month + "-" + date+" "+hour+":"+minute+":"+second;
 }
 
+/**
+ * 添加文件模态框
+ */
 $('#cloud_add_btn').click(function () {
     $('#cloud_add').modal({
         backdrop: 'static'
     });
 });
-
+/**
+ * 上传文件按钮
+ */
 $(document).on("click", '#cloud_save_btn', function() {
-    //需要执行的逻辑
     user = sessionStorage.getItem("userId");
-    var name = $("#cloudName_add").val();
-    console.log(1);
     var path = $("#APP_PATH").val();
-    console.log(2);
     var file = $('#clouds_add')[0].files[0];
     var allowsize = 10485760;
     if (file.size>allowsize){
-        alert("文件不能超过10kb");
+        alert("文件不能超过10MB");
         return false;
     }
-    console.log(3);
     var formData = new FormData();
-    console.log(4);
     formData.append("data", file);
-    console.log(6);
     formData.append("userId",user);
-    console.log("data:"+formData.get("data"));
-    console.log("userId:"+formData.get("userId"));
     $.ajax({
         url: path + "/cloud/saveCloud",
         type: "POST",
@@ -153,7 +166,6 @@ $(document).on("click", '#cloud_save_btn', function() {
         data: formData,
         success: function (result) {
             if (result.code == 200){
-                console.log(result.msg);
                 $('#cloud_add').modal("hide");
                 cloud_to_page(pagenum);
             }else {
@@ -164,7 +176,9 @@ $(document).on("click", '#cloud_save_btn', function() {
     });
 });
 
-
+/**
+ * 删除文件
+ */
 $(document).on("click", '.del', function() {
     var path = $("#APP_PATH").val();
     var title = $(this).parents("tr").find("td:eq(1)").text();
@@ -179,19 +193,24 @@ $(document).on("click", '.del', function() {
         });
     }
 });
-// 全选
+/**
+ * 选择checkbox
+ */
 $(document).on("click", '#check_all', function() {
     $(".check_item").prop("checked",$(this).prop("checked"));
 });
-
+/**
+ * 全选或全不选
+ */
 $(document).on("click", '.check_item', function() {
     var flag = $(".check_item:checked").length==$(".check_item").length;
     $("#check_all").prop("checked",flag);
 });
 
-// 批量删除
+/**
+ * 批量删除
+ */
 $(document).on("click", '#cloud_del_btn', function() {
-// $("#cloud_del_btn").click(function () {
     var title = "";
     var id = "";
     var path = $("#APP_PATH").val();
@@ -213,7 +232,9 @@ $(document).on("click", '#cloud_del_btn', function() {
     }
 });
 
-
+/**
+ * 搜索
+ */
 $(document).on("click", '#selectBtn', function() {
     selectContent();
 });
