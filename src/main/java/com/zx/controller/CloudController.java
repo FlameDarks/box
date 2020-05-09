@@ -9,6 +9,8 @@ import com.zx.bean.Cloud;
 import com.zx.bean.Msg;
 import com.zx.service.CloudService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,11 +18,20 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.*;
 
+@PropertySource(value={"classpath:/url.properties"})
 @Controller
 @RequestMapping("/cloud")
 public class CloudController {
     @Autowired
     CloudService cloudService;
+    @Value("${url.upload}")
+    String UPLOAD_PATH;
+    @Value("${url.delete}")
+    String DELETE_PATH;
+    @Value("${url.getInfo}")
+    String INFO_PATH;
+    @Value("${url.download}")
+    String DOWNLOAD_PATH;
 
     /**
      * 获取文件列表
@@ -62,20 +73,15 @@ public class CloudController {
             params.put("output", "json");
 //            存储地址
             params.put("path","/"+userId);
-            String UPLOAD_PATH = "http://127.0.0.1:8081/group1/upload";
 //            返回的信息
             result = HttpUtil.post(UPLOAD_PATH, params);
             JSONObject jsonObject1 = new JSONObject(result);
-//            通过MD5获取文件
-            String data1 =HttpUtil.get("http://127.0.0.1:8081/group1/get_file_info?md5="+jsonObject1.getStr("md5"));
+//            插入MD5
             cloud.setCloudMd5(jsonObject1.getStr("md5"));
-//            获得文件信息
-            JSONObject jsonObject3 = new JSONObject(data1).getJSONObject("data");
 //            获取文件名
-            String fileName = jsonObject3.getStr("name");
-            cloud.setCloudName(fileName);
+            cloud.setCloudName(file.getOriginalFilename());
 //            获取下载地址
-            cloud.setCloudUrl(jsonObject1.getStr("url"));
+            cloud.setCloudUrl(jsonObject1.getStr("path"));
             cloud.setUserId(userId);
             cloudService.save(cloud);
         } catch (IOException e) {
@@ -85,6 +91,17 @@ public class CloudController {
         return Msg.success().add("result",result);
     }
 
+    /**
+     * 获取真实的地址
+     * @param Id
+     * @return
+     */
+    @RequestMapping("/download")
+    @ResponseBody
+    public Msg download(@RequestParam("Id")Integer Id){
+        String trueUrl = DOWNLOAD_PATH+cloudService.getUrl(Id);
+        return Msg.success().add("url",trueUrl);
+    }
 
     /**
      * 删除文件
@@ -94,7 +111,7 @@ public class CloudController {
     @RequestMapping(value = "/delCloud",method = RequestMethod.DELETE)
     @ResponseBody
     public Msg delete(@RequestParam(value = "Id")String ids){
-        String DELETE_PATH = "http://127.0.0.1:8081/group1/delete";
+
         if (ids.contains("-")){
             String[] str_ids = ids.split("-");
             List<Integer> del_ids = new ArrayList<>();

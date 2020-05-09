@@ -32,19 +32,18 @@ function build_cloud_table(result) {
     $("#cloud_table tbody").empty();
     var cloud = result.extend.cloud_pageInfo.list;
     $.each(cloud,function (index,item) {
+        var url = trueUrl(item.cloudId);
         var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>")
         checkBoxTd.find("input").attr("check_id",item.cloudId);
         var cloudNameTd = $("<td></td>").append(item.cloudName);
         var cloudTimeTd = $("<td></td>").append(cloud_time(item.cloudTime));
-        var downBtn = $("<button></button>").addClass("btn btn-primary btn-sm down")
+        var downBtn = $("<button></button>").addClass("btn btn-primary btn-sm down down")
             .append($("<span></span>").addClass("glyphicon glyphicon-pencil").append("下载"));
-        downBtn.attr("down_id",item.cloudId);
-        var url = item.cloudUrl;
-        downBtn.attr("onclick","window.location.href='"+url+"'");
+        downBtn.attr("url",url).attr("filename",item.cloudName);
         var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm del")
             .append($("<span></span>").addClass("glyphicon glyphicon-trash").append("删除"));
         delBtn.attr("del_id",item.cloudId);
-        var btnTd = $("<td></td>").append(downBtn).append(" ").append(delBtn)
+        var btnTd = $("<td></td>").append(downBtn).append(" ").append(delBtn);
         $("<tr></tr>")
             .append(checkBoxTd)
             .append(cloudNameTd)
@@ -193,6 +192,27 @@ $(document).on("click", '.del', function() {
         });
     }
 });
+
+/**
+ * 获取真实的URL
+ * @param Id
+ * @returns {*}
+ */
+function trueUrl(Id) {
+    var url;
+    var path = $("#APP_PATH").val();
+    $.ajax({
+        url:path+"/cloud/download",
+        data:"Id="+Id,
+        type:"POST",
+        async:false,
+    })
+    .done(function(result) {
+        url = result.extend.url;
+    });
+    return url;
+}
+
 /**
  * 选择checkbox
  */
@@ -257,3 +277,68 @@ function selectContent() {
         });
     }
 }
+
+/**
+ * 获取 blob
+ * @param  {String} url 目标文件地址
+ * @return {Promise}
+ */
+function getBlob(url) {
+    return new Promise(resolve => {
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('GET', url, true);
+        xhr.responseType = 'blob';
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                resolve(xhr.response);
+            }
+        };
+
+        xhr.send();
+    });
+}
+
+/**
+ * 保存
+ * @param  {Blob} blob
+ * @param  {String} filename 想要保存的文件名称
+ */
+function saveAs(blob, filename) {
+    if (window.navigator.msSaveOrOpenBlob) {
+        navigator.msSaveBlob(blob, filename);
+    } else {
+        const link = document.createElement('a');
+        const body = document.querySelector('body');
+
+        link.href = window.URL.createObjectURL(blob);
+        link.download = filename;
+
+        // fix Firefox
+        link.style.display = 'none';
+        body.appendChild(link);
+
+        link.click();
+        body.removeChild(link);
+
+        window.URL.revokeObjectURL(link.href);
+    }
+}
+
+/**
+ * 下载
+ * @param  {String} url 目标文件地址
+ * @param  {String} filename 想要保存的文件名称
+ */
+function download(url, filename) {
+    getBlob(url).then(blob => {
+        saveAs(blob, filename);
+    });
+}
+
+/**
+ * 下载点击按钮
+ */
+$(document).on("click", '.down', function() {
+    download($(this).attr("url"),$(this).attr("filename"))
+});

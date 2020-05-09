@@ -76,4 +76,13 @@ public class CloudService {
     public String getMD5(Integer Id){
         return cloudMapper.selectByPrimaryKey(Id).getCloudMd5();
     }
+
+    /**
+     * 通过文件Id获取Url
+     * @param Id
+     * @return
+     */
+    public String getUrl(Integer Id){
+        return cloudMapper.selectByPrimaryKey(Id).getCloudUrl();
+    }
 }
