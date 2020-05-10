@@ -16,11 +16,11 @@
 <%
     pageContext.setAttribute("APP_PATH",request.getContextPath());
 %>
-<link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap3.css">
+<link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap.css">
 <link rel="stylesheet" href="${APP_PATH}/static/css/bookmark.css">
 <link rel="stylesheet" href="${APP_PATH}/static/css/all.css">
 <script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js"></script>
-<script type="text/javascript" src="${APP_PATH}/static/js/bootstrap3.js"></script>
+<script type="text/javascript" src="${APP_PATH}/static/js/bootstrap.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/bookmark.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/change.js"></script>
 <body background="${APP_PATH}/static/images/image/bg.jpg">

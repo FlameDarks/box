@@ -15,11 +15,11 @@
 <%
     pageContext.setAttribute("APP_PATH",request.getContextPath());
 %>
-<link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap3.css">
+<link rel="stylesheet" href="${APP_PATH}/static/css/bootstrap.css">
 <link rel="stylesheet" href="${APP_PATH}/static/css/chat.css">
 <link rel="stylesheet" href="${APP_PATH}/static/css/all.css">
 <script type="text/javascript" src="${APP_PATH}/static/js/jquery-3.4.1.js"></script>
-<script type="text/javascript" src="${APP_PATH}/static/js/bootstrap3.js"></script>
+<script type="text/javascript" src="${APP_PATH}/static/js/bootstrap.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/stomp.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/sockjs.js"></script>
 <script type="text/javascript" src="${APP_PATH}/static/js/chat.js"></script>
