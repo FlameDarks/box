@@ -92,7 +92,7 @@
     <shiro:hasRole name="admin">
         <div class="dropdown col-md-2">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                踢出人员
+                禁言人员
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" id="getout">
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="newpwds" class="col-sm-2 control-label">重复新密码</label>
+                        <label for="newpwds" class="col-sm-2 control-label">重复密码</label>
                         <div class="col-sm-10">
                             <input type="password" name="userPasswords" class="form-control" id="newpwds" placeholder="重复新密码">
                             <span class="help-block"></span>

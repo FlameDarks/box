@@ -93,7 +93,7 @@
     </div>
     <%--    页码--%>
     <div class="row">
-        <div class="col-md-6" id="contact_pageinfo"></div>
+        <div class="col-md-3 col-md-offset-3" id="contact_pageinfo"></div>
         <div class="col-md-6" id="contact_page"></div>
     </div>
 </div>
@@ -129,7 +129,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="newpwds" class="col-sm-2 control-label">重复新密码</label>
+                        <label for="newpwds" class="col-sm-2 control-label">重复密码</label>
                         <div class="col-sm-10">
                             <input type="password" name="userPasswords" class="form-control" id="newpwds" placeholder="重复新密码">
                             <span class="help-block"></span>
