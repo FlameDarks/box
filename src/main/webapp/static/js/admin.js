@@ -147,16 +147,32 @@ function user_type(type){
 /**
  * 添加用户模态框
  */
-$('#admin_add_btn').click(function () {
+$(document).on("click", '#admin_add_btn', function() {
+// $('#admin_add_btn').click(function () {
+    reset_form("admin_add_form");
     $('#admin_add').modal({
         backdrop: 'static'
+    });
+    $("#userName_add").focusout(function () {
+        check_user_name();
+    });
+    $("#userPassword_add").focusout(function () {
+        validate_pwds_form();
+    });
+    $("#userPasswords_add").focusout(function () {
+        validate_pwds_form();
     });
 });
 /**
  * 添加用户保存按钮
  */
 $(document).on("click", '#admin_save_btn', function() {
-    user = sessionStorage.getItem("userId");
+    if (!validate_pwds_form()){
+        return false;
+    }
+    if($("#admin_save_btn").attr("ajax-va")=="error"){
+        return false;
+    }
     var path = $("#APP_PATH").val();
     $.ajax({
         url: path + "/admin/saveAdmin",
@@ -164,12 +180,97 @@ $(document).on("click", '#admin_save_btn', function() {
         async: false,
         data: $('#admin_add form').serialize(),
         success: function (result) {
-            document.getElementById("admin_add_form").reset();
-            $('#admin_add').modal("hide");
-            admin_to_page(pagenum);
+            if (result.code == 100){
+                document.getElementById("admin_add_form").reset();
+                $('#admin_add').modal("hide");
+                admin_to_page(pagenum);
+            }
         }
     });
 });
+
+/**
+ * 注册校验
+ * @returns {boolean}
+ */
+function validate_pwds_form() {
+    console.log(1);
+    var userpwd = $("#userPassword_add").val().trim();
+    var userpwds = $("#userPasswords_add").val().trim();
+    var regpwd = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9_-]{8,16}$/;
+    if (!regpwd.test(userpwd)){
+        show_validate_msg("#userPassword_add","error","应包含至少一个大写字母、小写字母和数字的8-16位组合");
+        return false;
+    }else {
+        show_validate_msg("#userPassword_add","success","");
+    }
+    if (!regpwd.test(userpwds)){
+        show_validate_msg("#userPasswords_add","error","应包含至少一个大写字母、小写字母和数字的8-16位组合");
+        return false;
+    }else {
+        show_validate_msg("#userPasswords_add","success","");
+    }
+    if (userpwd!=userpwds){
+        show_validate_msg("#userPasswords_add","error","密码不一样");
+        return false;
+    }else {
+        show_validate_msg("#userPasswords_add","success","");
+    }
+    return true;
+}
+
+/**
+ * 注册校验提示信息
+ * @param element  目标ID
+ * @param status  状态（符合或不符合）
+ * @param msg    显示信息
+ */
+function show_validate_msg(element,status,msg) {
+    $(element).parent().removeClass("has-success has-error");
+    $(element).next("span").text("");
+    if ("success"==status){
+        $(element).parent().addClass("has-success");
+        $(element).next("span").text(msg);
+    }else if ("error"==status){
+        $(element).parent().addClass("has-error");
+        $(element).next("span").text(msg);
+    }
+}
+
+/**
+ * 验证用户名是否重复
+ */
+function check_user_name() {
+    var path = $("#APP_PATH").val();
+    var username = $("#userName_add").val().trim();
+    $.ajax({
+        url: path+"/user/checkUser",
+        type: "POST",
+        data: "user_name="+username,
+        async:false,
+        success:function (result) {
+            if (result.code==100){
+                show_validate_msg("#userName_add","success","用户名可用");
+                $("#user_reg_btn").attr("ajax-va","success");
+            }else{
+                show_validate_msg("#userName_add","error",result.extend.va_msg);
+                $("#user_reg_btn").attr("ajax-va","error");
+            }
+        }
+    });
+}
+
+/**
+ * 重置提示信息
+ * @param ele  目标ID
+ */
+function reset_form(ele) {
+    document.getElementById(ele).reset();
+    var eles = "#"+ele;
+    $(eles).find("*").removeClass("has-error has-success");
+    $(eles).find(".help-block").text("");
+}
+
 /**
  * 删除用户按钮
  */

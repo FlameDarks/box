@@ -168,12 +168,12 @@ $(document).on("click", '#reg_btn', function() {
         backdrop: 'static'
     });
     $("#user_name").focusout(function () {
-            check_user_name();
+        check_user_name();
     });
     $("#user_password").focusout(function () {
-            validate_pwd_form();
+        validate_pwd_form();
     });
     $("#user_passwords").focusout(function () {
-            validate_pwd_form();
+        validate_pwd_form();
     });
 });

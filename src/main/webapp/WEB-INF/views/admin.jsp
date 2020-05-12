@@ -158,18 +158,21 @@
                         <label for="userName_add" class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-10">
                             <input type="text" name="userName" class="form-control" id="userName_add" placeholder="用户名">
+                            <span class="help-block"></span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="userPassword_add" class="col-sm-2 control-label">密码</label>
                         <div class="col-sm-10">
-                            <input name="userPassword" class="form-control" id="userPassword_add" placeholder="密码">
+                            <input type="password" name="userPassword" class="form-control" id="userPassword_add" placeholder="密码">
+                            <span class="help-block"></span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="userPasswords_add" class="col-sm-2 control-label">重复密码</label>
                         <div class="col-sm-10">
-                            <input name="userPasswords" class="form-control" id="userPasswords_add" placeholder="重复密码">
+                            <input type="password" name="userPasswords" class="form-control" id="userPasswords_add" placeholder="重复密码">
+                            <span class="help-block"></span>
                         </div>
                     </div>
                     <div class="form-group">
