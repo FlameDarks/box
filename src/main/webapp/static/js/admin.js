@@ -148,7 +148,6 @@ function user_type(type){
  * 添加用户模态框
  */
 $(document).on("click", '#admin_add_btn', function() {
-// $('#admin_add_btn').click(function () {
     reset_form("admin_add_form");
     $('#admin_add').modal({
         backdrop: 'static'
