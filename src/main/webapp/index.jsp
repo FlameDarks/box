@@ -75,7 +75,6 @@
                 <div id="pwd_icon"><img src="${APP_PATH}/static/images/image/home_pwd.png" /></div>
                 <input type="password" name="userPassword" maxlength="16" autocomplete="off" id="userPassword" placeholder="请输入密码"/>
             </div>
-
             <input class="loginbtn" type="submit" id="login_btn" value="登录">
             <button class="regbtn" type="button" id="reg_btn" >注册</button>
         </form>

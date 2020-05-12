@@ -99,7 +99,7 @@ function validate_pwd_form() {
         show_validate_msg("#user_passwords","success","");
     }
     if (userpwd!=userpwds){
-        show_validate_msg("#user_passwords","error","请重新输入密码");
+        show_validate_msg("#user_passwords","error","密码不一样");
         return false;
     }else {
         show_validate_msg("#user_passwords","success","");

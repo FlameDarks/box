@@ -10,7 +10,7 @@
 <%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <html>
 <head>
-    <title>用户列表</title>
+    <title>用户管理</title>
 </head>
 <%
     pageContext.setAttribute("APP_PATH",request.getContextPath());

@@ -38,7 +38,7 @@ function build_cloud_table(result) {
         var cloudNameTd = $("<td></td>").append(item.cloudName);
         var cloudTimeTd = $("<td></td>").append(cloud_time(item.cloudTime));
         var downBtn = $("<button></button>").addClass("btn btn-primary btn-sm down down")
-            .append($("<span></span>").addClass("glyphicon glyphicon-pencil").append("下载"));
+            .append($("<span></span>").addClass("glyphicon glyphicon-cloud-download").append("下载"));
         downBtn.attr("url",url).attr("filename",item.cloudName);
         var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm del")
             .append($("<span></span>").addClass("glyphicon glyphicon-trash").append("删除"));
