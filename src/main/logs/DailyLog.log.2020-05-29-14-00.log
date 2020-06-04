@@ -1,0 +1,6 @@
+[2020-05-29 14:00:00:627] [INFO ] [method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 2419 ms
+
+[2020-05-29 14:00:05:840] [INFO ] [method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:1010)]
+{dataSource-1} inited
+

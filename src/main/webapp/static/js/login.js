@@ -6,7 +6,7 @@ $(function () {
         success=false;
         loginuser();
         if (success==true){
-            document.loginform.action = "page1";
+            document.loginform.action = "page8";
         }
     });
     $("#user_reg_btn").click(function() {

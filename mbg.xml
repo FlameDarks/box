@@ -44,6 +44,10 @@
 <!--        <table tableName="bookmark" domainObjectName="BookMark"/>-->
 <!--        <table tableName="cloud" domainObjectName="Cloud"/>-->
 <!--        <table tableName="chat" domainObjectName="Chat"/>-->
+<!--        <table tableName="calendar" domainObjectName="Calendar"/>-->
+<!--        <table tableName="image" domainObjectName="Image"/>-->
+<!--        <table tableName="imagemark" domainObjectName="ImageMark"/>-->
+        <table tableName="imagelike" domainObjectName="ImageLike"/>
 
         <!--关闭注释-->
         <!--

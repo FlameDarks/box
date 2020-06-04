@@ -44,23 +44,38 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-9">
                 <ul class="nav nav-pills">
+                    <li role="presentation"><a href="${APP_PATH}/page8">地图</a></li>
                     <li role="presentation"><a href="${APP_PATH}/page1">记事本</a></li>
                     <li role="presentation"><a href="${APP_PATH}/page2">通讯录</a></li>
                     <li role="presentation" class="active"><a href="${APP_PATH}/page3">收藏夹</a></li>
+                    <li role="presentation"><a href="${APP_PATH}/page7">日程表</a></li>
                     <li role="presentation"><a href="${APP_PATH}/page4">文件箱</a></li>
                     <li role="presentation"><a href="${APP_PATH}/page5">聊天室</a></li>
-                    <shiro:hasRole name="admin"><li role="presentation"><a href="${APP_PATH}/page6">用户管理</a></li></shiro:hasRole>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            图片库 <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="${APP_PATH}/page9">所有图片</a></li>
+                            <li role="presentation"><a href="${APP_PATH}/page11">热门图片</a></li>
+                            <li role="presentation"><a href="${APP_PATH}/page12">我的收藏</a></li>
+                        </ul>
+                    </li>
+                    <shiro:hasRole name="admin">
+                        <li role="presentation"><a href="${APP_PATH}/page6">用户管理</a></li>
+                        <li role="presentation"><a href="${APP_PATH}/page10">图片管理</a></li>
+                    </shiro:hasRole>
                 </ul>
             </div>
-            <div class="col-md-6">
+            <div>
                 <div class="row">
                     <select class="form-control col-md-1" id="check">
                         <option value="1">书签名</option>
                         <option value="2">网址</option>
                     </select>
-                    <input class="col-md-4" placeholder="请输入" id="selectInput">
+                    <input class="col-md-1" placeholder="请输入" id="selectInput">
                     <button class="btn btn-primary col-md-1" id="selectBtn" select="3">搜索</button>
                 </div>
             </div>

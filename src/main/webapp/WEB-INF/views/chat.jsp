@@ -47,12 +47,27 @@
     </div>
     <div>
         <ul class="nav nav-pills">
+            <li role="presentation"><a href="${APP_PATH}/page8">地图</a></li>
             <li role="presentation"><a href="${APP_PATH}/page1">记事本</a></li>
             <li role="presentation"><a href="${APP_PATH}/page2">通讯录</a></li>
             <li role="presentation"><a href="${APP_PATH}/page3">收藏夹</a></li>
+            <li role="presentation"><a href="${APP_PATH}/page7">日程表</a></li>
             <li role="presentation"><a href="${APP_PATH}/page4">文件箱</a></li>
             <li role="presentation" class="active"><a href="${APP_PATH}/page5">聊天室</a></li>
-            <shiro:hasRole name="admin"><li role="presentation"><a href="${APP_PATH}/page6">用户管理</a></li></shiro:hasRole>
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    图片库 <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li role="presentation"><a href="${APP_PATH}/page9">所有图片</a></li>
+                    <li role="presentation"><a href="${APP_PATH}/page11">热门图片</a></li>
+                    <li role="presentation"><a href="${APP_PATH}/page12">我的收藏</a></li>
+                </ul>
+            </li>
+            <shiro:hasRole name="admin">
+                <li role="presentation"><a href="${APP_PATH}/page6">用户管理</a></li>
+                <li role="presentation"><a href="${APP_PATH}/page10">图片管理</a></li>
+            </shiro:hasRole>
         </ul>
     </div>
 </div>

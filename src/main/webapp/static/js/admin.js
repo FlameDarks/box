@@ -12,7 +12,6 @@ $(function () {
  */
 function admin_to_page(pn) {
     var path = $("#APP_PATH").val();
-    user = sessionStorage.getItem("userId");
     $.ajax({
         url:path+"/admin/selectAdmin",
         data:"pn="+pn,

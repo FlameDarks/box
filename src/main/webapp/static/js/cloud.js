@@ -148,9 +148,9 @@ $(document).on("click", '#cloud_save_btn', function() {
     user = sessionStorage.getItem("userId");
     var path = $("#APP_PATH").val();
     var file = $('#clouds_add')[0].files[0];
-    var allowsize = 10485760;
+    var allowsize = 20971520;
     if (file.size>allowsize){
-        alert("文件不能超过10MB");
+        alert("文件不能超过20MB");
         return false;
     }
     var formData = new FormData();
@@ -279,22 +279,21 @@ function selectContent() {
 }
 
 /**
- * 获取 blob
+ * 获取 Blob
  * @param  {String} url 目标文件地址
  * @return {Promise}
  */
 function getBlob(url) {
-    return new Promise(resolve => {
+    return new Promise(resolve => {// Promise异步处理
         const xhr = new XMLHttpRequest();
 
-        xhr.open('GET', url, true);
+        xhr.open('GET', url, true);//请求方式，地址，是否异步
         xhr.responseType = 'blob';
         xhr.onload = () => {
             if (xhr.status === 200) {
-                resolve(xhr.response);
+                resolve(xhr.response);//resolve成功，response是一个包含二进制数据的Blob对象
             }
         };
-
         xhr.send();
     });
 }
@@ -306,22 +305,21 @@ function getBlob(url) {
  */
 function saveAs(blob, filename) {
     if (window.navigator.msSaveOrOpenBlob) {
-        navigator.msSaveBlob(blob, filename);
+        navigator.msSaveBlob(blob, filename);//允许用户在客户端上保存文件，提供保存
     } else {
-        const link = document.createElement('a');
-        const body = document.querySelector('body');
+        const link = document.createElement('a');//创建一个按钮
+        const body = document.querySelector('body');//获取body元素
 
-        link.href = window.URL.createObjectURL(blob);
-        link.download = filename;
+        link.href = window.URL.createObjectURL(blob);//创建一个新的URL对象
+        link.download = filename;//设定文件名
 
-        // fix Firefox
-        link.style.display = 'none';
-        body.appendChild(link);
+        link.style.display = 'none';//隐藏元素
+        body.appendChild(link);//添加列表项
 
         link.click();
         body.removeChild(link);
 
-        window.URL.revokeObjectURL(link.href);
+        window.URL.revokeObjectURL(link.href);//释放URL对象
     }
 }
 
@@ -340,5 +338,5 @@ function download(url, filename) {
  * 下载点击按钮
  */
 $(document).on("click", '.down', function() {
-    download($(this).attr("url"),$(this).attr("filename"))
+    download($(this).attr("url"),$(this).attr("filename"));
 });

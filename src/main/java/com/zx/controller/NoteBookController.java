@@ -101,15 +101,4 @@ public class NoteBookController {
         }
     }
 
-
-
-
-
-//    public String getNoteBook(@RequestParam(value = "pn",defaultValue = "1")Integer pn, Model model){
-//        PageHelper.startPage(pn,1);
-//        List<NoteBook> noteBooks = noteBookService.getAll();
-//        PageInfo pageInfo = new PageInfo(noteBooks,5);
-//        model.addAttribute("notebook_pageInfo",pageInfo);
-//        return "notebook";
-//    }
 }

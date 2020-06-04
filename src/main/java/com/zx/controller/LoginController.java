@@ -30,9 +30,40 @@ public class LoginController {
     public String getPage5(){
         return "chat";
     }
+    @RequestMapping("/page7")
+    public String getPage7(){
+        return "calendar";
+    }
+
+    @RequestMapping("/page8")
+    public String getPage8(){
+        return "map";
+    }
+
+    @RequestMapping("/page9")
+    public String getPage9(){
+        return "image";
+    }
+
+    @RequestMapping("/page10")
+    public String getPage10(){
+        return "images";
+    }
+
+    @RequestMapping("/page11")
+    public String getPage11(){
+        return "hotimage";
+    }
+
+    @RequestMapping("/page12")
+    public String getPage12(){
+        return "myimage";
+    }
+
     @RequestMapping("/page6")
     @RequiresRoles({"admin"})
     public String getPage6(){
         return "admin";
     }
+
 }
